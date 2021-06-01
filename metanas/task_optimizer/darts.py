@@ -354,6 +354,10 @@ def pca_viz(loss_nn, K=1):
         #ax.set_xlabel('x (cm)')
         ax.set_ylabel('y (cm)')
 
+        # yhat has to be (N, C) = (1,1) and y has to be (N,)=(1)
+        
+
+
         # # Visulize contour plot of loss_nn_pca
         # # Generate data:
         # x = [100 * torch.rand((1,1)).cuda() for _ in range(10)]

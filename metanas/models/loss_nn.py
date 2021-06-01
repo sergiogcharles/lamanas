@@ -3,15 +3,15 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 # From: https://www.deeplearningwizard.com/deep_learning/practical_pytorch/pytorch_feedforward_neuralnetwork/
-class LossNN(nn.Module):
+class NNL(nn.Module):
     def __init__(self, input_x_dim, input_y_dim, hidden_dim=64, output_dim=1):
-        super(LossNN, self).__init__()
+        super(NNL, self).__init__()
         #  Linear layer 1
         self.fcx = nn.Linear(input_x_dim, hidden_dim)
         # self.fcy = nn.Linear(input_y_dim, hidden_dim) 
         # Linear layer 2
         self.fc2 = nn.Linear(hidden_dim, output_dim)  
-
+        
         # Linear layer 3
         # self.fc3 = nn.Linear(output_dim, output_dim) 
         # self.batchnorm = nn.BatchNorm1d(output_dim) 

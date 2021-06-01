@@ -29,6 +29,7 @@ Train-TestPrec@(1,) @ Epoch 18: 0.04583333409908745
 Train-TestPrec@(1,) @ Epoch 19: 0.04605263234361222 
 Train-TestPrec@(1,) @ Epoch 20: 0.04575000075623393 
 Train-TestPrec@(1,) @ Epoch 1: 0.06500000171363354 
+<<<<<<< HEAD
 Train-TestPrec@(1,) @ Epoch 2: 0.06500000152736903 
 Train-TestPrec@(1,) @ Epoch 3: 0.056666668007771176 
 Train-TestPrec@(1,) @ Epoch 4: 0.05500000137835741 
@@ -78,3 +79,35 @@ Train-TestPrec@(1,) @ Epoch 20: 0.05300000108778477
 Train-TestPrec@(1,) @ Epoch 1: 0.15000000298023225 
 Train-TestPrec@(1,) @ Epoch 1: 0.11000000312924385 
 Train-TestPrec@(1,) @ Epoch 1: 0.14000000283122063 
+=======
+Train-TestPrec@(1,) @ Epoch 1: 0.05500000081956387 
+Train-TestPrec@(1,) @ Epoch 1: 0.045000001043081286 
+Train-TestPrec@(1,) @ Epoch 1: 0.04000000059604645 
+Train-TestPrec@(1,) @ Epoch 1: 0.04500000067055225 
+Train-TestPrec@(1,) @ Epoch 1: 0.23500000536441804 
+Train-TestPrec@(1,) @ Epoch 1: 0.05000000074505806 
+Train-TestPrec@(1,) @ Epoch 1: 0.030000000447034835 
+Train-TestPrec@(1,) @ Epoch 1: 0.07000000178813934 
+Train-TestPrec@(1,) @ Epoch 1: 0.05500000081956387 
+Train-TestPrec@(1,) @ Epoch 1: 0.22000000402331352 
+Train-TestPrec@(1,) @ Epoch 1: 0.04500000067055225 
+Train-TestPrec@(1,) @ Epoch 1: 0.06500000096857547 
+Train-TestPrec@(1,) @ Epoch 1: 0.07500000186264515 
+Train-TestPrec@(1,) @ Epoch 1: 0.10000000223517418 
+Train-TestPrec@(1,) @ Epoch 1: 0.07500000223517418 
+Train-TestPrec@(1,) @ Epoch 1: 0.08000000156462192 
+Train-TestPrec@(1,) @ Epoch 1: 0.07000000104308128 
+Train-TestPrec@(1,) @ Epoch 1: 0.0800000011920929 
+Train-TestPrec@(1,) @ Epoch 1: 0.03500000052154064 
+Train-TestPrec@(1,) @ Epoch 1: 0.06000000089406967 
+Train-TestPrec@(1,) @ Epoch 1: 0.07500000149011612 
+Train-TestPrec@(1,) @ Epoch 1: 0.055000001564621925 
+Train-TestPrec@(1,) @ Epoch 1: 0.03500000052154064 
+Train-TestPrec@(1,) @ Epoch 1: 0.20500000417232514 
+Train-TestPrec@(1,) @ Epoch 1: 0.04000000059604645 
+Train-TestPrec@(1,) @ Epoch 1: 0.05000000111758709 
+Train-TestPrec@(1,) @ Epoch 1: 0.14500000290572643 
+Train-TestPrec@(1,) @ Epoch 1: 0.04500000067055225 
+Train-TestPrec@(1,) @ Epoch 1: 0.07500000186264515 
+Train-TestPrec@(1,) @ Epoch 1: 0.13500000424683095 
+>>>>>>> 0532342459f50c1d26df63244a5daea43fa236c5

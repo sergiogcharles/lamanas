@@ -35,7 +35,7 @@ args=(
     --meta_epochs 1 \
     --warm_up_epochs 0 \
     --use_pairwise_input_alphas \
-    --eval_freq 1000 \
+    --eval_freq 10 \
     --eval_epochs 1 \
 
     --normalizer softmax \
@@ -49,7 +49,7 @@ args=(
     --layers 4 \
     --reduction_layers 1 3 \
     --use_first_order_darts \
-    --loss_nn loss_rnn \
+    --loss_nn loss_nn \
     --use_torchmeta_loader \
 
 )

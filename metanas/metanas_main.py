@@ -167,12 +167,15 @@ def _init_alpha_normalizer(name, task_train_steps, t_max, t_min, temp_anneal_mod
 
 def _build_model(config, task_distribution, normalizer):
 
+    # print(config.loss_nn)
+    # breakpoint()
     if config.meta_model == "searchcnn":
         meta_model = SearchCNNController(
             task_distribution.n_input_channels,
             config.init_channels,
             task_distribution.n_classes,
             config.layers,
+            config.loss_nn,
             n_nodes=config.nodes,
             reduction_layers=config.reduction_layers,
             device_ids=config.gpus,
@@ -930,7 +933,7 @@ if __name__ == "__main__":
     )
 
     # For phis
-    parser.add_argument("--phi_lr", type=float, default=0.025, help="lr for phis")
+    parser.add_argument("--phi_lr", type=float, default=0.01, help="lr for phis")
     parser.add_argument(
         "--phi_momentum", type=float, default=0.0, help="momentum for phis"
     )
@@ -1013,6 +1016,11 @@ if __name__ == "__main__":
         help="sparsify_input_alphas input for the search_cnn forward pass "
         "during final evaluation.",
     )  #### deprecated
+
+    # Self-Supervised Loss Architecture
+    parser.add_argument(
+        "--loss_nn", type=str, default='loss_nn', help="loss neural network to use for self-supervised learning",
+    )
 
     args = parser.parse_args()
     args.path = os.path.join(
