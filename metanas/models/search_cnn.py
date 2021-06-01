@@ -34,7 +34,8 @@ import copy
 from metanas.models import ops
 from metanas.utils import genotypes as gt
 
-from metanas.models.loss_nn import LossNN
+from metanas.models.loss_nn import NNL
+from metanas.models.loss_rnn import RNNL
 
 def SoftMax(logits, params, dim=-1):
 
@@ -81,6 +82,7 @@ class SearchCNNController(nn.Module):
         C,
         n_classes,
         n_layers,
+        lossfunc,
         n_nodes=4,
         reduction_layers=[],
         stem_multiplier=3,
@@ -95,7 +97,15 @@ class SearchCNNController(nn.Module):
         super().__init__()
         self.n_nodes = n_nodes
         # self.criterion = nn.CrossEntropyLoss()
-        self.criterion = LossNN(n_classes, n_classes)
+        LossNN = None
+        if lossfunc == 'loss_nn':
+            print('nn')
+            self.criterion = NNL(n_classes, n_classes)
+        elif lossfunc == 'loss_rnn':
+            print('rnn')
+            self.criterion = RNNL(n_classes, n_classes)
+            # breakpoint()
+        # self.criterion = LossNN
         self.use_pairwise_input_alphas = use_pairwise_input_alphas
         self.use_hierarchical_alphas = use_hierarchical_alphas
         self.alpha_prune_threshold = alpha_prune_threshold

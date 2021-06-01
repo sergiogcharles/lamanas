@@ -49,7 +49,7 @@ args=(
     --layers 4 \
     --reduction_layers 1 3 \
     --use_first_order_darts \
-    --loss_nn loss_rnn \
+    --loss_nn loss_nn \
     --use_torchmeta_loader \
 
 )
