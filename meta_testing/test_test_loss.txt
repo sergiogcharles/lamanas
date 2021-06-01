@@ -1,0 +1,1 @@
+Test-TestLoss @ Epoch 10: 3.075 

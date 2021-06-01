@@ -62,22 +62,22 @@ class NAS_Reptile:
 
         self.w_meta_optim.zero_grad()
         self.a_meta_optim.zero_grad()
-        # self.phi_meta_optim.zero_grad()
+        self.phi_meta_optim.zero_grad()
 
         self.meta_model.train()
 
         w_finite_differences = list()
         a_finite_differences = list()
-        # phi_finite_differences = list()
+        phi_finite_differences = list()
 
         for task_info in task_infos:
             w_finite_differences += [
                 get_finite_difference(self.meta_model.named_weights(), task_info.w_task)
             ]
             # Phi differences
-            # phi_finite_differences += [
-            #     get_finite_difference(self.meta_model.named_phis(), task_info.phi_task)
-            # ]
+            phi_finite_differences += [
+                get_finite_difference(self.meta_model.named_phis(), task_info.phi_task)
+            ]
             a_finite_differences += [
                 get_finite_difference(self.meta_model.named_alphas(), task_info.a_task)
             ]
@@ -93,19 +93,19 @@ class NAS_Reptile:
         }
 
         # Phi finite differences
-        # mean_phi_task_finitediff = {
-        #     k: get_mean_gradient_from_key(k, phi_finite_differences)
-        #     for k in phi_tasks[0].keys()
-        # }
+        mean_phi_task_finitediff = {
+            k: get_mean_gradient_from_key(k, phi_finite_differences)
+            for k in phi_tasks[0].keys()
+        }
 
         for layer_name, layer_weight_tensor in self.meta_model.named_weights():
             if layer_weight_tensor.grad is not None:
                 layer_weight_tensor.grad.data.add_(-mean_w_task_finitediff[layer_name])
 
         # For phi
-        # for layer_name, layer_weight_tensor in self.meta_model.named_phis():
-        #     if layer_weight_tensor.grad is not None:
-        #         layer_weight_tensor.grad.data.add_(-mean_phi_task_finitediff[layer_name])
+        for layer_name, layer_weight_tensor in self.meta_model.named_phis():
+            if layer_weight_tensor.grad is not None:
+                layer_weight_tensor.grad.data.add_(-mean_phi_task_finitediff[layer_name])
 
         for layer_name, layer_weight_tensor in self.meta_model.named_alphas():
             if layer_weight_tensor.grad is not None:
@@ -114,7 +114,7 @@ class NAS_Reptile:
 
         self.w_meta_optim.step()
         # Phi step
-        # self.phi_meta_optim.step()
+        self.phi_meta_optim.step()
         if self.a_meta_optim is not None:
             self.a_meta_optim.step()
 

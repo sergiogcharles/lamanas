@@ -30,6 +30,13 @@ from metanas.models.search_cnn import SearchCNNController
 from torch.autograd import Variable
 import os
 
+# For visualization
+from metanas.task_optimizer.pca_low_rank import pca_lowrank
+from . import _linalg_utils as _utils
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.interpolate
+
 class Darts:
     def __init__(self, model, config, do_schedule_lr=False):
 
@@ -66,10 +73,9 @@ class Darts:
         self.phi_optim = torch.optim.Adam(
             self.model.phis(),
             self.config.phi_lr,
-            # lr=0.01,
-            betas=(0.0, 0.999)
-            # ,
-            # weight_decay=self.config.phi_weight_decay,
+            # lr=5,
+            betas=(0.0, 0.999),
+            weight_decay=self.config.phi_weight_decay,
         )
 
         self.architect = Architect(
@@ -311,6 +317,76 @@ class Darts:
 
         return task_info
 
+# PCA viz
+def pca_viz(loss_nn, K=1):
+    loss_nn_pca = copy.deepcopy(loss_nn).cuda()
+
+
+    # for n, p in model.criterion.named_parameters():
+    #     print(n,p)
+    #     break
+    # print(model.criterion.fcx)
+    matmul = _utils.matmul
+    
+    # print(loss_nn_pca.fcx.weight) 
+    with torch.no_grad():
+        # Perform SVD decomposition only on W1 weight
+
+        W1 = loss_nn_pca.fcx.weight
+        U, S, V = pca_lowrank(W1, q=None, center=True, niter=3)
+
+        W_hat = matmul(W1, V[:, :K])
+        print(W_hat.shape)
+        # W_hat = W_hat
+
+        # print(loss_nn_pca.fcx.weight.shape)
+
+        loss_nn_pca.fcx.weight = torch.nn.Parameter(W_hat)
+
+        xlist = np.linspace(-3.0, 3.0, 100)
+        ylist = np.linspace(-3.0, 3.0, 100)
+        X, Y = np.meshgrid(xlist, ylist)
+        Z = np.sqrt(X**2 + Y**2)
+        fig,ax=plt.subplots(1,1)
+        cp = ax.contourf(X, Y, Z)
+        fig.colorbar(cp) # Add a colorbar to a plot
+        ax.set_title('Filled Contours Plot')
+        #ax.set_xlabel('x (cm)')
+        ax.set_ylabel('y (cm)')
+
+        # # Visulize contour plot of loss_nn_pca
+        # # Generate data:
+        # x = [100 * torch.rand((1,1)).cuda() for _ in range(10)]
+        # y = [1000 * torch.rand((1)).type(torch.LongTensor).cuda() for _ in range(10)]
+        # z = [loss_nn_pca(x[i], y[i]) for i in range(10)]
+
+        # # Reshape and cast to numpy
+        # x = [x_new.reshape(-1).detach().cpu()[0] for x_new in x]
+        # y = [y_new.detach().cpu().numpy()[0] for y_new in y]
+        # z = [z_new.detach().cpu().numpy() for z_new in z]
+
+        # x = np.array(x).reshape(1, -1)
+        # y = np.array(y).reshape(1, -1)
+        # z = np.array(z).reshape(1, -1)
+
+        # print(z)
+
+        # # Set up a regular grid of interpolation points
+        # xi, yi = np.linspace(x.min(), x.max(), 100), np.linspace(y.min(), y.max(), 100)
+        # xi, yi = np.meshgrid(xi, yi)
+
+        # # Interpolate
+        # rbf = scipy.interpolate.Rbf(x, y, z, function='linear')
+        # zi = rbf(xi, yi)
+
+        # plt.imshow(zi, vmin=z.min(), vmax=z.max(), origin='lower',
+        #         extent=[x.min(), x.max(), y.min(), y.max()])
+        # plt.scatter(x, y, c=z)
+        # plt.colorbar()
+        # plt.show()
+        plt.savefig('./loss_viz.png')
+
+
 
 def train(
     task,
@@ -372,20 +448,24 @@ def train(
         print(f"MSE before: {loss_proxy}")
         loss_proxy.backward(retain_graph=True)
 
-        for param in model.criterion.parameters():
-            loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
-            os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
-            with open(loss_params_filename, "w") as f:
-                torch.set_printoptions(threshold=10_000)
-                f.write(str(param.grad.data))
-            break
+        # for param in model.criterion.parameters():
+        #     loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
+        #     os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
+        #     with open(loss_params_filename, "w") as f:
+        #         torch.set_printoptions(threshold=10_000)
+        #         f.write(str(param.grad.data))
+        #     break
 
         # loss = model.criterion(logits, train_y)
         # loss.backward()
-        
+                
         nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
         phi_optim.step()
 
+        # Visualize loss neural network
+        pca_viz(model.criterion)
+
+        # with torch.no_grad():
         output = model.criterion(logits, train_y)
         loss_after = loss_proxy_mse(output, target)
         print(f"MSE after: {loss_after}")
