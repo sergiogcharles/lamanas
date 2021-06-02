@@ -656,6 +656,10 @@ class SearchCNN(nn.Module):
         self.n_classes = n_classes
         self.n_layers = n_layers
 
+        # ResNet to go from C_in to C_in
+        
+
+
         C_cur = stem_multiplier * C
         self.stem = nn.Sequential(
             nn.Conv2d(C_in, C_cur, 3, 1, 1, bias=False), nn.BatchNorm2d(C_cur)
@@ -731,6 +735,9 @@ class SearchCNN(nn.Module):
             (i.e. not None). Note that both hierarchical and pairwise alphas can be None.
 
         """
+
+        # Insert resnet here
+
         s0 = s1 = self.stem(x)
 
         if sparsify_input_alphas:

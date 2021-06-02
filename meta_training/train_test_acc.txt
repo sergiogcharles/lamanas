@@ -112,3 +112,17 @@ Train-TestPrec@(1,) @ Epoch 1: 0.07500000186264515
 Train-TestPrec@(1,) @ Epoch 1: 0.13500000424683095 
 >>>>>>> 0532342459f50c1d26df63244a5daea43fa236c5
 Train-TestPrec@(1,) @ Epoch 1: 0.13000000342726709 
+Train-TestPrec@(1,) @ Epoch 1: 0.20000000298023224 
+Train-TestPrec@(1,) @ Epoch 1: 0.2000000037252903 
+Train-TestPrec@(1,) @ Epoch 1: 0.180000002682209 
+Train-TestPrec@(1,) @ Epoch 1: 0.22500000447034835 
+Train-TestPrec@(1,) @ Epoch 1: 0.23500000089406967 
+Train-TestPrec@(1,) @ Epoch 2: 0.22500000186264515 
+Train-TestPrec@(1,) @ Epoch 3: 0.21833333571751912 
+Train-TestPrec@(1,) @ Epoch 4: 0.2225000023841858 
+Train-TestPrec@(1,) @ Epoch 5: 0.2250000022351742 
+Train-TestPrec@(1,) @ Epoch 6: 0.22333333566784858 
+Train-TestPrec@(1,) @ Epoch 7: 0.22357143126428128 
+Train-TestPrec@(1,) @ Epoch 8: 0.22687500272877514 
+Train-TestPrec@(1,) @ Epoch 9: 0.2333333355271154 
+Train-TestPrec@(1,) @ Epoch 10: 0.2340000021830201 

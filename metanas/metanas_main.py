@@ -38,6 +38,13 @@ from metanas.utils import genotypes as gt
 from metanas.utils import utils
 
 
+# For visualization
+from metanas.task_optimizer.pca_low_rank import pca_lowrank
+from . import _linalg_utils as _utils
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.interpolate
+
 def meta_architecture_search(
     config, task_optimizer_cls=Darts, meta_optimizer_cls=NAS_Reptile
 ):
@@ -360,6 +367,58 @@ def _prune_alphas(meta_model, meta_model_prune_threshold):
     if isinstance(meta_model, SearchCNNController):
         meta_model.prune_alphas(prune_threshold=meta_model_prune_threshold)
 
+# PCA viz
+def pca_viz(loss_nn, K=3, meta_epoch=0):
+    loss_nn_pca = copy.deepcopy(loss_nn).cuda()
+
+    matmul = _utils.matmul
+    
+    # print(loss_nn_pca.fcx.weight) 
+    with torch.no_grad():
+        # Perform SVD decomposition only on W1 weight
+
+        W1 = loss_nn_pca.fcx.weight
+        # print('shape, ', W1.shape)
+        U, S, V = pca_lowrank(W1, q=None, center=True, niter=3)
+
+        # K-reduced W
+        W_hat = matmul(W1, V[:, :K])
+
+        loss_nn_pca.fcx.weight = torch.nn.Parameter(W_hat)
+
+        # train_x in puts in R^1x2 (x,y)
+        x = np.linspace(-1000, 1000, 200).reshape(-1, 1)
+        y = np.linspace(-1000, 1000, 200).reshape(-1, 1)
+
+        z = np.zeros((len(y), len(x)))
+
+        # Y = len(y)
+        # X = len(x.T)
+
+        for i in range(len(x)):
+            for j in range(len(y)):
+                # x should be (N,C)=(1, 2)
+                x_input = torch.tensor([x[i], y[j]]).reshape((1, 2))
+                # y should be (N) where each value is the class index in the range [0, C-1]=[0, 1]
+                y_label = torch.randint(0, 2, (1,)).reshape(1).type(torch.LongTensor)
+                # print(y_label)
+
+                # Compute loss
+                z[i][j] = loss_nn_pca(x_input, y_label) / 1000
+            # if i % 10:
+            #     print(f'{i}/{len(y)}')
+
+        x, y = x.flatten(), y.flatten()
+        fig1, ax1 = plt.subplots()
+        cs = ax1.contourf(x, y, z, cmap ='Greens', alpha=1)
+        fig1.colorbar(cs)
+        ax1.set_title('Self-supervised loss neural network PCA contour plot')
+
+        if not os.path.isdir("metanas/loss_contour_plots"):
+            os.makedirs("loss_contour_plots")
+        loss_png_filename = 'loss_viz_metaepoch' + str(meta_epoch)+'.png'
+        plt.savefig(os.path.join('loss_contour_plots', loss_png_filename))
+        plt.close()
 
 def train(
     config,
@@ -471,6 +530,9 @@ def train(
                 f"Train-TestLoss {config.losses_logger.avg:.3f} "
                 f"Train-TestPrec@(1,) ({config.top1_logger.avg:.1%}, {1.00:.1%})"
             )
+
+        # Visualize self-supervised loss
+        pca_viz(meta_model.criterion, meta_epoch=meta_epoch)
         
         # Write meta train metrics to file
         train_test_loss_filename = 'meta_training' + "/train_test_loss.txt"

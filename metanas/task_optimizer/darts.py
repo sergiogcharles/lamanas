@@ -209,6 +209,9 @@ class Darts:
                 self.model.normalizer["params"]["curr_step"] += 1
                 self.architect.v_net.normalizer["params"]["curr_step"] += 1
 
+        # Visualize loss neural network for K steps of task learner
+        # pca_viz(self.model.criterion)
+
         w_task = OrderedDict(
             {
                 layer_name: copy.deepcopy(layer_weight)
@@ -318,14 +321,9 @@ class Darts:
         return task_info
 
 # PCA viz
-def pca_viz(loss_nn, K=1):
+def pca_viz(loss_nn, K=3, meta_epoch=0):
     loss_nn_pca = copy.deepcopy(loss_nn).cuda()
 
-
-    # for n, p in model.criterion.named_parameters():
-    #     print(n,p)
-    #     break
-    # print(model.criterion.fcx)
     matmul = _utils.matmul
     
     # print(loss_nn_pca.fcx.weight) 
@@ -333,100 +331,46 @@ def pca_viz(loss_nn, K=1):
         # Perform SVD decomposition only on W1 weight
 
         W1 = loss_nn_pca.fcx.weight
+        # print('shape, ', W1.shape)
         U, S, V = pca_lowrank(W1, q=None, center=True, niter=3)
 
+        # K-reduced W
         W_hat = matmul(W1, V[:, :K])
-        # print(W_hat.shape)
-        # W_hat = W_hat
-
-        # print(loss_nn_pca.fcx.weight.shape)
 
         loss_nn_pca.fcx.weight = torch.nn.Parameter(W_hat)
 
-        # xlist = np.linspace(-3.0, 3.0, 100)
-        # ylist = np.linspace(-3.0, 3.0, 100)
-        # X, Y = np.meshgrid(xlist, ylist)
-        # Z = np.sqrt(X**2 + Y**2)
-        # fig,ax=plt.subplots(1,1)
-        # cp = ax.contourf(X, Y, Z)
-        # fig.colorbar(cp) # Add a colorbar to a plot
-        # ax.set_title('Filled Contours Plot')
-        # #ax.set_xlabel('x (cm)')
-        # ax.set_ylabel('y (cm)')
-        x = np.linspace(-100, 100, 100).reshape(1, -1)
-        # Class labels
-        y = np.linspace(0, 0, 10).reshape(-1, 1)
+        # train_x in puts in R^1x2 (x,y)
+        x = np.linspace(-1000, 1000, 200).reshape(-1, 1)
+        y = np.linspace(-1000, 1000, 200).reshape(-1, 1)
 
-        matrix = [[None] * len(x.T)] * len(y)
-        for i in range(len(y)):
-            for j in range(len(x.T)):
-                matrix[i][j] = (x[0][j], y[i][0])
+        z = np.zeros((len(y), len(x)))
 
-        z = np.zeros((len(y), len(x.T)))
+        # Y = len(y)
+        # X = len(x.T)
 
-        Y = len(y)
-        X = len(x.T)
+        for i in range(len(x)):
+            for j in range(len(y)):
+                # x should be (N,C)=(1, 2)
+                x_input = torch.tensor([x[i], y[j]]).reshape((1, 2))
+                # y should be (N) where each value is the class index in the range [0, C-1]=[0, 1]
+                y_label = torch.randint(0, 2, (1,)).reshape(1).type(torch.LongTensor)
+                # print(y_label)
 
-        
+                # Compute loss
+                z[i][j] = loss_nn_pca(x_input, y_label) / 1000
+            # if i % 10:
+            #     print(f'{i}/{len(y)}')
 
-        for i in range(len(y)):
-            for j in range(len(x.T)):
-                # Compute loss from matrix
-                t = matrix[i][j]
-                x_input, y_label = t[0], t[1]
-                x_input = torch.tensor([x_input]).reshape((1, 1))
-                y_label = torch.tensor(y_label).reshape(-1).type(torch.LongTensor)
-                # print("x", x_input.shape)
-                # print("y", y_label)
-                z[i][j] = loss_nn_pca(x_input, y_label)
-            if i % 10:
-                print(f'{i}/{len(y)}')
-
-        # we no longer need x and y to be
-        # 2 dimensional, so flatten them.
         x, y = x.flatten(), y.flatten()
-        
         fig1, ax1 = plt.subplots()
         cs = ax1.contourf(x, y, z, cmap ='Greens', alpha=1)
         fig1.colorbar(cs)
         ax1.set_title('Self-supervised loss neural network PCA contour plot')
 
-
-        # yhat has to be (N, C) = (1,1) and y has to be (N,)=(1)
-        
-
-
-        # # Visulize contour plot of loss_nn_pca
-        # # Generate data:
-        # x = [100 * torch.rand((1,1)).cuda() for _ in range(10)]
-        # y = [1000 * torch.rand((1)).type(torch.LongTensor).cuda() for _ in range(10)]
-        # z = [loss_nn_pca(x[i], y[i]) for i in range(10)]
-
-        # # Reshape and cast to numpy
-        # x = [x_new.reshape(-1).detach().cpu()[0] for x_new in x]
-        # y = [y_new.detach().cpu().numpy()[0] for y_new in y]
-        # z = [z_new.detach().cpu().numpy() for z_new in z]
-
-        # x = np.array(x).reshape(1, -1)
-        # y = np.array(y).reshape(1, -1)
-        # z = np.array(z).reshape(1, -1)
-
-        # print(z)
-
-        # # Set up a regular grid of interpolation points
-        # xi, yi = np.linspace(x.min(), x.max(), 100), np.linspace(y.min(), y.max(), 100)
-        # xi, yi = np.meshgrid(xi, yi)
-
-        # # Interpolate
-        # rbf = scipy.interpolate.Rbf(x, y, z, function='linear')
-        # zi = rbf(xi, yi)
-
-        # plt.imshow(zi, vmin=z.min(), vmax=z.max(), origin='lower',
-        #         extent=[x.min(), x.max(), y.min(), y.max()])
-        # plt.scatter(x, y, c=z)
-        # plt.colorbar()
-        # plt.show()
-        plt.savefig('./loss_viz.png')
+        if not os.path.isdir("loss_contour_plots"):
+            os.makedirs("loss_contour_plots")
+        plt.savefig('loss_contour_plots/loss_viz.png')
+        plt.close()
 
 
 
@@ -505,7 +449,7 @@ def train(
         phi_optim.step()
 
         # Visualize loss neural network
-        pca_viz(model.criterion)
+        # pca_viz(model.criterion)
 
         # with torch.no_grad():
         output = model.criterion(logits, train_y)

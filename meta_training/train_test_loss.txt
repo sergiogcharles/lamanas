@@ -116,3 +116,17 @@ Train-TestLoss @ Epoch 1: 4.122
 Train-TestLoss @ Epoch 1: 1.742 
 >>>>>>> 0532342459f50c1d26df63244a5daea43fa236c5
 Train-TestLoss @ Epoch 1: 1.716 
+Train-TestLoss @ Epoch 1: 2.945 
+Train-TestLoss @ Epoch 1: 2.955 
+Train-TestLoss @ Epoch 1: 2.897 
+Train-TestLoss @ Epoch 1: 3.109 
+Train-TestLoss @ Epoch 1: 3.086 
+Train-TestLoss @ Epoch 2: 2.946 
+Train-TestLoss @ Epoch 3: 2.865 
+Train-TestLoss @ Epoch 4: 2.809 
+Train-TestLoss @ Epoch 5: 2.790 
+Train-TestLoss @ Epoch 6: 2.759 
+Train-TestLoss @ Epoch 7: 2.742 
+Train-TestLoss @ Epoch 8: 2.712 
+Train-TestLoss @ Epoch 9: 2.692 
+Train-TestLoss @ Epoch 10: 2.687 
