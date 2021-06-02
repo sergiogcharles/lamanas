@@ -367,9 +367,9 @@ def pca_viz(loss_nn, K=3, meta_epoch=0):
         fig1.colorbar(cs)
         ax1.set_title('Self-supervised loss neural network PCA contour plot')
 
-        if not os.path.isdir("loss_contour_plots"):
-            os.makedirs("loss_contour_plots")
-        plt.savefig('loss_contour_plots/loss_viz.png')
+        os.makedirs("loss_contour_plots", exist_ok=True)
+        loss_png_filename = 'loss_viz_metaepoch' + str(meta_epoch)+'.png'
+        plt.savefig(os.path.join('loss_contour_plots', loss_png_filename))
         plt.close()
 
 
@@ -397,6 +397,9 @@ def train(
         val_X, val_y = val_X.to(config.device), val_y.to(config.device)
         N = train_X.size(0)
 
+        # for param in model.criterion.parameters():
+        #     param.requires_grad = False
+
         # phase 2. architect step (alpha)
         if not warm_up:  # only update alphas outside warm up phase
             alpha_optim.zero_grad()
@@ -409,7 +412,6 @@ def train(
         # phase 1. child network step (w)
         w_optim.zero_grad()
         logits = model(train_X).cuda()
-        # logits = Variable(logits.data, requires_grad=True)
 
         # ground truth: whatever the softmax produces
         target_loss = nn.CrossEntropyLoss()
@@ -422,11 +424,13 @@ def train(
         w_optim.step()
 
         # Phase 3: update phi meta parameters of loss neural net
+        # for param in model.criterion.parameters():
+        #     param.requires_grad = True
+
         phi_optim.zero_grad()
 
         # Pass through neural net loss model
         output = model.criterion(logits, train_y).type(torch.float).cuda()
-        # output =  Variable(output.data, requires_grad=True).type(torch.float).cuda()
 
         loss_proxy_mse = nn.MSELoss()
         # This is the proxy of -<partial L_T/partial  phi, partial L_train/ partial phi>
@@ -441,9 +445,6 @@ def train(
         #         torch.set_printoptions(threshold=10_000)
         #         f.write(str(param.grad.data))
         #     break
-
-        # loss = model.criterion(logits, train_y)
-        # loss.backward()
                 
         nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
         phi_optim.step()

@@ -414,8 +414,7 @@ def pca_viz(loss_nn, K=3, meta_epoch=0):
         fig1.colorbar(cs)
         ax1.set_title('Self-supervised loss neural network PCA contour plot')
 
-        if not os.path.isdir("metanas/loss_contour_plots"):
-            os.makedirs("loss_contour_plots")
+        os.makedirs("loss_contour_plots", exist_ok=True)
         loss_png_filename = 'loss_viz_metaepoch' + str(meta_epoch)+'.png'
         plt.savefig(os.path.join('loss_contour_plots', loss_png_filename))
         plt.close()
