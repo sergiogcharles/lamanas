@@ -26,7 +26,7 @@ class NNL(nn.Module):
         # print(x.shape)
         y = y.type(torch.float).reshape(-1, 1).cuda()
         # print(y.shape)
-
+        
         z = torch.cat((x,y), dim=1)
         # print(z.shape)
         # print("z dim", z.shape)

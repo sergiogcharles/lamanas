@@ -1,5 +1,10 @@
-Test-TestLoss @ Epoch 0: 2.910 
-Test-TestLoss @ Epoch 0: 1341208.013 
-Test-TestLoss @ Epoch 0: -289467.331 
-Test-TestLoss @ Epoch 0: 1.688 
-Test-TestLoss @ Epoch 0: 1.820 
+Test-TestLoss @ Epoch 0: 1.337 
+Test-TestLoss @ Epoch 1: 1.397 
+Test-TestLoss @ Epoch 2: 1.454 
+Test-TestLoss @ Epoch 3: 1.458 
+Test-TestLoss @ Epoch 4: 1.429 
+Test-TestLoss @ Epoch 5: 1.463 
+Test-TestLoss @ Epoch 6: 1.470 
+Test-TestLoss @ Epoch 7: 1.469 
+Test-TestLoss @ Epoch 8: 1.466 
+Test-TestLoss @ Epoch 9: 1.471 

@@ -24,6 +24,8 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
+from metanas.models.loss_nn import NNL
+from metanas.models.loss_rnn import RNNL
 
 def conv_block(in_channels: int, out_channels: int) -> nn.Module:
     """Returns a Module that performs 3x3 convolution, ReLu activation, 2x2 max pooling.
@@ -65,7 +67,8 @@ class MamlModel(nn.Module):
 
         self.logits = nn.Linear(final_layer_size, k_way)
 
-        self.criterion = nn.CrossEntropyLoss()
+        # self.criterion = nn.CrossEntropyLoss()
+        self.criterion = NNL(k_way, k_way)
 
         ### dummy alphas to not break code
         self.alpha_normal = nn.ParameterList()
@@ -82,6 +85,13 @@ class MamlModel(nn.Module):
                 self._alphas.append((n, p))
 
         self.alpha_prune_threshold = 0.0
+
+        # setup phis list
+        self._phis = []
+        for n, p in self.criterion.named_parameters():
+            if "phi" in n:
+                self._phis.append((n, p))
+
 
     def forward(self, x):
         x = self.conv1(x)
@@ -109,6 +119,13 @@ class MamlModel(nn.Module):
         for n, p in self._alphas:
             yield n, p
         # return None
+
+    def phis(self):
+        return self.criterion.parameters()
+
+    def named_phis(self):
+        for n, p in self._phis:
+            yield n, p
 
     def genotype(self):
         return None
