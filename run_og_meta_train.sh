@@ -1,11 +1,10 @@
 #!/bin/bash
 
 DATASET=omniglot
-DATASET_DIR=/home/ubuntu/metanas/omniglot
-TRAIN_DIR=/home/ubuntu/metanas/results
+DATASET_DIR=/home/ubuntu/metanas_custom/omniglot
+TRAIN_DIR=/home/ubuntu/metanas_custom/results
 		
 mkdir -p $TRAIN_DIR
-
 
 args=(
     # Execution

@@ -657,7 +657,7 @@ class SearchCNN(nn.Module):
         self.n_layers = n_layers
 
         # ResNet to go from C_in to C_in
-        
+
 
 
         C_cur = stem_multiplier * C
@@ -737,6 +737,9 @@ class SearchCNN(nn.Module):
         """
 
         # Insert resnet here
+        # Input shape is: 20, 1, 28, 28
+        
+        print('input shape', x.shape)
 
         s0 = s1 = self.stem(x)
 

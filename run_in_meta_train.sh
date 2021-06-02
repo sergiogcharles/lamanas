@@ -1,13 +1,10 @@
-
+#!/bin/bash
 
 DATASET=miniimagenet
-DATASET_DIR=/path/to/miniimagenet
-TRAIN_DIR=/results/path
+DATASET_DIR=/home/ubuntu/metanas_custom/miniimagenet
+TRAIN_DIR=/home/ubuntu/metanas_custom/results
 		
 mkdir -p $TRAIN_DIR
-
-
-
 
 
 args=(
@@ -35,11 +32,11 @@ args=(
     --alpha_prune_threshold 0.01 \
     # Meta Learning
     --meta_model searchcnn \
-    --meta_epochs 30000 \
-    --warm_up_epochs 15000 \
+    --meta_epochs 1 \
+    --warm_up_epochs 0 \
     --use_pairwise_input_alphas \
     --eval_freq 2500 \
-    --eval_epochs 200 \
+    --eval_epochs 1 \
 
     --normalizer softmax \
     --normalizer_temp_anneal_mode linear \
@@ -58,5 +55,5 @@ args=(
 )
 
 
-python -u -m ../metanas.metanas_main "${args[@]}"
+python -u -m metanas.metanas_main "${args[@]}"
 
