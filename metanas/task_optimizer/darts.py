@@ -336,23 +336,61 @@ def pca_viz(loss_nn, K=1):
         U, S, V = pca_lowrank(W1, q=None, center=True, niter=3)
 
         W_hat = matmul(W1, V[:, :K])
-        print(W_hat.shape)
+        # print(W_hat.shape)
         # W_hat = W_hat
 
         # print(loss_nn_pca.fcx.weight.shape)
 
         loss_nn_pca.fcx.weight = torch.nn.Parameter(W_hat)
 
-        xlist = np.linspace(-3.0, 3.0, 100)
-        ylist = np.linspace(-3.0, 3.0, 100)
-        X, Y = np.meshgrid(xlist, ylist)
-        Z = np.sqrt(X**2 + Y**2)
-        fig,ax=plt.subplots(1,1)
-        cp = ax.contourf(X, Y, Z)
-        fig.colorbar(cp) # Add a colorbar to a plot
-        ax.set_title('Filled Contours Plot')
-        #ax.set_xlabel('x (cm)')
-        ax.set_ylabel('y (cm)')
+        # xlist = np.linspace(-3.0, 3.0, 100)
+        # ylist = np.linspace(-3.0, 3.0, 100)
+        # X, Y = np.meshgrid(xlist, ylist)
+        # Z = np.sqrt(X**2 + Y**2)
+        # fig,ax=plt.subplots(1,1)
+        # cp = ax.contourf(X, Y, Z)
+        # fig.colorbar(cp) # Add a colorbar to a plot
+        # ax.set_title('Filled Contours Plot')
+        # #ax.set_xlabel('x (cm)')
+        # ax.set_ylabel('y (cm)')
+        x = np.linspace(-100, 100, 100).reshape(1, -1)
+        # Class labels
+        y = np.linspace(0, 0, 10).reshape(-1, 1)
+
+        matrix = [[None] * len(x.T)] * len(y)
+        for i in range(len(y)):
+            for j in range(len(x.T)):
+                matrix[i][j] = (x[0][j], y[i][0])
+
+        z = np.zeros((len(y), len(x.T)))
+
+        Y = len(y)
+        X = len(x.T)
+
+        
+
+        for i in range(len(y)):
+            for j in range(len(x.T)):
+                # Compute loss from matrix
+                t = matrix[i][j]
+                x_input, y_label = t[0], t[1]
+                x_input = torch.tensor([x_input]).reshape((1, 1))
+                y_label = torch.tensor(y_label).reshape(-1).type(torch.LongTensor)
+                # print("x", x_input.shape)
+                # print("y", y_label)
+                z[i][j] = loss_nn_pca(x_input, y_label)
+            if i % 10:
+                print(f'{i}/{len(y)}')
+
+        # we no longer need x and y to be
+        # 2 dimensional, so flatten them.
+        x, y = x.flatten(), y.flatten()
+        
+        fig1, ax1 = plt.subplots()
+        cs = ax1.contourf(x, y, z, cmap ='Greens', alpha=1)
+        fig1.colorbar(cs)
+        ax1.set_title('Self-supervised loss neural network PCA contour plot')
+
 
         # yhat has to be (N, C) = (1,1) and y has to be (N,)=(1)
         

@@ -111,3 +111,4 @@ Train-TestPrec@(1,) @ Epoch 1: 0.04500000067055225
 Train-TestPrec@(1,) @ Epoch 1: 0.07500000186264515 
 Train-TestPrec@(1,) @ Epoch 1: 0.13500000424683095 
 >>>>>>> 0532342459f50c1d26df63244a5daea43fa236c5
+Train-TestPrec@(1,) @ Epoch 1: 0.13000000342726709 

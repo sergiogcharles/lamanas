@@ -115,3 +115,4 @@ Train-TestLoss @ Epoch 1: 2.443
 Train-TestLoss @ Epoch 1: 4.122 
 Train-TestLoss @ Epoch 1: 1.742 
 >>>>>>> 0532342459f50c1d26df63244a5daea43fa236c5
+Train-TestLoss @ Epoch 1: 1.716 
