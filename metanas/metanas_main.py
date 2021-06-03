@@ -413,7 +413,9 @@ def pca_viz(loss_nn, K=3, meta_epoch=0):
         fig1, ax1 = plt.subplots()
         cs = ax1.contourf(x, y, z, cmap ='Greens', alpha=1)
         fig1.colorbar(cs)
-        ax1.set_title('Self-supervised loss neural network PCA contour plot')
+        plt.xlabel(r'$z_1$')
+        plt.ylabel(r'$z_2$')
+        ax1.set_title(f'Self-supervised loss neural network PCA contour plot @t={meta_epoch}')
 
         os.makedirs("loss_contour_plots", exist_ok=True)
         loss_png_filename = 'loss_viz_metaepoch' + str(meta_epoch)+'.png'

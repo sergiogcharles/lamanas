@@ -21,44 +21,18 @@ class NNL(nn.Module):
         self.cross_entropy = nn.CrossEntropyLoss()
 
     def forward(self, x, y):
-        # print(y)
         ce = self.cross_entropy(x, y)
+        return ce
+        # x = x.type(torch.float).cuda()
+        # y = y.type(torch.float).reshape(-1, 1).cuda()        
+        # z = torch.cat((x,y), dim=1)
 
-        x = x.type(torch.float).cuda()
-        # print(x.shape)
-        y = y.type(torch.float).reshape(-1, 1).cuda()
-        # print(y.shape)
-        
-        z = torch.cat((x,y), dim=1)
-        # print(z.shape)
-        # print("z dim", z.shape)
-        # print('stack ', z.shape)
-        
-        # y = y.reshape(-1, 1)
-        # y = y.repeat(1, x.shape[1])
-        
-        # print("y shape", y.shape)
-        z_emb = self.fcx(z)
-        # y_emb = self.fcy(y)
+        # z_emb = self.fcx(z)
 
-        # TODO
-        # Suggestions: stack on first few pretrained layers of VGG
-        # Global average pooling
+        # # Residual connection
+        # out = z_emb + ce
+        # # + y_emb + ce
+        # out = self.fc2(out)
 
-        # Concat and then go thru linear/maybe attention
-        # torch.cat((x_emb, y_emb))
-
-
-        # Residual connection
-        out = z_emb + ce
-        # + y_emb + ce
-        out = self.fc2(out)
-        # out = self.fc3(out)
-        # Batch norm
-        # out = self.batchnorm(out)
-        # out = 1 + torch.sigmoid(out)
-
-        # out = torch.abs(out)
-        # Average over minibatch N
-        # print(f"Loss: {torch.mean(out)}")
-        return torch.mean(out).cuda()
+        # # Average over minibatch N
+        # return torch.mean(out).cuda()
