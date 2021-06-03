@@ -8,9 +8,11 @@ class NNL(nn.Module):
         super(NNL, self).__init__()
         #  Linear layer 1
         self.fcx = nn.Linear(input_x_dim + 1, hidden_dim)
+        nn.init.orthogonal_(self.fcx.weight, gain=1)
         # self.fcy = nn.Linear(input_y_dim, hidden_dim) 
         # Linear layer 2
         self.fc2 = nn.Linear(hidden_dim, output_dim)  
+        nn.init.orthogonal_(self.fc2.weight, gain=1)
         
         # Linear layer 3
         # self.fc3 = nn.Linear(output_dim, output_dim) 
