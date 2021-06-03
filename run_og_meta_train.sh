@@ -31,11 +31,11 @@ args=(
     --alpha_prune_threshold 0.01 \
     # Meta Learning
     --meta_model searchcnn \
-    --meta_epochs 20 \
+    --meta_epochs 30 \
     --warm_up_epochs 0 \
     --use_pairwise_input_alphas \
     --eval_freq 1000 \
-    --eval_epochs 10 \
+    --eval_epochs 5 \
 
     --normalizer softmax \
     --normalizer_temp_anneal_mode linear \
@@ -49,6 +49,7 @@ args=(
     --reduction_layers 1 3 \
     --use_first_order_darts \
     --loss_nn loss_nn \
+    --pretrained none \
     --use_torchmeta_loader \
 
 )

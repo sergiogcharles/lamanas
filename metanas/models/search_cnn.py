@@ -86,6 +86,7 @@ class SearchCNNController(nn.Module):
         n_classes,
         n_layers,
         lossfunc,
+        pretrained,
         n_nodes=4,
         reduction_layers=[],
         stem_multiplier=3,
@@ -109,6 +110,15 @@ class SearchCNNController(nn.Module):
             self.criterion = RNNL(n_classes, n_classes)
             # breakpoint()
         # self.criterion = LossNN
+
+        # Whether pretrained or not
+        if pretrained == 'pretrained':
+            self.pretrained = True
+            print('pretrained')
+        elif pretrained == 'none':
+            self.pretrained = False
+            print('no pretraining')
+
         self.use_pairwise_input_alphas = use_pairwise_input_alphas
         self.use_hierarchical_alphas = use_hierarchical_alphas
         self.alpha_prune_threshold = alpha_prune_threshold
@@ -199,6 +209,7 @@ class SearchCNNController(nn.Module):
             stem_multiplier,
             PRIMITIVES=self.primitives,
             feature_scale_rate=feature_scale_rate,
+            pretrained=self.pretrained,
         )
 
     def apply_normalizer(self, alpha):
@@ -640,6 +651,7 @@ class SearchCNN(nn.Module):
         stem_multiplier=3,
         PRIMITIVES=None,
         feature_scale_rate=2,
+        pretrained=False,
     ):
         """
         Args:
@@ -660,27 +672,29 @@ class SearchCNN(nn.Module):
         self.n_layers = n_layers
 
         # ResNet to go from C_in to C_in
+        self.pretrained = pretrained
 
-        # Upsample so we can go from (20, 1, 28, 28) to (20, 1, 224, 224)
-        # self.upsample = nn.Upsample(scale_factor=8, mode='nearest')
+        if self.pretrained:
+            # Upsample so we can go from (20, 1, 28, 28) to (20, 1, 224, 224)
+            self.upsample = nn.Upsample(scale_factor=8, mode='nearest')
 
-        # # Conv1x1 to go from (20, 1, 224, 224) to (20, 3, 224, 224)
-        # # (W−F+2P)/S+1 = (224 - 5 + 2*2) / 1 + 1 = 224
-        # self.conv1 = nn.Conv2d(1, 3, kernel_size=5, stride=1, padding=2)
+            # Conv1x1 to go from (20, 1, 224, 224) to (20, 3, 224, 224)
+            # (W−F+2P)/S+1 = (224 - 5 + 2*2) / 1 + 1 = 224
+            self.conv1 = nn.Conv2d(1, 3, kernel_size=5, stride=1, padding=2)
 
-        # # ResNet
-        # self.resnet = torchvision.models.resnet18(pretrained=True)
-        # # print(self.resnet)
+            # ResNet
+            self.resnet = torchvision.models.resnet18(pretrained=True)
+            # print(self.resnet)
 
-        # self.resnet = nn.Sequential(*list(self.resnet.children())[:-4])
+            self.resnet = nn.Sequential(*list(self.resnet.children())[:-4])
 
-        # # freeze parameters
-        # # for param in self.resnet.parameters():
-        # #     param.requires_grad = False
+            # freeze parameters
+            # for param in self.resnet.parameters():
+            #     param.requires_grad = False
 
-        # #Conv5x5 to go from (20, 128, 28, 28) to (20, 1, 28, 28)
-        # # (W−F+2P)/S+1 = (28 - 5 + 2*2) / 1 + 1 = 28
-        # self.conv2 = nn.Conv2d(128, 1, kernel_size=5, stride=1, padding=2)
+            #Conv5x5 to go from (20, 128, 28, 28) to (20, 1, 28, 28)
+            # (W−F+2P)/S+1 = (28 - 5 + 2*2) / 1 + 1 = 28
+            self.conv2 = nn.Conv2d(128, 1, kernel_size=5, stride=1, padding=2)
 
         C_cur = stem_multiplier * C
         self.stem = nn.Sequential(
@@ -761,10 +775,11 @@ class SearchCNN(nn.Module):
         # Insert resnet here
         # Input shape is: 20, 1, 28, 28
 
-        # x = self.upsample(x)
-        # x = self.conv1(x)
-        # x = self.resnet(x)
-        # x = self.conv2(x)
+        if self.pretrained:
+            x = self.upsample(x)
+            x = self.conv1(x)
+            x = self.resnet(x)
+            x = self.conv2(x)
 
         s0 = s1 = self.stem(x)
 

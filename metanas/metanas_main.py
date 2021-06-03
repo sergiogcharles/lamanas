@@ -192,6 +192,7 @@ def _build_model(config, task_distribution, normalizer):
             use_hierarchical_alphas=config.use_hierarchical_alphas,
             use_pairwise_input_alphas=config.use_pairwise_input_alphas,
             alpha_prune_threshold=config.alpha_prune_threshold,
+            pretrained=config.pretrained,
         )
 
     elif config.meta_model == "maml":
@@ -1081,6 +1082,11 @@ if __name__ == "__main__":
     # Self-Supervised Loss Architecture
     parser.add_argument(
         "--loss_nn", type=str, default='loss_nn', help="loss neural network to use for self-supervised learning",
+    )
+
+    # Pretraining
+    parser.add_argument(
+        "--pretrained", type=str, default='none', help="whether to use resnet-18 pretraining",
     )
 
     args = parser.parse_args()

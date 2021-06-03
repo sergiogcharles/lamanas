@@ -434,47 +434,35 @@ def train(
         ##############################################
 
         # logits_no_grad = logits.detach()
-
+        
         # Pass through neural net loss model
         output = model.criterion(logits, train_y).cuda()
 
-        # loss_proxy_mse = nn.MSELoss()
+        loss_proxy_mse = nn.MSELoss()
         # # This is the proxy of -lambda * <partial L_T/partial  theta, partial L_train/ partial theta> - xi * <partial L_T/partial  alpha, partial L_train/ partial alpha>
-        # loss_proxy = loss_proxy_mse(output, target)
-        # print(f"MSE before: {loss_proxy}")
+        loss_proxy = loss_proxy_mse(output, target)
+        print(f"MSE before: {loss_proxy}")
 
         # Proxy
-        loss_proxy = target 
-        print(len(torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)))
+        # loss_proxy = target 
+        # print(len(torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)))
 
-        grad_train_theta = torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)
-        grad_val_theta = torch.autograd.grad(target, model.weights(), retain_graph=True, allow_unused=True)
+        # grad_train_theta = torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)
+        # grad_val_theta = torch.autograd.grad(target, model.weights(), retain_graph=True, allow_unused=True)
 
-        grad_train_alpha = torch.autograd.grad(output, model.alphas(), retain_graph=True, allow_unused=True)
-        grad_val_alpha = torch.autograd.grad(target, model.alphas(), retain_graph=True, allow_unused=True)
+        # grad_train_alpha = torch.autograd.grad(output, model.alphas(), retain_graph=True, allow_unused=True)
+        # grad_val_alpha = torch.autograd.grad(target, model.alphas(), retain_graph=True, allow_unused=True)
 
-        for i in range(len(grad_train_theta)):
-            if not isinstance(grad_train_theta, type(None)) and not isinstance(grad_val_theta, type(None)) and not isinstance(grad_train_theta[i], type(None)) and isinstance(grad_val_theta[i], type(None)):
-                loss_proxy -= torch.dot(grad_train_theta[i].reshape(-1), grad_val_theta[i].reshape(-1))
+        # for i in range(len(grad_train_theta)):
+        #     if not isinstance(grad_train_theta, type(None)) and not isinstance(grad_val_theta, type(None)) and not isinstance(grad_train_theta[i], type(None)) and isinstance(grad_val_theta[i], type(None)):
+        #         loss_proxy -= torch.dot(grad_train_theta[i].reshape(-1), grad_val_theta[i].reshape(-1))
 
-        for i in range(len(grad_train_alpha)):
-            if not isinstance(grad_train_alpha, type(None)) and not isinstance(grad_val_alpha, type(None)) and not isinstance(grad_train_alpha[i], type(None)) and isinstance(grad_val_alpha[i], type(None)):
-                loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
-
-        # for i, v in enumerate(torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)):
-        #     print(f'{i}: {v.shape}')
-        #     # print(v)
-        #     print(f'Dot prod: {torch.dot(v.reshape(-1),v.reshape(-1))}')
+        # for i in range(len(grad_train_alpha)):
+        #     if not isinstance(grad_train_alpha, type(None)) and not isinstance(grad_val_alpha, type(None)) and not isinstance(grad_train_alpha[i], type(None)) and isinstance(grad_val_alpha[i], type(None)):
+        #         loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
 
 
-        # print(torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)[0].shape)
-        # print(torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)[1].shape)
-        # -lambda * <partial L_T/partial  theta, partial L_train/ partial theta>
-        # loss_proxy -= lr * torch.dot(torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True), torch.autograd.grad(target, model.weights(), retain_graph=True, allow_unused=True)) 
-        # # - xi * <partial L_T/partial  alpha, partial L_train/ partial alpha>
-        # loss_proxy -= lr * torch.dot(torch.autograd.grad(output, model.alphas(), retain_graph=True, allow_unused=True), torch.autograd.grad(target, model.alphas(), retain_graph=True, allow_unused=True))
-
-        # print(f"MSE before: {loss_proxy(output, target)}")
+        # print(f"MSE before: {loss_proxy_mse(output, target)}")
 
         loss_proxy.backward()
 
@@ -492,10 +480,10 @@ def train(
         # Visualize loss neural network
         # pca_viz(model.criterion)
 
-        # with torch.no_grad():
-        #     output = model.criterion(logits, train_y)
-        #     loss_after = loss_proxy(output, target)
-        #     print(f"Loss proxy after: {loss_after}")
+        with torch.no_grad():
+            output = model.criterion(logits, train_y)
+            loss_after = loss_proxy_mse(output, target)
+            print(f"MSE after: {loss_after}")
 
 
 
