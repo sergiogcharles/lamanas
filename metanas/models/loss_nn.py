@@ -25,6 +25,8 @@ class NNL(nn.Module):
     def forward(self, x, y):
         if self.residual == 'residual':
             ce = self.cross_entropy(x, y)
+
+        # return ce
         
         x = x.type(torch.float).cuda()
         y = y.type(torch.float).reshape(-1, 1).cuda()        

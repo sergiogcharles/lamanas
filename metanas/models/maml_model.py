@@ -82,8 +82,6 @@ class MamlModel(nn.Module):
             elif residual == 'none':
                 print('No residual')
                 self.criterion = RNNL(k_way, k_way, residual='none')
-            # breakpoint()
-        # self.criterion = LossNN
 
         # Whether pretrained or not
         if pretrained == 'pretrained':

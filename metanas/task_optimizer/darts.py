@@ -478,8 +478,11 @@ def train(
         val_X, val_y = val_X.to(config.device), val_y.to(config.device)
         N = train_X.size(0)
 
-        # for param in model.criterion.parameters():
-        #     param.requires_grad = False
+        for param in model.parameters():
+            param.requires_grad = True
+
+        for param in model.criterion.parameters():
+            param.requires_grad = True
 
         # phase 2. architect step (alpha)
         if not warm_up:  # only update alphas outside warm up phase
@@ -506,63 +509,79 @@ def train(
         phi_optim.zero_grad()
 
         logits = model(train_X).cuda()
-
+        logits = Variable(logits.data, requires_grad=True)
+        logits.retain_grad()
+        
         # ground truth: whatever the softmax produces
         target_loss = nn.CrossEntropyLoss()
         target = target_loss(logits, train_y)
-        ##############################################
-
         # logits_no_grad = logits.detach()
 
         # Pass through neural net loss model
         output = model.criterion(logits, train_y).cuda()
+        
+        if config.loss_proxy == 'mse':
+            loss_proxy_mse = nn.MSELoss()
+            loss_proxy = loss_proxy_mse(output, target)
+            print(f"MSE before: {loss_proxy}")
 
-        loss_proxy_mse = nn.MSELoss()
-        # # This is the proxy of -lambda * <partial L_T/partial  theta, partial L_train/ partial theta> - xi * <partial L_T/partial  alpha, partial L_train/ partial alpha>
-        loss_proxy = loss_proxy_mse(output, target)
-        print(f"MSE before: {loss_proxy}")
+            loss_proxy.backward(retain_graph=True)
 
-        # Proxy
-        # loss_proxy = target 
-        # print(len(torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)))
+            # for param in model.parameters():
+            #     loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
+            #     os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
+            #     with open(loss_params_filename, "w") as f:
+            #         torch.set_printoptions(threshold=10_000)
+            #         f.write(str(param.grad))
+            #     break
 
-        # grad_train_theta = torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)
-        # grad_val_theta = torch.autograd.grad(target, model.weights(), retain_graph=True, allow_unused=True)
+            nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
+            phi_optim.step()
 
-        # grad_train_alpha = torch.autograd.grad(output, model.alphas(), retain_graph=True, allow_unused=True)
-        # grad_val_alpha = torch.autograd.grad(target, model.alphas(), retain_graph=True, allow_unused=True)
+            with torch.no_grad():
+                output = model.criterion(logits, train_y)
+                loss_after = loss_proxy_mse(output, target)
+                print(f"MSE after: {loss_after}")
+        elif config.loss_proxy == 'dot_product':
+            # Proxy
+            loss_proxy = target 
 
-        # for i in range(len(grad_train_theta)):
-        #     if not isinstance(grad_train_theta, type(None)) and not isinstance(grad_val_theta, type(None)) and not isinstance(grad_train_theta[i], type(None)) and isinstance(grad_val_theta[i], type(None)):
-        #         loss_proxy -= torch.dot(grad_train_theta[i].reshape(-1), grad_val_theta[i].reshape(-1))
+            grad_train_theta = torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)
+            grad_val_theta = torch.autograd.grad(target, model.weights(), retain_graph=True, allow_unused=True)
 
-        # for i in range(len(grad_train_alpha)):
-        #     if not isinstance(grad_train_alpha, type(None)) and not isinstance(grad_val_alpha, type(None)) and not isinstance(grad_train_alpha[i], type(None)) and isinstance(grad_val_alpha[i], type(None)):
-        #         loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
+            grad_train_alpha = torch.autograd.grad(output, model.alphas(), retain_graph=True, allow_unused=True)
+            grad_val_alpha = torch.autograd.grad(target, model.alphas(), retain_graph=True, allow_unused=True)
+
+            for i in range(len(grad_train_theta)):
+                if (type(grad_train_theta) != type(None)) and (type(grad_val_theta) != type(None)) and (type(grad_train_theta[i]) != type(None)) and (type(grad_val_theta[i]) != type(None)):
+                    loss_proxy -= torch.dot(grad_train_theta[i].reshape(-1), grad_val_theta[i].reshape(-1))
+
+            for i in range(len(grad_train_alpha)):
+                if (type(grad_train_alpha) != type(None)) and (type(grad_val_alpha) != type(None)) and (type(grad_train_alpha[i]) != type(None)) and (type(grad_val_alpha[i]) != type(None)):
+                    loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
+            
+
+            print(f"Loss proxy before: {loss_proxy}")
+
+            loss_proxy.backward(retain_graph=True)
+
+            # for param in model.parameters():
+            #     loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
+            #     os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
+            #     with open(loss_params_filename, "w") as f:
+            #         torch.set_printoptions(threshold=10_000)
+            #         f.write(str(param.grad))
+            #     break
+
+            nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
+            phi_optim.step()
+
+            with torch.no_grad():
+                output = model.criterion(logits, train_y)
+                loss_after = loss_proxy
+                print(f"Loss proxy after: {loss_after}")
 
 
-        # print(f"MSE before: {loss_proxy_mse(output, target)}")
-
-        loss_proxy.backward()
-
-        # for param in model.criterion.parameters():
-        #     loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
-        #     os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
-        #     with open(loss_params_filename, "w") as f:
-        #         torch.set_printoptions(threshold=10_000)
-        #         f.write(str(param.grad.data))
-        #     break
-                
-        nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
-        phi_optim.step()
-
-        # Visualize loss neural network
-        # pca_viz(model.criterion)
-
-        with torch.no_grad():
-            output = model.criterion(logits, train_y)
-            loss_after = loss_proxy_mse(output, target)
-            print(f"MSE after: {loss_after}")
 
 
 class Architect:

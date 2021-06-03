@@ -174,8 +174,6 @@ def _init_alpha_normalizer(name, task_train_steps, t_max, t_min, temp_anneal_mod
 
 def _build_model(config, task_distribution, normalizer):
 
-    # print(config.loss_nn)
-    # breakpoint()
     if config.meta_model == "searchcnn":
         meta_model = SearchCNNController(
             task_distribution.n_input_channels,
@@ -416,7 +414,7 @@ def pca_viz(loss_nn, K=3, meta_epoch=0):
         x, y = x.flatten(), y.flatten()
         fig1, ax1 = plt.subplots()
 
-        plt.style.use('seaborn')
+        plt.style.use('seaborn-deep')
 
         cs = ax1.contourf(x, y, z, cmap ='Greens', alpha=1)
         fig1.colorbar(cs)

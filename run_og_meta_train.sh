@@ -49,8 +49,8 @@ args=(
     --reduction_layers 1 3 \
     --use_first_order_darts \
     --loss_nn loss_nn \
-    --pretrained pretrained \
-    --loss_proxy mse \
+    --pretrained none \
+    --loss_proxy dot_product \
     --use_torchmeta_loader \
     --residual residual \
 
