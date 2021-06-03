@@ -1,1 +1,14 @@
+<<<<<<< HEAD
 Test-TestPrec@(1,) @ Epoch 0: (46.0%, 100.0%) 
+=======
+Test-TestPrec@(1,) @ Epoch 0: (55.4%, 100.0%) 
+Test-TestPrec@(1,) @ Epoch 1: (55.3%, 100.0%) 
+Test-TestPrec@(1,) @ Epoch 2: (53.7%, 100.0%) 
+Test-TestPrec@(1,) @ Epoch 3: (53.6%, 100.0%) 
+Test-TestPrec@(1,) @ Epoch 4: (54.4%, 100.0%) 
+Test-TestPrec@(1,) @ Epoch 5: (53.6%, 100.0%) 
+Test-TestPrec@(1,) @ Epoch 6: (53.6%, 100.0%) 
+Test-TestPrec@(1,) @ Epoch 7: (53.6%, 100.0%) 
+Test-TestPrec@(1,) @ Epoch 8: (53.8%, 100.0%) 
+Test-TestPrec@(1,) @ Epoch 9: (53.7%, 100.0%) 
+>>>>>>> 9b9c03083e0e39da03a46528313d0c13ae5e7c7b

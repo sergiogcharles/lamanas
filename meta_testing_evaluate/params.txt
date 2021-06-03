@@ -1,2 +1,24 @@
  
+<<<<<<< HEAD
  Sparse_num_params (mean, min, max) @ Epoch 0: 453376.96, 428840, 462272 
+=======
+ Sparse_num_params (mean, min, max) @ Epoch 0: 446424.0, 408120, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 1: 444838.08, 393616, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 2: 445189.76, 389192, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 3: 445731.28, 389192, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 4: 445292.352, 389192, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 5: 444979.5733333333, 389192, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 6: 445310.08, 389192, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 7: 444939.72, 373624, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 8: 444979.2, 373624, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 9: 444759.232, 373624, 462272 
+>>>>>>> 9b9c03083e0e39da03a46528313d0c13ae5e7c7b

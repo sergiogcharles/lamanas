@@ -35,7 +35,7 @@ args=(
     --warm_up_epochs 0 \
     --use_pairwise_input_alphas \
     --eval_freq 1000 \
-    --eval_epochs 1 \
+    --eval_epochs 10 \
 
     --normalizer softmax \
     --normalizer_temp_anneal_mode linear \

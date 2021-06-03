@@ -674,9 +674,9 @@ class SearchCNN(nn.Module):
 
         # self.resnet = nn.Sequential(*list(self.resnet.children())[:-4])
 
-        # freeze parameters
-        # for param in self.resnet.parameters():
-        #     param.requires_grad = False
+        # # freeze parameters
+        # # for param in self.resnet.parameters():
+        # #     param.requires_grad = False
 
         # #Conv5x5 to go from (20, 128, 28, 28) to (20, 1, 28, 28)
         # # (W−F+2P)/S+1 = (28 - 5 + 2*2) / 1 + 1 = 28
