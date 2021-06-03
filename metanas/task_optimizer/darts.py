@@ -87,6 +87,9 @@ class Darts:
             self.config.use_first_order_darts,
         )
 
+        # What loss proxy we're using
+        print(f'loss proxy: {config.loss_proxy}')
+
     def step(
         self,
         task,
@@ -240,21 +243,51 @@ class Darts:
 
             # Pass through neural net loss model
             output = self.model.criterion(logits, train_y).cuda()
+            
+            if self.config.loss_proxy == 'mse':
+                loss_proxy_mse = nn.MSELoss()
+                loss_proxy = loss_proxy_mse(output, target)
+                print(f"MSE before: {loss_proxy}")
 
-            loss_proxy_mse = nn.MSELoss()
-            # # This is the proxy of -lambda * <partial L_T/partial  theta, partial L_train/ partial theta> - xi * <partial L_T/partial  alpha, partial L_train/ partial alpha>
-            loss_proxy = loss_proxy_mse(output, target)
-            print(f"MSE before: {loss_proxy}")
+                loss_proxy.backward()
 
-            loss_proxy.backward()
+                nn.utils.clip_grad_norm_(self.model.phis(), self.config.phi_grad_clip)
+                self.phi_optim.step()
 
-            nn.utils.clip_grad_norm_(self.model.phis(), self.config.phi_grad_clip)
-            self.phi_optim.step()
+                with torch.no_grad():
+                    output = self.model.criterion(logits, train_y)
+                    loss_after = loss_proxy_mse(output, target)
+                    print(f"MSE after: {loss_after}")
+            elif self.config.loss_proxy == 'dot_product':
+                # Proxy
+                loss_proxy = target 
 
-            with torch.no_grad():
-                output = self.model.criterion(logits, train_y)
-                loss_after = loss_proxy_mse(output, target)
-                print(f"MSE after: {loss_after}")
+                grad_train_theta = torch.autograd.grad(output, self.model.weights(), retain_graph=True, allow_unused=True)
+                grad_val_theta = torch.autograd.grad(target, self.model.weights(), retain_graph=True, allow_unused=True)
+
+                grad_train_alpha = torch.autograd.grad(output, self.model.alphas(), retain_graph=True, allow_unused=True)
+                grad_val_alpha = torch.autograd.grad(target, self.model.alphas(), retain_graph=True, allow_unused=True)
+
+                for i in range(len(grad_train_theta)):
+                    if not isinstance(grad_train_theta, type(None)) and not isinstance(grad_val_theta, type(None)) and not isinstance(grad_train_theta[i], type(None)) and isinstance(grad_val_theta[i], type(None)):
+                        loss_proxy -= torch.dot(grad_train_theta[i].reshape(-1), grad_val_theta[i].reshape(-1))
+
+                for i in range(len(grad_train_alpha)):
+                    if not isinstance(grad_train_alpha, type(None)) and not isinstance(grad_val_alpha, type(None)) and not isinstance(grad_train_alpha[i], type(None)) and isinstance(grad_val_alpha[i], type(None)):
+                        loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
+                
+
+                print(f"Loss proxy before: {loss_proxy}")
+
+                loss_proxy.backward()
+
+                nn.utils.clip_grad_norm_(self.model.phis(), self.config.phi_grad_clip)
+                self.phi_optim.step()
+
+                with torch.no_grad():
+                    output = self.model.criterion(logits, train_y)
+                    loss_after = loss_proxy
+                    print(f"Loss proxy after: {loss_after}")
 
 
         # Visualize loss neural network for K steps of task learner

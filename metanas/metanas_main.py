@@ -1091,6 +1091,11 @@ if __name__ == "__main__":
         "--pretrained", type=str, default='none', help="whether to use resnet-18 pretraining",
     )
 
+    # Loss neural network learning proxy
+    parser.add_argument(
+        "--loss_proxy", type=str, default='mse', help="the loss proxy used, i.e. mse or the dot product of gradients method",
+    )
+
     args = parser.parse_args()
     args.path = os.path.join(
         args.path, ""

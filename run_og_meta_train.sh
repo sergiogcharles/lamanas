@@ -50,6 +50,7 @@ args=(
     --use_first_order_darts \
     --loss_nn loss_nn \
     --pretrained none \
+    --loss_proxy mse \
     --use_torchmeta_loader \
 
 )
