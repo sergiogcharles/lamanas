@@ -27,6 +27,8 @@ from torch import nn
 from metanas.models.loss_nn import NNL
 from metanas.models.loss_rnn import RNNL
 
+import torchvision
+
 def conv_block(in_channels: int, out_channels: int) -> nn.Module:
     """Returns a Module that performs 3x3 convolution, ReLu activation, 2x2 max pooling.
 
@@ -49,6 +51,9 @@ class MamlModel(nn.Module):
         num_conv_channels: int,
         k_way: int,
         final_layer_size,
+        lossfunc,
+        pretrained,
+        residual,
     ):
         """Simple CNN as used in MAML and Reptile
 
@@ -60,6 +65,35 @@ class MamlModel(nn.Module):
             final_layer_size: 64 for Omniglot, 1600 for miniImageNet
         """
         super(MamlModel, self).__init__()
+
+        if lossfunc == 'loss_nn':
+            print('nn')
+            if residual == 'residual':
+                print('Using residual')
+                self.criterion = NNL(k_way, k_way, residual='residual')
+            elif residual == 'none':
+                print('No residual')
+                self.criterion = NNL(k_way, k_way, residual='none')
+        elif lossfunc == 'loss_rnn':
+            print('rnn')
+            if residual == 'residual':
+                print('Using residual')
+                self.criterion = RNNL(k_way, k_way, residual='residual')
+            elif residual == 'none':
+                print('No residual')
+                self.criterion = RNNL(k_way, k_way, residual='none')
+            # breakpoint()
+        # self.criterion = LossNN
+
+        # Whether pretrained or not
+        if pretrained == 'pretrained':
+            self.pretrained = True
+            print('pretrained')
+        elif pretrained == 'none':
+            self.pretrained = False
+            print('no pretraining')
+
+
         self.conv1 = conv_block(num_input_channels, num_conv_channels)
         self.conv2 = conv_block(num_conv_channels, num_conv_channels)
         self.conv3 = conv_block(num_conv_channels, num_conv_channels)
@@ -68,7 +102,7 @@ class MamlModel(nn.Module):
         self.logits = nn.Linear(final_layer_size, k_way)
 
         # self.criterion = nn.CrossEntropyLoss()
-        self.criterion = NNL(k_way, k_way)
+        # self.criterion = NNL(k_way, k_way, residual)
 
         ### dummy alphas to not break code
         self.alpha_normal = nn.ParameterList()
@@ -92,8 +126,37 @@ class MamlModel(nn.Module):
             if "phi" in n:
                 self._phis.append((n, p))
 
+        # ResNet to go from C_in to C_in
+        self.pretrained = pretrained
+
+        if self.pretrained == 'pretrained':
+            # Upsample so we can go from (20, 1, 28, 28) to (20, 1, 224, 224)
+            self.upsample = nn.Upsample(scale_factor=8, mode='nearest')
+
+            # Conv1x1 to go from (20, 1, 224, 224) to (20, 3, 224, 224)
+            # (W−F+2P)/S+1 = (224 - 5 + 2*2) / 1 + 1 = 224
+            self.conva = nn.Conv2d(1, 3, kernel_size=5, stride=1, padding=2)
+
+            # ResNet
+            self.resnet = torchvision.models.resnet18(pretrained=True)
+            # print(self.resnet)
+
+            self.resnet = nn.Sequential(*list(self.resnet.children())[:-4])
+
+            #Conv5x5 to go from (20, 128, 28, 28) to (20, 1, 28, 28)
+            # (W−F+2P)/S+1 = (28 - 5 + 2*2) / 1 + 1 = 28
+            self.convb = nn.Conv2d(128, 1, kernel_size=5, stride=1, padding=2)
+
 
     def forward(self, x):
+        # Insert resnet here
+        # Input shape is: 20, 1, 28, 28
+        if self.pretrained == 'pretrained':
+            x = self.upsample(x)
+            x = self.conva(x)
+            x = self.resnet(x)
+            x = self.convb(x)
+        
         x = self.conv1(x)
         x = self.conv2(x)
         x = self.conv3(x)
@@ -146,3 +209,9 @@ class MamlModel(nn.Module):
     def loss(self, X, y):
         logits = self.forward(X)
         return self.criterion(logits, y)
+
+    # Cross entropy loss
+    def cross_entropy_loss(self, X, y):
+        loss = nn.CrossEntropyLoss()
+        logits = self.forward(X)
+        return loss(logits, y)

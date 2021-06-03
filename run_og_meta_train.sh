@@ -30,8 +30,8 @@ args=(
     --meta_model_prune_threshold 0.01 \
     --alpha_prune_threshold 0.01 \
     # Meta Learning
-    --meta_model searchcnn \
-    --meta_epochs 10 \
+    --meta_model maml \
+    --meta_epochs 20 \
     --warm_up_epochs 0 \
     --use_pairwise_input_alphas \
     --eval_freq 1000 \
@@ -49,7 +49,7 @@ args=(
     --reduction_layers 1 3 \
     --use_first_order_darts \
     --loss_nn loss_nn \
-    --pretrained none \
+    --pretrained pretrained \
     --loss_proxy mse \
     --use_torchmeta_loader \
     --residual residual \

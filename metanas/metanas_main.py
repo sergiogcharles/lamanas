@@ -212,6 +212,9 @@ def _build_model(config, task_distribution, normalizer):
             conv_channels,
             task_distribution.n_classes,
             final_layer_size,
+            config.loss_nn,
+            pretrained=config.pretrained,
+            residual=config.residual,
         )
 
     elif config.meta_model == "auto_meta":
@@ -389,8 +392,8 @@ def pca_viz(loss_nn, K=3, meta_epoch=0):
         loss_nn_pca.fc1.weight = torch.nn.Parameter(W_hat)
 
         # train_x in puts in R^1x2 (x,y)
-        x = np.linspace(-1000, 1000, 200).reshape(-1, 1)
-        y = np.linspace(-1000, 1000, 200).reshape(-1, 1)
+        x = np.linspace(-1e4, 1e4, 200).reshape(-1, 1)
+        y = np.linspace(-1e4, 1e4, 200).reshape(-1, 1)
 
         z = np.zeros((len(y), len(x)))
 
@@ -406,17 +409,22 @@ def pca_viz(loss_nn, K=3, meta_epoch=0):
                 # print(y_label)
 
                 # Compute loss
-                z[i][j] = loss_nn_pca(x_input, y_label) / 1000
+                z[i][j] = loss_nn_pca(x_input, y_label) / 10000
             # if i % 10:
             #     print(f'{i}/{len(y)}')
 
         x, y = x.flatten(), y.flatten()
         fig1, ax1 = plt.subplots()
+
+        plt.style.use('seaborn')
+
         cs = ax1.contourf(x, y, z, cmap ='Greens', alpha=1)
         fig1.colorbar(cs)
         plt.xlabel(r'$z_1$')
-        plt.ylabel(r'$z_2$')
-        ax1.set_title(f'Self-supervised loss neural network PCA contour plot @t={meta_epoch}')
+        plt.ylabel(r'$z_2$', rotation=0)
+        plt.ticklabel_format(axis='both', style='sci', scilimits=(0,0))
+        # ax1.set_title(f'Self-supervised loss neural network PCA contour plot @t={meta_epoch}')
+        plt.title(f'Self-supervised loss neural network PCA contour plot @t={meta_epoch}', y=1.08)
 
         os.makedirs("loss_contour_plots", exist_ok=True)
         loss_png_filename = 'loss_viz_metaepoch' + str(meta_epoch)+'.png'

@@ -4,3 +4,13 @@
  Sparse_num_params (mean, min, max) @ Epoch 0: 452362.24, 434160, 462272 
  
  Sparse_num_params (mean, min, max) @ Epoch 0: 452958.08, 428840, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 0: 450039.36, 412264, 462272 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 0: 23829.0, 23829, 23829 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 0: 23829.0, 23829, 23829 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 0: 23829.0, 23829, 23829 
+ 
+ Sparse_num_params (mean, min, max) @ Epoch 0: 710180.0, 710180, 710180 

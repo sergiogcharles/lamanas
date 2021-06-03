@@ -4486,3 +4486,4461 @@ Parameter Group 0
 06/03 11:37:01 AM | WORKERS=0
 06/03 11:37:01 AM | 
 06/03 11:46:31 AM | train steps for evaluation:50 
+06/03 11:48:53 AM | Start meta architecture search
+06/03 11:48:55 AM | alpha initial = [Parameter containing:
+tensor([[-1.2638e-03,  9.2259e-04, -5.6929e-04,  5.6286e-04,  3.3291e-04,
+         -1.7200e-03, -1.4151e-03],
+        [-1.4703e-03,  6.1948e-05, -3.3090e-04,  1.0506e-03, -2.4032e-04,
+          1.3403e-03, -9.6398e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 3.9411e-04,  1.7075e-03, -1.9932e-03, -1.0545e-03, -6.8437e-04,
+          1.2614e-03,  3.0901e-04],
+        [-3.5742e-04, -8.0423e-04, -1.5509e-03,  1.0038e-03, -1.6929e-03,
+          7.0306e-04, -1.3280e-04],
+        [-3.6272e-04, -1.6196e-03,  8.3767e-04, -1.1744e-03,  1.1090e-03,
+         -2.8171e-05,  8.2000e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-7.2357e-04,  2.1181e-04,  8.0172e-05, -9.6965e-04, -1.1708e-04,
+         -2.7256e-04, -1.5040e-03],
+        [-1.3640e-03, -7.0275e-04,  3.3661e-04, -4.6956e-05, -1.3670e-03,
+          9.0608e-04,  5.3011e-04],
+        [-2.0089e-03, -9.4791e-05, -2.9545e-04, -1.2527e-03, -2.6824e-04,
+          1.6938e-03, -1.9072e-03],
+        [-7.4074e-04, -5.6045e-04,  8.9731e-04, -7.1879e-04, -8.9197e-04,
+         -1.2475e-04, -2.2795e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0005,  0.0003,  0.0014, -0.0005, -0.0001, -0.0004, -0.0009],
+        [-0.0012,  0.0001,  0.0015, -0.0011,  0.0002, -0.0003, -0.0039]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 8.4821e-04, -4.3797e-04, -4.0370e-04,  7.5502e-04,  3.0186e-05,
+         -1.1078e-03,  2.8966e-04],
+        [-3.7905e-04, -1.3450e-03,  8.2055e-04,  1.4720e-03, -8.4060e-04,
+         -1.0131e-03, -9.2631e-05],
+        [ 4.2180e-04, -1.1253e-04, -3.8055e-04,  4.2545e-04,  1.1967e-03,
+         -1.1728e-03, -1.3795e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 7.8373e-04, -2.2998e-03, -3.8197e-04,  1.7676e-03, -1.1601e-04,
+          6.8671e-04, -1.8244e-04],
+        [ 6.9766e-04, -1.5537e-03, -6.2458e-04,  1.6646e-03,  1.2116e-03,
+          4.3323e-05,  1.3722e-03],
+        [ 8.5415e-04,  1.2475e-03,  4.4239e-04,  6.2807e-04,  4.6608e-04,
+         -5.0943e-04, -1.8639e-03],
+        [ 1.3898e-03,  1.2090e-03, -8.4869e-04, -7.1824e-04,  4.7971e-04,
+          4.2830e-04,  1.0340e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 0.0016,  0.0037, -0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 5.1336e-04, -3.0265e-05, -4.5254e-04, -6.0019e-04, -6.5082e-04,
+        -2.2528e-04], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0014], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 2.1322e-03,  6.2069e-04, -8.7749e-05], device='cuda:0',
+       requires_grad=True), Parameter containing:
+tensor([-0.0009,  0.0012, -0.0009, -0.0008,  0.0009,  0.0013], device='cuda:0',
+       requires_grad=True)] 
+06/03 11:48:55 AM | 
+06/03 11:48:55 AM | Parameters:
+06/03 11:48:55 AM | A_META_ANNEAL=0
+06/03 11:48:55 AM | A_META_LR=0.6
+06/03 11:48:55 AM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 11:48:55 AM | A_TASK_ANNEAL=0
+06/03 11:48:55 AM | ALPHA_LR=0.005
+06/03 11:48:55 AM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 11:48:55 AM | ALPHA_WEIGHT_DECAY=0.001
+06/03 11:48:55 AM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 11:48:55 AM | BATCH_SIZE=20
+06/03 11:48:55 AM | BATCH_SIZE_TEST=10
+06/03 11:48:55 AM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 11:48:55 AM | DATASET=omniglot
+06/03 11:48:55 AM | DEVICE=cuda
+06/03 11:48:55 AM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 11:48:55 AM | DROP_PATH_PROB=0.2
+06/03 11:48:55 AM | EVAL=False
+06/03 11:48:55 AM | EVAL_EPOCHS=1
+06/03 11:48:55 AM | EVAL_FREQ=1000
+06/03 11:48:55 AM | EVAL_PREFIX=
+06/03 11:48:55 AM | GPUS=[0]
+06/03 11:48:55 AM | HP_SETTING=og_metanas
+06/03 11:48:55 AM | INIT_CHANNELS=28
+06/03 11:48:55 AM | JOB_ID=0
+06/03 11:48:55 AM | K=20
+06/03 11:48:55 AM | LAYERS=4
+06/03 11:48:55 AM | LOGGER=<Logger darts (INFO)>
+06/03 11:48:55 AM | LOSS_NN=loss_nn
+06/03 11:48:55 AM | LOSS_PROXY=mse
+06/03 11:48:55 AM | META_BATCH_SIZE=10
+06/03 11:48:55 AM | META_EPOCHS=10
+06/03 11:48:55 AM | META_MODEL=searchcnn
+06/03 11:48:55 AM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 11:48:55 AM | MODEL_PATH=None
+06/03 11:48:55 AM | N=5
+06/03 11:48:55 AM | N_TRAIN=15
+06/03 11:48:55 AM | NAME=metatrain_og
+06/03 11:48:55 AM | NODES=3
+06/03 11:48:55 AM | NORMALIZER=softmax
+06/03 11:48:55 AM | NORMALIZER_T_MAX=1.0
+06/03 11:48:55 AM | NORMALIZER_T_MIN=0.05
+06/03 11:48:55 AM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 11:48:55 AM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 11:48:55 AM | PHI_GRAD_CLIP=1000000.0
+06/03 11:48:55 AM | PHI_LR=0.01
+06/03 11:48:55 AM | PHI_META_ANNEAL=1
+06/03 11:48:55 AM | PHI_META_LR=0.001
+06/03 11:48:55 AM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 11:48:55 AM | PHI_MOMENTUM=0.0
+06/03 11:48:55 AM | PHI_TASK_ANNEAL=0
+06/03 11:48:55 AM | PHI_WEIGHT_DECAY=0.0
+06/03 11:48:55 AM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 11:48:55 AM | PRETRAINED=none
+06/03 11:48:55 AM | PRINT_FREQ=50
+06/03 11:48:55 AM | Q=1
+06/03 11:48:55 AM | REDUCTION_LAYERS=[1, 3]
+06/03 11:48:55 AM | RESIDUAL=residual
+06/03 11:48:55 AM | SEED=2
+06/03 11:48:55 AM | SPARSIFY_INPUT_ALPHAS=None
+06/03 11:48:55 AM | START_EPOCH=1
+06/03 11:48:55 AM | TASK_TRAIN_STEPS=5
+06/03 11:48:55 AM | TEST_ADAPT_STEPS=1.0
+06/03 11:48:55 AM | TEST_META_BATCH_SIZE=25
+06/03 11:48:55 AM | TEST_TASK_TRAIN_STEPS=50
+06/03 11:48:55 AM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 11:48:55 AM | USE_FIRST_ORDER_DARTS=True
+06/03 11:48:55 AM | USE_HIERARCHICAL_ALPHAS=False
+06/03 11:48:55 AM | USE_HP_SETTING=1
+06/03 11:48:55 AM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 11:48:55 AM | USE_TORCHMETA_LOADER=True
+06/03 11:48:55 AM | USE_VINYALS_SPLIT=False
+06/03 11:48:55 AM | W_GRAD_CLIP=1000000.0
+06/03 11:48:55 AM | W_LR=0.005
+06/03 11:48:55 AM | W_META_ANNEAL=0
+06/03 11:48:55 AM | W_META_LR=1.0
+06/03 11:48:55 AM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 11:48:55 AM | W_MOMENTUM=0.0
+06/03 11:48:55 AM | W_TASK_ANNEAL=0
+06/03 11:48:55 AM | W_WEIGHT_DECAY=0.0
+06/03 11:48:55 AM | WARM_UP_EPOCHS=0
+06/03 11:48:55 AM | WORKERS=0
+06/03 11:48:55 AM | 
+06/03 12:03:22 PM | train steps for evaluation:50 
+06/03 12:04:57 PM | Start meta architecture search
+06/03 12:05:00 PM | alpha initial = [Parameter containing:
+tensor([[-1.2638e-03,  9.2259e-04, -5.6929e-04,  5.6286e-04,  3.3291e-04,
+         -1.7200e-03, -1.4151e-03],
+        [-1.4703e-03,  6.1948e-05, -3.3090e-04,  1.0506e-03, -2.4032e-04,
+          1.3403e-03, -9.6398e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 3.9411e-04,  1.7075e-03, -1.9932e-03, -1.0545e-03, -6.8437e-04,
+          1.2614e-03,  3.0901e-04],
+        [-3.5742e-04, -8.0423e-04, -1.5509e-03,  1.0038e-03, -1.6929e-03,
+          7.0306e-04, -1.3280e-04],
+        [-3.6272e-04, -1.6196e-03,  8.3767e-04, -1.1744e-03,  1.1090e-03,
+         -2.8171e-05,  8.2000e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-7.2357e-04,  2.1181e-04,  8.0172e-05, -9.6965e-04, -1.1708e-04,
+         -2.7256e-04, -1.5040e-03],
+        [-1.3640e-03, -7.0275e-04,  3.3661e-04, -4.6956e-05, -1.3670e-03,
+          9.0608e-04,  5.3011e-04],
+        [-2.0089e-03, -9.4791e-05, -2.9545e-04, -1.2527e-03, -2.6824e-04,
+          1.6938e-03, -1.9072e-03],
+        [-7.4074e-04, -5.6045e-04,  8.9731e-04, -7.1879e-04, -8.9197e-04,
+         -1.2475e-04, -2.2795e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0005,  0.0003,  0.0014, -0.0005, -0.0001, -0.0004, -0.0009],
+        [-0.0012,  0.0001,  0.0015, -0.0011,  0.0002, -0.0003, -0.0039]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 8.4821e-04, -4.3797e-04, -4.0370e-04,  7.5502e-04,  3.0186e-05,
+         -1.1078e-03,  2.8966e-04],
+        [-3.7905e-04, -1.3450e-03,  8.2055e-04,  1.4720e-03, -8.4060e-04,
+         -1.0131e-03, -9.2631e-05],
+        [ 4.2180e-04, -1.1253e-04, -3.8055e-04,  4.2545e-04,  1.1967e-03,
+         -1.1728e-03, -1.3795e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 7.8373e-04, -2.2998e-03, -3.8197e-04,  1.7676e-03, -1.1601e-04,
+          6.8671e-04, -1.8244e-04],
+        [ 6.9766e-04, -1.5537e-03, -6.2458e-04,  1.6646e-03,  1.2116e-03,
+          4.3323e-05,  1.3722e-03],
+        [ 8.5415e-04,  1.2475e-03,  4.4239e-04,  6.2807e-04,  4.6608e-04,
+         -5.0943e-04, -1.8639e-03],
+        [ 1.3898e-03,  1.2090e-03, -8.4869e-04, -7.1824e-04,  4.7971e-04,
+          4.2830e-04,  1.0340e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 0.0016,  0.0037, -0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 5.1336e-04, -3.0265e-05, -4.5254e-04, -6.0019e-04, -6.5082e-04,
+        -2.2528e-04], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0014], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 2.1322e-03,  6.2069e-04, -8.7749e-05], device='cuda:0',
+       requires_grad=True), Parameter containing:
+tensor([-0.0009,  0.0012, -0.0009, -0.0008,  0.0009,  0.0013], device='cuda:0',
+       requires_grad=True)] 
+06/03 12:05:00 PM | 
+06/03 12:05:00 PM | Parameters:
+06/03 12:05:00 PM | A_META_ANNEAL=0
+06/03 12:05:00 PM | A_META_LR=0.6
+06/03 12:05:00 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:05:00 PM | A_TASK_ANNEAL=0
+06/03 12:05:00 PM | ALPHA_LR=0.005
+06/03 12:05:00 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 12:05:00 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 12:05:00 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 12:05:00 PM | BATCH_SIZE=20
+06/03 12:05:00 PM | BATCH_SIZE_TEST=10
+06/03 12:05:00 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 12:05:00 PM | DATASET=omniglot
+06/03 12:05:00 PM | DEVICE=cuda
+06/03 12:05:00 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 12:05:00 PM | DROP_PATH_PROB=0.2
+06/03 12:05:00 PM | EVAL=False
+06/03 12:05:00 PM | EVAL_EPOCHS=1
+06/03 12:05:00 PM | EVAL_FREQ=1000
+06/03 12:05:00 PM | EVAL_PREFIX=
+06/03 12:05:00 PM | GPUS=[0]
+06/03 12:05:00 PM | HP_SETTING=og_metanas
+06/03 12:05:00 PM | INIT_CHANNELS=28
+06/03 12:05:00 PM | JOB_ID=0
+06/03 12:05:00 PM | K=20
+06/03 12:05:00 PM | LAYERS=4
+06/03 12:05:00 PM | LOGGER=<Logger darts (INFO)>
+06/03 12:05:00 PM | LOSS_NN=loss_nn
+06/03 12:05:00 PM | LOSS_PROXY=mse
+06/03 12:05:00 PM | META_BATCH_SIZE=10
+06/03 12:05:00 PM | META_EPOCHS=10
+06/03 12:05:00 PM | META_MODEL=searchcnn
+06/03 12:05:00 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 12:05:00 PM | MODEL_PATH=None
+06/03 12:05:00 PM | N=5
+06/03 12:05:00 PM | N_TRAIN=15
+06/03 12:05:00 PM | NAME=metatrain_og
+06/03 12:05:00 PM | NODES=3
+06/03 12:05:00 PM | NORMALIZER=softmax
+06/03 12:05:00 PM | NORMALIZER_T_MAX=1.0
+06/03 12:05:00 PM | NORMALIZER_T_MIN=0.05
+06/03 12:05:00 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 12:05:00 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 12:05:00 PM | PHI_GRAD_CLIP=1000000.0
+06/03 12:05:00 PM | PHI_LR=0.01
+06/03 12:05:00 PM | PHI_META_ANNEAL=1
+06/03 12:05:00 PM | PHI_META_LR=0.001
+06/03 12:05:00 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:05:00 PM | PHI_MOMENTUM=0.0
+06/03 12:05:00 PM | PHI_TASK_ANNEAL=0
+06/03 12:05:00 PM | PHI_WEIGHT_DECAY=0.0
+06/03 12:05:00 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 12:05:00 PM | PRETRAINED=none
+06/03 12:05:00 PM | PRINT_FREQ=50
+06/03 12:05:00 PM | Q=1
+06/03 12:05:00 PM | REDUCTION_LAYERS=[1, 3]
+06/03 12:05:00 PM | RESIDUAL=residual
+06/03 12:05:00 PM | SEED=2
+06/03 12:05:00 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 12:05:00 PM | START_EPOCH=1
+06/03 12:05:00 PM | TASK_TRAIN_STEPS=5
+06/03 12:05:00 PM | TEST_ADAPT_STEPS=1.0
+06/03 12:05:00 PM | TEST_META_BATCH_SIZE=25
+06/03 12:05:00 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 12:05:00 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 12:05:00 PM | USE_FIRST_ORDER_DARTS=True
+06/03 12:05:00 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 12:05:00 PM | USE_HP_SETTING=1
+06/03 12:05:00 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 12:05:00 PM | USE_TORCHMETA_LOADER=True
+06/03 12:05:00 PM | USE_VINYALS_SPLIT=False
+06/03 12:05:00 PM | W_GRAD_CLIP=1000000.0
+06/03 12:05:00 PM | W_LR=0.005
+06/03 12:05:00 PM | W_META_ANNEAL=0
+06/03 12:05:00 PM | W_META_LR=1.0
+06/03 12:05:00 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:05:00 PM | W_MOMENTUM=0.0
+06/03 12:05:00 PM | W_TASK_ANNEAL=0
+06/03 12:05:00 PM | W_WEIGHT_DECAY=0.0
+06/03 12:05:00 PM | WARM_UP_EPOCHS=0
+06/03 12:05:00 PM | WORKERS=0
+06/03 12:05:00 PM | 
+06/03 12:07:11 PM | Start meta architecture search
+06/03 12:07:13 PM | alpha initial = [Parameter containing:
+tensor([[-1.2638e-03,  9.2259e-04, -5.6929e-04,  5.6286e-04,  3.3291e-04,
+         -1.7200e-03, -1.4151e-03],
+        [-1.4703e-03,  6.1948e-05, -3.3090e-04,  1.0506e-03, -2.4032e-04,
+          1.3403e-03, -9.6398e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 3.9411e-04,  1.7075e-03, -1.9932e-03, -1.0545e-03, -6.8437e-04,
+          1.2614e-03,  3.0901e-04],
+        [-3.5742e-04, -8.0423e-04, -1.5509e-03,  1.0038e-03, -1.6929e-03,
+          7.0306e-04, -1.3280e-04],
+        [-3.6272e-04, -1.6196e-03,  8.3767e-04, -1.1744e-03,  1.1090e-03,
+         -2.8171e-05,  8.2000e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-7.2357e-04,  2.1181e-04,  8.0172e-05, -9.6965e-04, -1.1708e-04,
+         -2.7256e-04, -1.5040e-03],
+        [-1.3640e-03, -7.0275e-04,  3.3661e-04, -4.6956e-05, -1.3670e-03,
+          9.0608e-04,  5.3011e-04],
+        [-2.0089e-03, -9.4791e-05, -2.9545e-04, -1.2527e-03, -2.6824e-04,
+          1.6938e-03, -1.9072e-03],
+        [-7.4074e-04, -5.6045e-04,  8.9731e-04, -7.1879e-04, -8.9197e-04,
+         -1.2475e-04, -2.2795e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0005,  0.0003,  0.0014, -0.0005, -0.0001, -0.0004, -0.0009],
+        [-0.0012,  0.0001,  0.0015, -0.0011,  0.0002, -0.0003, -0.0039]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 8.4821e-04, -4.3797e-04, -4.0370e-04,  7.5502e-04,  3.0186e-05,
+         -1.1078e-03,  2.8966e-04],
+        [-3.7905e-04, -1.3450e-03,  8.2055e-04,  1.4720e-03, -8.4060e-04,
+         -1.0131e-03, -9.2631e-05],
+        [ 4.2180e-04, -1.1253e-04, -3.8055e-04,  4.2545e-04,  1.1967e-03,
+         -1.1728e-03, -1.3795e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 7.8373e-04, -2.2998e-03, -3.8197e-04,  1.7676e-03, -1.1601e-04,
+          6.8671e-04, -1.8244e-04],
+        [ 6.9766e-04, -1.5537e-03, -6.2458e-04,  1.6646e-03,  1.2116e-03,
+          4.3323e-05,  1.3722e-03],
+        [ 8.5415e-04,  1.2475e-03,  4.4239e-04,  6.2807e-04,  4.6608e-04,
+         -5.0943e-04, -1.8639e-03],
+        [ 1.3898e-03,  1.2090e-03, -8.4869e-04, -7.1824e-04,  4.7971e-04,
+          4.2830e-04,  1.0340e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 0.0016,  0.0037, -0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 5.1336e-04, -3.0265e-05, -4.5254e-04, -6.0019e-04, -6.5082e-04,
+        -2.2528e-04], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0014], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 2.1322e-03,  6.2069e-04, -8.7749e-05], device='cuda:0',
+       requires_grad=True), Parameter containing:
+tensor([-0.0009,  0.0012, -0.0009, -0.0008,  0.0009,  0.0013], device='cuda:0',
+       requires_grad=True)] 
+06/03 12:07:13 PM | 
+06/03 12:07:13 PM | Parameters:
+06/03 12:07:13 PM | A_META_ANNEAL=0
+06/03 12:07:13 PM | A_META_LR=0.6
+06/03 12:07:13 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:07:13 PM | A_TASK_ANNEAL=0
+06/03 12:07:13 PM | ALPHA_LR=0.005
+06/03 12:07:13 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 12:07:13 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 12:07:13 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 12:07:13 PM | BATCH_SIZE=20
+06/03 12:07:13 PM | BATCH_SIZE_TEST=10
+06/03 12:07:13 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 12:07:13 PM | DATASET=omniglot
+06/03 12:07:13 PM | DEVICE=cuda
+06/03 12:07:13 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 12:07:13 PM | DROP_PATH_PROB=0.2
+06/03 12:07:13 PM | EVAL=False
+06/03 12:07:13 PM | EVAL_EPOCHS=1
+06/03 12:07:13 PM | EVAL_FREQ=1000
+06/03 12:07:13 PM | EVAL_PREFIX=
+06/03 12:07:13 PM | GPUS=[0]
+06/03 12:07:13 PM | HP_SETTING=og_metanas
+06/03 12:07:13 PM | INIT_CHANNELS=28
+06/03 12:07:13 PM | JOB_ID=0
+06/03 12:07:13 PM | K=20
+06/03 12:07:13 PM | LAYERS=4
+06/03 12:07:13 PM | LOGGER=<Logger darts (INFO)>
+06/03 12:07:13 PM | LOSS_NN=loss_nn
+06/03 12:07:13 PM | LOSS_PROXY=mse
+06/03 12:07:13 PM | META_BATCH_SIZE=10
+06/03 12:07:13 PM | META_EPOCHS=10
+06/03 12:07:13 PM | META_MODEL=searchcnn
+06/03 12:07:13 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 12:07:13 PM | MODEL_PATH=None
+06/03 12:07:13 PM | N=5
+06/03 12:07:13 PM | N_TRAIN=15
+06/03 12:07:13 PM | NAME=metatrain_og
+06/03 12:07:13 PM | NODES=3
+06/03 12:07:13 PM | NORMALIZER=softmax
+06/03 12:07:13 PM | NORMALIZER_T_MAX=1.0
+06/03 12:07:13 PM | NORMALIZER_T_MIN=0.05
+06/03 12:07:13 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 12:07:13 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 12:07:13 PM | PHI_GRAD_CLIP=1000000.0
+06/03 12:07:13 PM | PHI_LR=0.01
+06/03 12:07:13 PM | PHI_META_ANNEAL=1
+06/03 12:07:13 PM | PHI_META_LR=0.001
+06/03 12:07:13 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:07:13 PM | PHI_MOMENTUM=0.0
+06/03 12:07:13 PM | PHI_TASK_ANNEAL=0
+06/03 12:07:13 PM | PHI_WEIGHT_DECAY=0.0
+06/03 12:07:13 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 12:07:13 PM | PRETRAINED=none
+06/03 12:07:13 PM | PRINT_FREQ=50
+06/03 12:07:13 PM | Q=1
+06/03 12:07:13 PM | REDUCTION_LAYERS=[1, 3]
+06/03 12:07:13 PM | RESIDUAL=residual
+06/03 12:07:13 PM | SEED=2
+06/03 12:07:13 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 12:07:13 PM | START_EPOCH=1
+06/03 12:07:13 PM | TASK_TRAIN_STEPS=5
+06/03 12:07:13 PM | TEST_ADAPT_STEPS=1.0
+06/03 12:07:13 PM | TEST_META_BATCH_SIZE=25
+06/03 12:07:13 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 12:07:13 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 12:07:13 PM | USE_FIRST_ORDER_DARTS=True
+06/03 12:07:13 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 12:07:13 PM | USE_HP_SETTING=1
+06/03 12:07:13 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 12:07:13 PM | USE_TORCHMETA_LOADER=True
+06/03 12:07:13 PM | USE_VINYALS_SPLIT=False
+06/03 12:07:13 PM | W_GRAD_CLIP=1000000.0
+06/03 12:07:13 PM | W_LR=0.005
+06/03 12:07:13 PM | W_META_ANNEAL=0
+06/03 12:07:13 PM | W_META_LR=1.0
+06/03 12:07:13 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:07:13 PM | W_MOMENTUM=0.0
+06/03 12:07:13 PM | W_TASK_ANNEAL=0
+06/03 12:07:13 PM | W_WEIGHT_DECAY=0.0
+06/03 12:07:13 PM | WARM_UP_EPOCHS=0
+06/03 12:07:13 PM | WORKERS=0
+06/03 12:07:13 PM | 
+06/03 12:10:17 PM | Start meta architecture search
+06/03 12:10:20 PM | alpha initial = [Parameter containing:
+tensor([[-1.2638e-03,  9.2259e-04, -5.6929e-04,  5.6286e-04,  3.3291e-04,
+         -1.7200e-03, -1.4151e-03],
+        [-1.4703e-03,  6.1948e-05, -3.3090e-04,  1.0506e-03, -2.4032e-04,
+          1.3403e-03, -9.6398e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 3.9411e-04,  1.7075e-03, -1.9932e-03, -1.0545e-03, -6.8437e-04,
+          1.2614e-03,  3.0901e-04],
+        [-3.5742e-04, -8.0423e-04, -1.5509e-03,  1.0038e-03, -1.6929e-03,
+          7.0306e-04, -1.3280e-04],
+        [-3.6272e-04, -1.6196e-03,  8.3767e-04, -1.1744e-03,  1.1090e-03,
+         -2.8171e-05,  8.2000e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-7.2357e-04,  2.1181e-04,  8.0172e-05, -9.6965e-04, -1.1708e-04,
+         -2.7256e-04, -1.5040e-03],
+        [-1.3640e-03, -7.0275e-04,  3.3661e-04, -4.6956e-05, -1.3670e-03,
+          9.0608e-04,  5.3011e-04],
+        [-2.0089e-03, -9.4791e-05, -2.9545e-04, -1.2527e-03, -2.6824e-04,
+          1.6938e-03, -1.9072e-03],
+        [-7.4074e-04, -5.6045e-04,  8.9731e-04, -7.1879e-04, -8.9197e-04,
+         -1.2475e-04, -2.2795e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0005,  0.0003,  0.0014, -0.0005, -0.0001, -0.0004, -0.0009],
+        [-0.0012,  0.0001,  0.0015, -0.0011,  0.0002, -0.0003, -0.0039]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 8.4821e-04, -4.3797e-04, -4.0370e-04,  7.5502e-04,  3.0186e-05,
+         -1.1078e-03,  2.8966e-04],
+        [-3.7905e-04, -1.3450e-03,  8.2055e-04,  1.4720e-03, -8.4060e-04,
+         -1.0131e-03, -9.2631e-05],
+        [ 4.2180e-04, -1.1253e-04, -3.8055e-04,  4.2545e-04,  1.1967e-03,
+         -1.1728e-03, -1.3795e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 7.8373e-04, -2.2998e-03, -3.8197e-04,  1.7676e-03, -1.1601e-04,
+          6.8671e-04, -1.8244e-04],
+        [ 6.9766e-04, -1.5537e-03, -6.2458e-04,  1.6646e-03,  1.2116e-03,
+          4.3323e-05,  1.3722e-03],
+        [ 8.5415e-04,  1.2475e-03,  4.4239e-04,  6.2807e-04,  4.6608e-04,
+         -5.0943e-04, -1.8639e-03],
+        [ 1.3898e-03,  1.2090e-03, -8.4869e-04, -7.1824e-04,  4.7971e-04,
+          4.2830e-04,  1.0340e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 0.0016,  0.0037, -0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 5.1336e-04, -3.0265e-05, -4.5254e-04, -6.0019e-04, -6.5082e-04,
+        -2.2528e-04], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0014], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 2.1322e-03,  6.2069e-04, -8.7749e-05], device='cuda:0',
+       requires_grad=True), Parameter containing:
+tensor([-0.0009,  0.0012, -0.0009, -0.0008,  0.0009,  0.0013], device='cuda:0',
+       requires_grad=True)] 
+06/03 12:10:20 PM | 
+06/03 12:10:20 PM | Parameters:
+06/03 12:10:20 PM | A_META_ANNEAL=0
+06/03 12:10:20 PM | A_META_LR=0.6
+06/03 12:10:20 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:10:20 PM | A_TASK_ANNEAL=0
+06/03 12:10:20 PM | ALPHA_LR=0.005
+06/03 12:10:20 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 12:10:20 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 12:10:20 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 12:10:20 PM | BATCH_SIZE=20
+06/03 12:10:20 PM | BATCH_SIZE_TEST=10
+06/03 12:10:20 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 12:10:20 PM | DATASET=omniglot
+06/03 12:10:20 PM | DEVICE=cuda
+06/03 12:10:20 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 12:10:20 PM | DROP_PATH_PROB=0.2
+06/03 12:10:20 PM | EVAL=False
+06/03 12:10:20 PM | EVAL_EPOCHS=1
+06/03 12:10:20 PM | EVAL_FREQ=1000
+06/03 12:10:20 PM | EVAL_PREFIX=
+06/03 12:10:20 PM | GPUS=[0]
+06/03 12:10:20 PM | HP_SETTING=og_metanas
+06/03 12:10:20 PM | INIT_CHANNELS=28
+06/03 12:10:20 PM | JOB_ID=0
+06/03 12:10:20 PM | K=20
+06/03 12:10:20 PM | LAYERS=4
+06/03 12:10:20 PM | LOGGER=<Logger darts (INFO)>
+06/03 12:10:20 PM | LOSS_NN=loss_nn
+06/03 12:10:20 PM | LOSS_PROXY=mse
+06/03 12:10:20 PM | META_BATCH_SIZE=10
+06/03 12:10:20 PM | META_EPOCHS=10
+06/03 12:10:20 PM | META_MODEL=searchcnn
+06/03 12:10:20 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 12:10:20 PM | MODEL_PATH=None
+06/03 12:10:20 PM | N=5
+06/03 12:10:20 PM | N_TRAIN=15
+06/03 12:10:20 PM | NAME=metatrain_og
+06/03 12:10:20 PM | NODES=3
+06/03 12:10:20 PM | NORMALIZER=softmax
+06/03 12:10:20 PM | NORMALIZER_T_MAX=1.0
+06/03 12:10:20 PM | NORMALIZER_T_MIN=0.05
+06/03 12:10:20 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 12:10:20 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 12:10:20 PM | PHI_GRAD_CLIP=1000000.0
+06/03 12:10:20 PM | PHI_LR=0.01
+06/03 12:10:20 PM | PHI_META_ANNEAL=1
+06/03 12:10:20 PM | PHI_META_LR=0.001
+06/03 12:10:20 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:10:20 PM | PHI_MOMENTUM=0.0
+06/03 12:10:20 PM | PHI_TASK_ANNEAL=0
+06/03 12:10:20 PM | PHI_WEIGHT_DECAY=0.0
+06/03 12:10:20 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 12:10:20 PM | PRETRAINED=none
+06/03 12:10:20 PM | PRINT_FREQ=50
+06/03 12:10:20 PM | Q=1
+06/03 12:10:20 PM | REDUCTION_LAYERS=[1, 3]
+06/03 12:10:20 PM | RESIDUAL=residual
+06/03 12:10:20 PM | SEED=2
+06/03 12:10:20 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 12:10:20 PM | START_EPOCH=1
+06/03 12:10:20 PM | TASK_TRAIN_STEPS=5
+06/03 12:10:20 PM | TEST_ADAPT_STEPS=1.0
+06/03 12:10:20 PM | TEST_META_BATCH_SIZE=25
+06/03 12:10:20 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 12:10:20 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 12:10:20 PM | USE_FIRST_ORDER_DARTS=True
+06/03 12:10:20 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 12:10:20 PM | USE_HP_SETTING=1
+06/03 12:10:20 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 12:10:20 PM | USE_TORCHMETA_LOADER=True
+06/03 12:10:20 PM | USE_VINYALS_SPLIT=False
+06/03 12:10:20 PM | W_GRAD_CLIP=1000000.0
+06/03 12:10:20 PM | W_LR=0.005
+06/03 12:10:20 PM | W_META_ANNEAL=0
+06/03 12:10:20 PM | W_META_LR=1.0
+06/03 12:10:20 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:10:20 PM | W_MOMENTUM=0.0
+06/03 12:10:20 PM | W_TASK_ANNEAL=0
+06/03 12:10:20 PM | W_WEIGHT_DECAY=0.0
+06/03 12:10:20 PM | WARM_UP_EPOCHS=0
+06/03 12:10:20 PM | WORKERS=0
+06/03 12:10:20 PM | 
+06/03 12:13:41 PM | Start meta architecture search
+06/03 12:13:43 PM | alpha initial = [Parameter containing:
+tensor([[-1.2638e-03,  9.2259e-04, -5.6929e-04,  5.6286e-04,  3.3291e-04,
+         -1.7200e-03, -1.4151e-03],
+        [-1.4703e-03,  6.1948e-05, -3.3090e-04,  1.0506e-03, -2.4032e-04,
+          1.3403e-03, -9.6398e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 3.9411e-04,  1.7075e-03, -1.9932e-03, -1.0545e-03, -6.8437e-04,
+          1.2614e-03,  3.0901e-04],
+        [-3.5742e-04, -8.0423e-04, -1.5509e-03,  1.0038e-03, -1.6929e-03,
+          7.0306e-04, -1.3280e-04],
+        [-3.6272e-04, -1.6196e-03,  8.3767e-04, -1.1744e-03,  1.1090e-03,
+         -2.8171e-05,  8.2000e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-7.2357e-04,  2.1181e-04,  8.0172e-05, -9.6965e-04, -1.1708e-04,
+         -2.7256e-04, -1.5040e-03],
+        [-1.3640e-03, -7.0275e-04,  3.3661e-04, -4.6956e-05, -1.3670e-03,
+          9.0608e-04,  5.3011e-04],
+        [-2.0089e-03, -9.4791e-05, -2.9545e-04, -1.2527e-03, -2.6824e-04,
+          1.6938e-03, -1.9072e-03],
+        [-7.4074e-04, -5.6045e-04,  8.9731e-04, -7.1879e-04, -8.9197e-04,
+         -1.2475e-04, -2.2795e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0005,  0.0003,  0.0014, -0.0005, -0.0001, -0.0004, -0.0009],
+        [-0.0012,  0.0001,  0.0015, -0.0011,  0.0002, -0.0003, -0.0039]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 8.4821e-04, -4.3797e-04, -4.0370e-04,  7.5502e-04,  3.0186e-05,
+         -1.1078e-03,  2.8966e-04],
+        [-3.7905e-04, -1.3450e-03,  8.2055e-04,  1.4720e-03, -8.4060e-04,
+         -1.0131e-03, -9.2631e-05],
+        [ 4.2180e-04, -1.1253e-04, -3.8055e-04,  4.2545e-04,  1.1967e-03,
+         -1.1728e-03, -1.3795e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 7.8373e-04, -2.2998e-03, -3.8197e-04,  1.7676e-03, -1.1601e-04,
+          6.8671e-04, -1.8244e-04],
+        [ 6.9766e-04, -1.5537e-03, -6.2458e-04,  1.6646e-03,  1.2116e-03,
+          4.3323e-05,  1.3722e-03],
+        [ 8.5415e-04,  1.2475e-03,  4.4239e-04,  6.2807e-04,  4.6608e-04,
+         -5.0943e-04, -1.8639e-03],
+        [ 1.3898e-03,  1.2090e-03, -8.4869e-04, -7.1824e-04,  4.7971e-04,
+          4.2830e-04,  1.0340e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 0.0016,  0.0037, -0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 5.1336e-04, -3.0265e-05, -4.5254e-04, -6.0019e-04, -6.5082e-04,
+        -2.2528e-04], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0014], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 2.1322e-03,  6.2069e-04, -8.7749e-05], device='cuda:0',
+       requires_grad=True), Parameter containing:
+tensor([-0.0009,  0.0012, -0.0009, -0.0008,  0.0009,  0.0013], device='cuda:0',
+       requires_grad=True)] 
+06/03 12:13:43 PM | 
+06/03 12:13:43 PM | Parameters:
+06/03 12:13:43 PM | A_META_ANNEAL=0
+06/03 12:13:43 PM | A_META_LR=0.6
+06/03 12:13:43 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:13:43 PM | A_TASK_ANNEAL=0
+06/03 12:13:43 PM | ALPHA_LR=0.005
+06/03 12:13:43 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 12:13:43 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 12:13:43 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 12:13:43 PM | BATCH_SIZE=20
+06/03 12:13:43 PM | BATCH_SIZE_TEST=10
+06/03 12:13:43 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 12:13:43 PM | DATASET=omniglot
+06/03 12:13:43 PM | DEVICE=cuda
+06/03 12:13:43 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 12:13:43 PM | DROP_PATH_PROB=0.2
+06/03 12:13:43 PM | EVAL=False
+06/03 12:13:43 PM | EVAL_EPOCHS=1
+06/03 12:13:43 PM | EVAL_FREQ=1000
+06/03 12:13:43 PM | EVAL_PREFIX=
+06/03 12:13:43 PM | GPUS=[0]
+06/03 12:13:43 PM | HP_SETTING=og_metanas
+06/03 12:13:43 PM | INIT_CHANNELS=28
+06/03 12:13:43 PM | JOB_ID=0
+06/03 12:13:43 PM | K=20
+06/03 12:13:43 PM | LAYERS=4
+06/03 12:13:43 PM | LOGGER=<Logger darts (INFO)>
+06/03 12:13:43 PM | LOSS_NN=loss_nn
+06/03 12:13:43 PM | LOSS_PROXY=mse
+06/03 12:13:43 PM | META_BATCH_SIZE=10
+06/03 12:13:43 PM | META_EPOCHS=10
+06/03 12:13:43 PM | META_MODEL=searchcnn
+06/03 12:13:43 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 12:13:43 PM | MODEL_PATH=None
+06/03 12:13:43 PM | N=5
+06/03 12:13:43 PM | N_TRAIN=15
+06/03 12:13:43 PM | NAME=metatrain_og
+06/03 12:13:43 PM | NODES=3
+06/03 12:13:43 PM | NORMALIZER=softmax
+06/03 12:13:43 PM | NORMALIZER_T_MAX=1.0
+06/03 12:13:43 PM | NORMALIZER_T_MIN=0.05
+06/03 12:13:43 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 12:13:43 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 12:13:43 PM | PHI_GRAD_CLIP=1000000.0
+06/03 12:13:43 PM | PHI_LR=0.01
+06/03 12:13:43 PM | PHI_META_ANNEAL=1
+06/03 12:13:43 PM | PHI_META_LR=0.001
+06/03 12:13:43 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:13:43 PM | PHI_MOMENTUM=0.0
+06/03 12:13:43 PM | PHI_TASK_ANNEAL=0
+06/03 12:13:43 PM | PHI_WEIGHT_DECAY=0.0
+06/03 12:13:43 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 12:13:43 PM | PRETRAINED=none
+06/03 12:13:43 PM | PRINT_FREQ=50
+06/03 12:13:43 PM | Q=1
+06/03 12:13:43 PM | REDUCTION_LAYERS=[1, 3]
+06/03 12:13:43 PM | RESIDUAL=residual
+06/03 12:13:43 PM | SEED=2
+06/03 12:13:43 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 12:13:43 PM | START_EPOCH=1
+06/03 12:13:43 PM | TASK_TRAIN_STEPS=5
+06/03 12:13:43 PM | TEST_ADAPT_STEPS=1.0
+06/03 12:13:43 PM | TEST_META_BATCH_SIZE=25
+06/03 12:13:43 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 12:13:43 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 12:13:43 PM | USE_FIRST_ORDER_DARTS=True
+06/03 12:13:43 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 12:13:43 PM | USE_HP_SETTING=1
+06/03 12:13:43 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 12:13:43 PM | USE_TORCHMETA_LOADER=True
+06/03 12:13:43 PM | USE_VINYALS_SPLIT=False
+06/03 12:13:43 PM | W_GRAD_CLIP=1000000.0
+06/03 12:13:43 PM | W_LR=0.005
+06/03 12:13:43 PM | W_META_ANNEAL=0
+06/03 12:13:43 PM | W_META_LR=1.0
+06/03 12:13:43 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:13:43 PM | W_MOMENTUM=0.0
+06/03 12:13:43 PM | W_TASK_ANNEAL=0
+06/03 12:13:43 PM | W_WEIGHT_DECAY=0.0
+06/03 12:13:43 PM | WARM_UP_EPOCHS=0
+06/03 12:13:43 PM | WORKERS=0
+06/03 12:13:43 PM | 
+06/03 12:15:39 PM | Start meta architecture search
+06/03 12:15:41 PM | alpha initial = [Parameter containing:
+tensor([[-1.2638e-03,  9.2259e-04, -5.6929e-04,  5.6286e-04,  3.3291e-04,
+         -1.7200e-03, -1.4151e-03],
+        [-1.4703e-03,  6.1948e-05, -3.3090e-04,  1.0506e-03, -2.4032e-04,
+          1.3403e-03, -9.6398e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 3.9411e-04,  1.7075e-03, -1.9932e-03, -1.0545e-03, -6.8437e-04,
+          1.2614e-03,  3.0901e-04],
+        [-3.5742e-04, -8.0423e-04, -1.5509e-03,  1.0038e-03, -1.6929e-03,
+          7.0306e-04, -1.3280e-04],
+        [-3.6272e-04, -1.6196e-03,  8.3767e-04, -1.1744e-03,  1.1090e-03,
+         -2.8171e-05,  8.2000e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-7.2357e-04,  2.1181e-04,  8.0172e-05, -9.6965e-04, -1.1708e-04,
+         -2.7256e-04, -1.5040e-03],
+        [-1.3640e-03, -7.0275e-04,  3.3661e-04, -4.6956e-05, -1.3670e-03,
+          9.0608e-04,  5.3011e-04],
+        [-2.0089e-03, -9.4791e-05, -2.9545e-04, -1.2527e-03, -2.6824e-04,
+          1.6938e-03, -1.9072e-03],
+        [-7.4074e-04, -5.6045e-04,  8.9731e-04, -7.1879e-04, -8.9197e-04,
+         -1.2475e-04, -2.2795e-04]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0005,  0.0003,  0.0014, -0.0005, -0.0001, -0.0004, -0.0009],
+        [-0.0012,  0.0001,  0.0015, -0.0011,  0.0002, -0.0003, -0.0039]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 8.4821e-04, -4.3797e-04, -4.0370e-04,  7.5502e-04,  3.0186e-05,
+         -1.1078e-03,  2.8966e-04],
+        [-3.7905e-04, -1.3450e-03,  8.2055e-04,  1.4720e-03, -8.4060e-04,
+         -1.0131e-03, -9.2631e-05],
+        [ 4.2180e-04, -1.1253e-04, -3.8055e-04,  4.2545e-04,  1.1967e-03,
+         -1.1728e-03, -1.3795e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 7.8373e-04, -2.2998e-03, -3.8197e-04,  1.7676e-03, -1.1601e-04,
+          6.8671e-04, -1.8244e-04],
+        [ 6.9766e-04, -1.5537e-03, -6.2458e-04,  1.6646e-03,  1.2116e-03,
+          4.3323e-05,  1.3722e-03],
+        [ 8.5415e-04,  1.2475e-03,  4.4239e-04,  6.2807e-04,  4.6608e-04,
+         -5.0943e-04, -1.8639e-03],
+        [ 1.3898e-03,  1.2090e-03, -8.4869e-04, -7.1824e-04,  4.7971e-04,
+          4.2830e-04,  1.0340e-03]], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 0.0016,  0.0037, -0.0012], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 5.1336e-04, -3.0265e-05, -4.5254e-04, -6.0019e-04, -6.5082e-04,
+        -2.2528e-04], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([0.0014], device='cuda:0', requires_grad=True), Parameter containing:
+tensor([ 2.1322e-03,  6.2069e-04, -8.7749e-05], device='cuda:0',
+       requires_grad=True), Parameter containing:
+tensor([-0.0009,  0.0012, -0.0009, -0.0008,  0.0009,  0.0013], device='cuda:0',
+       requires_grad=True)] 
+06/03 12:15:41 PM | 
+06/03 12:15:41 PM | Parameters:
+06/03 12:15:41 PM | A_META_ANNEAL=0
+06/03 12:15:41 PM | A_META_LR=0.6
+06/03 12:15:41 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:15:41 PM | A_TASK_ANNEAL=0
+06/03 12:15:41 PM | ALPHA_LR=0.005
+06/03 12:15:41 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 12:15:41 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 12:15:41 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 12:15:41 PM | BATCH_SIZE=20
+06/03 12:15:41 PM | BATCH_SIZE_TEST=10
+06/03 12:15:41 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 12:15:41 PM | DATASET=omniglot
+06/03 12:15:41 PM | DEVICE=cuda
+06/03 12:15:41 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 12:15:41 PM | DROP_PATH_PROB=0.2
+06/03 12:15:41 PM | EVAL=False
+06/03 12:15:41 PM | EVAL_EPOCHS=1
+06/03 12:15:41 PM | EVAL_FREQ=1000
+06/03 12:15:41 PM | EVAL_PREFIX=
+06/03 12:15:41 PM | GPUS=[0]
+06/03 12:15:41 PM | HP_SETTING=og_metanas
+06/03 12:15:41 PM | INIT_CHANNELS=28
+06/03 12:15:41 PM | JOB_ID=0
+06/03 12:15:41 PM | K=20
+06/03 12:15:41 PM | LAYERS=4
+06/03 12:15:41 PM | LOGGER=<Logger darts (INFO)>
+06/03 12:15:41 PM | LOSS_NN=loss_nn
+06/03 12:15:41 PM | LOSS_PROXY=mse
+06/03 12:15:41 PM | META_BATCH_SIZE=10
+06/03 12:15:41 PM | META_EPOCHS=10
+06/03 12:15:41 PM | META_MODEL=searchcnn
+06/03 12:15:41 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 12:15:41 PM | MODEL_PATH=None
+06/03 12:15:41 PM | N=5
+06/03 12:15:41 PM | N_TRAIN=15
+06/03 12:15:41 PM | NAME=metatrain_og
+06/03 12:15:41 PM | NODES=3
+06/03 12:15:41 PM | NORMALIZER=softmax
+06/03 12:15:41 PM | NORMALIZER_T_MAX=1.0
+06/03 12:15:41 PM | NORMALIZER_T_MIN=0.05
+06/03 12:15:41 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 12:15:41 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 12:15:41 PM | PHI_GRAD_CLIP=1000000.0
+06/03 12:15:41 PM | PHI_LR=0.01
+06/03 12:15:41 PM | PHI_META_ANNEAL=1
+06/03 12:15:41 PM | PHI_META_LR=0.001
+06/03 12:15:41 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:15:41 PM | PHI_MOMENTUM=0.0
+06/03 12:15:41 PM | PHI_TASK_ANNEAL=0
+06/03 12:15:41 PM | PHI_WEIGHT_DECAY=0.0
+06/03 12:15:41 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 12:15:41 PM | PRETRAINED=none
+06/03 12:15:41 PM | PRINT_FREQ=50
+06/03 12:15:41 PM | Q=1
+06/03 12:15:41 PM | REDUCTION_LAYERS=[1, 3]
+06/03 12:15:41 PM | RESIDUAL=residual
+06/03 12:15:41 PM | SEED=2
+06/03 12:15:41 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 12:15:41 PM | START_EPOCH=1
+06/03 12:15:41 PM | TASK_TRAIN_STEPS=5
+06/03 12:15:41 PM | TEST_ADAPT_STEPS=1.0
+06/03 12:15:41 PM | TEST_META_BATCH_SIZE=25
+06/03 12:15:41 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 12:15:41 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 12:15:41 PM | USE_FIRST_ORDER_DARTS=True
+06/03 12:15:41 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 12:15:41 PM | USE_HP_SETTING=1
+06/03 12:15:41 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 12:15:41 PM | USE_TORCHMETA_LOADER=True
+06/03 12:15:41 PM | USE_VINYALS_SPLIT=False
+06/03 12:15:41 PM | W_GRAD_CLIP=1000000.0
+06/03 12:15:41 PM | W_LR=0.005
+06/03 12:15:41 PM | W_META_ANNEAL=0
+06/03 12:15:41 PM | W_META_LR=1.0
+06/03 12:15:41 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:15:41 PM | W_MOMENTUM=0.0
+06/03 12:15:41 PM | W_TASK_ANNEAL=0
+06/03 12:15:41 PM | W_WEIGHT_DECAY=0.0
+06/03 12:15:41 PM | WARM_UP_EPOCHS=0
+06/03 12:15:41 PM | WORKERS=0
+06/03 12:15:41 PM | 
+06/03 12:25:48 PM | train steps for evaluation:50 
+06/03 12:37:13 PM | Test data evaluation:: [ 0/1] Test-TestLoss 1.010 Test-TestPrec@(1,) (41.8%, 100.0%) 
+ Sparse_num_params (mean, min, max): 450039.36, 412264, 462272
+06/03 12:37:13 PM | Finished meta architecture search
+06/03 12:58:30 PM | Start meta architecture search
+06/03 12:58:32 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 12:58:32 PM | 
+06/03 12:58:32 PM | Parameters:
+06/03 12:58:32 PM | A_META_ANNEAL=0
+06/03 12:58:32 PM | A_META_LR=0.6
+06/03 12:58:32 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:58:32 PM | A_TASK_ANNEAL=0
+06/03 12:58:32 PM | ALPHA_LR=0.005
+06/03 12:58:32 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 12:58:32 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 12:58:32 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 12:58:32 PM | BATCH_SIZE=20
+06/03 12:58:32 PM | BATCH_SIZE_TEST=10
+06/03 12:58:32 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 12:58:32 PM | DATASET=omniglot
+06/03 12:58:32 PM | DEVICE=cuda
+06/03 12:58:32 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 12:58:32 PM | DROP_PATH_PROB=0.2
+06/03 12:58:32 PM | EVAL=False
+06/03 12:58:32 PM | EVAL_EPOCHS=1
+06/03 12:58:32 PM | EVAL_FREQ=1000
+06/03 12:58:32 PM | EVAL_PREFIX=
+06/03 12:58:32 PM | GPUS=[0]
+06/03 12:58:32 PM | HP_SETTING=og_metanas
+06/03 12:58:32 PM | INIT_CHANNELS=28
+06/03 12:58:32 PM | JOB_ID=0
+06/03 12:58:32 PM | K=20
+06/03 12:58:32 PM | LAYERS=4
+06/03 12:58:32 PM | LOGGER=<Logger darts (INFO)>
+06/03 12:58:32 PM | LOSS_NN=loss_nn
+06/03 12:58:32 PM | LOSS_PROXY=mse
+06/03 12:58:32 PM | META_BATCH_SIZE=10
+06/03 12:58:32 PM | META_EPOCHS=10
+06/03 12:58:32 PM | META_MODEL=maml
+06/03 12:58:32 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 12:58:32 PM | MODEL_PATH=None
+06/03 12:58:32 PM | N=5
+06/03 12:58:32 PM | N_TRAIN=15
+06/03 12:58:32 PM | NAME=metatrain_og
+06/03 12:58:32 PM | NODES=3
+06/03 12:58:32 PM | NORMALIZER=softmax
+06/03 12:58:32 PM | NORMALIZER_T_MAX=1.0
+06/03 12:58:32 PM | NORMALIZER_T_MIN=0.05
+06/03 12:58:32 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 12:58:32 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 12:58:32 PM | PHI_GRAD_CLIP=1000000.0
+06/03 12:58:32 PM | PHI_LR=0.01
+06/03 12:58:32 PM | PHI_META_ANNEAL=1
+06/03 12:58:32 PM | PHI_META_LR=0.001
+06/03 12:58:32 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:58:32 PM | PHI_MOMENTUM=0.0
+06/03 12:58:32 PM | PHI_TASK_ANNEAL=0
+06/03 12:58:32 PM | PHI_WEIGHT_DECAY=0.0
+06/03 12:58:32 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 12:58:32 PM | PRETRAINED=none
+06/03 12:58:32 PM | PRINT_FREQ=50
+06/03 12:58:32 PM | Q=1
+06/03 12:58:32 PM | REDUCTION_LAYERS=[1, 3]
+06/03 12:58:32 PM | RESIDUAL=residual
+06/03 12:58:32 PM | SEED=2
+06/03 12:58:32 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 12:58:32 PM | START_EPOCH=1
+06/03 12:58:32 PM | TASK_TRAIN_STEPS=5
+06/03 12:58:32 PM | TEST_ADAPT_STEPS=1.0
+06/03 12:58:32 PM | TEST_META_BATCH_SIZE=25
+06/03 12:58:32 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 12:58:32 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 12:58:32 PM | USE_FIRST_ORDER_DARTS=True
+06/03 12:58:32 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 12:58:32 PM | USE_HP_SETTING=1
+06/03 12:58:32 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 12:58:32 PM | USE_TORCHMETA_LOADER=True
+06/03 12:58:32 PM | USE_VINYALS_SPLIT=False
+06/03 12:58:32 PM | W_GRAD_CLIP=1000000.0
+06/03 12:58:32 PM | W_LR=0.005
+06/03 12:58:32 PM | W_META_ANNEAL=0
+06/03 12:58:32 PM | W_META_LR=1.0
+06/03 12:58:32 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:58:32 PM | W_MOMENTUM=0.0
+06/03 12:58:32 PM | W_TASK_ANNEAL=0
+06/03 12:58:32 PM | W_WEIGHT_DECAY=0.0
+06/03 12:58:32 PM | WARM_UP_EPOCHS=0
+06/03 12:58:32 PM | WORKERS=0
+06/03 12:58:32 PM | 
+06/03 12:59:31 PM | Start meta architecture search
+06/03 12:59:33 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 12:59:33 PM | 
+06/03 12:59:33 PM | Parameters:
+06/03 12:59:33 PM | A_META_ANNEAL=0
+06/03 12:59:33 PM | A_META_LR=0.6
+06/03 12:59:33 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:59:33 PM | A_TASK_ANNEAL=0
+06/03 12:59:33 PM | ALPHA_LR=0.005
+06/03 12:59:33 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 12:59:33 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 12:59:33 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 12:59:33 PM | BATCH_SIZE=20
+06/03 12:59:33 PM | BATCH_SIZE_TEST=10
+06/03 12:59:33 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 12:59:33 PM | DATASET=omniglot
+06/03 12:59:33 PM | DEVICE=cuda
+06/03 12:59:33 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 12:59:33 PM | DROP_PATH_PROB=0.2
+06/03 12:59:33 PM | EVAL=False
+06/03 12:59:33 PM | EVAL_EPOCHS=1
+06/03 12:59:33 PM | EVAL_FREQ=1000
+06/03 12:59:33 PM | EVAL_PREFIX=
+06/03 12:59:33 PM | GPUS=[0]
+06/03 12:59:33 PM | HP_SETTING=og_metanas
+06/03 12:59:33 PM | INIT_CHANNELS=28
+06/03 12:59:33 PM | JOB_ID=0
+06/03 12:59:33 PM | K=20
+06/03 12:59:33 PM | LAYERS=4
+06/03 12:59:33 PM | LOGGER=<Logger darts (INFO)>
+06/03 12:59:33 PM | LOSS_NN=loss_nn
+06/03 12:59:33 PM | LOSS_PROXY=mse
+06/03 12:59:33 PM | META_BATCH_SIZE=10
+06/03 12:59:33 PM | META_EPOCHS=10
+06/03 12:59:33 PM | META_MODEL=maml
+06/03 12:59:33 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 12:59:33 PM | MODEL_PATH=None
+06/03 12:59:33 PM | N=5
+06/03 12:59:33 PM | N_TRAIN=15
+06/03 12:59:33 PM | NAME=metatrain_og
+06/03 12:59:33 PM | NODES=3
+06/03 12:59:33 PM | NORMALIZER=softmax
+06/03 12:59:33 PM | NORMALIZER_T_MAX=1.0
+06/03 12:59:33 PM | NORMALIZER_T_MIN=0.05
+06/03 12:59:33 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 12:59:33 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 12:59:33 PM | PHI_GRAD_CLIP=1000000.0
+06/03 12:59:33 PM | PHI_LR=0.01
+06/03 12:59:33 PM | PHI_META_ANNEAL=1
+06/03 12:59:33 PM | PHI_META_LR=0.001
+06/03 12:59:33 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:59:33 PM | PHI_MOMENTUM=0.0
+06/03 12:59:33 PM | PHI_TASK_ANNEAL=0
+06/03 12:59:33 PM | PHI_WEIGHT_DECAY=0.0
+06/03 12:59:33 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 12:59:33 PM | PRETRAINED=none
+06/03 12:59:33 PM | PRINT_FREQ=50
+06/03 12:59:33 PM | Q=1
+06/03 12:59:33 PM | REDUCTION_LAYERS=[1, 3]
+06/03 12:59:33 PM | RESIDUAL=residual
+06/03 12:59:33 PM | SEED=2
+06/03 12:59:33 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 12:59:33 PM | START_EPOCH=1
+06/03 12:59:33 PM | TASK_TRAIN_STEPS=5
+06/03 12:59:33 PM | TEST_ADAPT_STEPS=1.0
+06/03 12:59:33 PM | TEST_META_BATCH_SIZE=25
+06/03 12:59:33 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 12:59:33 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 12:59:33 PM | USE_FIRST_ORDER_DARTS=True
+06/03 12:59:33 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 12:59:33 PM | USE_HP_SETTING=1
+06/03 12:59:33 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 12:59:33 PM | USE_TORCHMETA_LOADER=True
+06/03 12:59:33 PM | USE_VINYALS_SPLIT=False
+06/03 12:59:33 PM | W_GRAD_CLIP=1000000.0
+06/03 12:59:33 PM | W_LR=0.005
+06/03 12:59:33 PM | W_META_ANNEAL=0
+06/03 12:59:33 PM | W_META_LR=1.0
+06/03 12:59:33 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 12:59:33 PM | W_MOMENTUM=0.0
+06/03 12:59:33 PM | W_TASK_ANNEAL=0
+06/03 12:59:33 PM | W_WEIGHT_DECAY=0.0
+06/03 12:59:33 PM | WARM_UP_EPOCHS=0
+06/03 12:59:33 PM | WORKERS=0
+06/03 12:59:33 PM | 
+06/03 01:03:56 PM | Start meta architecture search
+06/03 01:03:59 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:03:59 PM | 
+06/03 01:03:59 PM | Parameters:
+06/03 01:03:59 PM | A_META_ANNEAL=0
+06/03 01:03:59 PM | A_META_LR=0.6
+06/03 01:03:59 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:03:59 PM | A_TASK_ANNEAL=0
+06/03 01:03:59 PM | ALPHA_LR=0.005
+06/03 01:03:59 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:03:59 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:03:59 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:03:59 PM | BATCH_SIZE=20
+06/03 01:03:59 PM | BATCH_SIZE_TEST=10
+06/03 01:03:59 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:03:59 PM | DATASET=omniglot
+06/03 01:03:59 PM | DEVICE=cuda
+06/03 01:03:59 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:03:59 PM | DROP_PATH_PROB=0.2
+06/03 01:03:59 PM | EVAL=False
+06/03 01:03:59 PM | EVAL_EPOCHS=1
+06/03 01:03:59 PM | EVAL_FREQ=1000
+06/03 01:03:59 PM | EVAL_PREFIX=
+06/03 01:03:59 PM | GPUS=[0]
+06/03 01:03:59 PM | HP_SETTING=og_metanas
+06/03 01:03:59 PM | INIT_CHANNELS=28
+06/03 01:03:59 PM | JOB_ID=0
+06/03 01:03:59 PM | K=20
+06/03 01:03:59 PM | LAYERS=4
+06/03 01:03:59 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:03:59 PM | LOSS_NN=loss_nn
+06/03 01:03:59 PM | LOSS_PROXY=mse
+06/03 01:03:59 PM | META_BATCH_SIZE=10
+06/03 01:03:59 PM | META_EPOCHS=10
+06/03 01:03:59 PM | META_MODEL=maml
+06/03 01:03:59 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:03:59 PM | MODEL_PATH=None
+06/03 01:03:59 PM | N=5
+06/03 01:03:59 PM | N_TRAIN=15
+06/03 01:03:59 PM | NAME=metatrain_og
+06/03 01:03:59 PM | NODES=3
+06/03 01:03:59 PM | NORMALIZER=softmax
+06/03 01:03:59 PM | NORMALIZER_T_MAX=1.0
+06/03 01:03:59 PM | NORMALIZER_T_MIN=0.05
+06/03 01:03:59 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:03:59 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:03:59 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:03:59 PM | PHI_LR=0.01
+06/03 01:03:59 PM | PHI_META_ANNEAL=1
+06/03 01:03:59 PM | PHI_META_LR=0.001
+06/03 01:03:59 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:03:59 PM | PHI_MOMENTUM=0.0
+06/03 01:03:59 PM | PHI_TASK_ANNEAL=0
+06/03 01:03:59 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:03:59 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:03:59 PM | PRETRAINED=none
+06/03 01:03:59 PM | PRINT_FREQ=50
+06/03 01:03:59 PM | Q=1
+06/03 01:03:59 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:03:59 PM | RESIDUAL=residual
+06/03 01:03:59 PM | SEED=2
+06/03 01:03:59 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:03:59 PM | START_EPOCH=1
+06/03 01:03:59 PM | TASK_TRAIN_STEPS=5
+06/03 01:03:59 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:03:59 PM | TEST_META_BATCH_SIZE=25
+06/03 01:03:59 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:03:59 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:03:59 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:03:59 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:03:59 PM | USE_HP_SETTING=1
+06/03 01:03:59 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:03:59 PM | USE_TORCHMETA_LOADER=True
+06/03 01:03:59 PM | USE_VINYALS_SPLIT=False
+06/03 01:03:59 PM | W_GRAD_CLIP=1000000.0
+06/03 01:03:59 PM | W_LR=0.005
+06/03 01:03:59 PM | W_META_ANNEAL=0
+06/03 01:03:59 PM | W_META_LR=1.0
+06/03 01:03:59 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:03:59 PM | W_MOMENTUM=0.0
+06/03 01:03:59 PM | W_TASK_ANNEAL=0
+06/03 01:03:59 PM | W_WEIGHT_DECAY=0.0
+06/03 01:03:59 PM | WARM_UP_EPOCHS=0
+06/03 01:03:59 PM | WORKERS=0
+06/03 01:03:59 PM | 
+06/03 01:07:39 PM | Start meta architecture search
+06/03 01:07:41 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:07:41 PM | 
+06/03 01:07:41 PM | Parameters:
+06/03 01:07:41 PM | A_META_ANNEAL=0
+06/03 01:07:41 PM | A_META_LR=0.6
+06/03 01:07:41 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:07:41 PM | A_TASK_ANNEAL=0
+06/03 01:07:41 PM | ALPHA_LR=0.005
+06/03 01:07:41 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:07:41 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:07:41 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:07:41 PM | BATCH_SIZE=20
+06/03 01:07:41 PM | BATCH_SIZE_TEST=10
+06/03 01:07:41 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:07:41 PM | DATASET=omniglot
+06/03 01:07:41 PM | DEVICE=cuda
+06/03 01:07:41 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:07:41 PM | DROP_PATH_PROB=0.2
+06/03 01:07:41 PM | EVAL=False
+06/03 01:07:41 PM | EVAL_EPOCHS=1
+06/03 01:07:41 PM | EVAL_FREQ=1000
+06/03 01:07:41 PM | EVAL_PREFIX=
+06/03 01:07:41 PM | GPUS=[0]
+06/03 01:07:41 PM | HP_SETTING=og_metanas
+06/03 01:07:41 PM | INIT_CHANNELS=28
+06/03 01:07:41 PM | JOB_ID=0
+06/03 01:07:41 PM | K=20
+06/03 01:07:41 PM | LAYERS=4
+06/03 01:07:41 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:07:41 PM | LOSS_NN=loss_nn
+06/03 01:07:41 PM | LOSS_PROXY=mse
+06/03 01:07:41 PM | META_BATCH_SIZE=10
+06/03 01:07:41 PM | META_EPOCHS=10
+06/03 01:07:41 PM | META_MODEL=maml
+06/03 01:07:41 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:07:41 PM | MODEL_PATH=None
+06/03 01:07:41 PM | N=5
+06/03 01:07:41 PM | N_TRAIN=15
+06/03 01:07:41 PM | NAME=metatrain_og
+06/03 01:07:41 PM | NODES=3
+06/03 01:07:41 PM | NORMALIZER=softmax
+06/03 01:07:41 PM | NORMALIZER_T_MAX=1.0
+06/03 01:07:41 PM | NORMALIZER_T_MIN=0.05
+06/03 01:07:41 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:07:41 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:07:41 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:07:41 PM | PHI_LR=0.01
+06/03 01:07:41 PM | PHI_META_ANNEAL=1
+06/03 01:07:41 PM | PHI_META_LR=0.001
+06/03 01:07:41 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:07:41 PM | PHI_MOMENTUM=0.0
+06/03 01:07:41 PM | PHI_TASK_ANNEAL=0
+06/03 01:07:41 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:07:41 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:07:41 PM | PRETRAINED=none
+06/03 01:07:41 PM | PRINT_FREQ=50
+06/03 01:07:41 PM | Q=1
+06/03 01:07:41 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:07:41 PM | RESIDUAL=residual
+06/03 01:07:41 PM | SEED=2
+06/03 01:07:41 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:07:41 PM | START_EPOCH=1
+06/03 01:07:41 PM | TASK_TRAIN_STEPS=5
+06/03 01:07:41 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:07:41 PM | TEST_META_BATCH_SIZE=25
+06/03 01:07:41 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:07:41 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:07:41 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:07:41 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:07:41 PM | USE_HP_SETTING=1
+06/03 01:07:41 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:07:41 PM | USE_TORCHMETA_LOADER=True
+06/03 01:07:41 PM | USE_VINYALS_SPLIT=False
+06/03 01:07:41 PM | W_GRAD_CLIP=1000000.0
+06/03 01:07:41 PM | W_LR=0.005
+06/03 01:07:41 PM | W_META_ANNEAL=0
+06/03 01:07:41 PM | W_META_LR=1.0
+06/03 01:07:41 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:07:41 PM | W_MOMENTUM=0.0
+06/03 01:07:41 PM | W_TASK_ANNEAL=0
+06/03 01:07:41 PM | W_WEIGHT_DECAY=0.0
+06/03 01:07:41 PM | WARM_UP_EPOCHS=0
+06/03 01:07:41 PM | WORKERS=0
+06/03 01:07:41 PM | 
+06/03 01:10:59 PM | train steps for evaluation:50 
+06/03 01:11:14 PM | Test data evaluation:: [ 0/1] Test-TestLoss -3435607.070 Test-TestPrec@(1,) (5.0%, 100.0%) 
+ Sparse_num_params (mean, min, max): 23829.0, 23829, 23829
+06/03 01:11:14 PM | Finished meta architecture search
+06/03 01:12:15 PM | Start meta architecture search
+06/03 01:12:17 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:12:17 PM | 
+06/03 01:12:17 PM | Parameters:
+06/03 01:12:17 PM | A_META_ANNEAL=0
+06/03 01:12:17 PM | A_META_LR=0.6
+06/03 01:12:17 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:12:17 PM | A_TASK_ANNEAL=0
+06/03 01:12:17 PM | ALPHA_LR=0.005
+06/03 01:12:17 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:12:17 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:12:17 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:12:17 PM | BATCH_SIZE=20
+06/03 01:12:17 PM | BATCH_SIZE_TEST=10
+06/03 01:12:17 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:12:17 PM | DATASET=omniglot
+06/03 01:12:17 PM | DEVICE=cuda
+06/03 01:12:17 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:12:17 PM | DROP_PATH_PROB=0.2
+06/03 01:12:17 PM | EVAL=False
+06/03 01:12:17 PM | EVAL_EPOCHS=1
+06/03 01:12:17 PM | EVAL_FREQ=1000
+06/03 01:12:17 PM | EVAL_PREFIX=
+06/03 01:12:17 PM | GPUS=[0]
+06/03 01:12:17 PM | HP_SETTING=og_metanas
+06/03 01:12:17 PM | INIT_CHANNELS=28
+06/03 01:12:17 PM | JOB_ID=0
+06/03 01:12:17 PM | K=20
+06/03 01:12:17 PM | LAYERS=4
+06/03 01:12:17 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:12:17 PM | LOSS_NN=loss_nn
+06/03 01:12:17 PM | LOSS_PROXY=mse
+06/03 01:12:17 PM | META_BATCH_SIZE=10
+06/03 01:12:17 PM | META_EPOCHS=10
+06/03 01:12:17 PM | META_MODEL=maml
+06/03 01:12:17 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:12:17 PM | MODEL_PATH=None
+06/03 01:12:17 PM | N=5
+06/03 01:12:17 PM | N_TRAIN=15
+06/03 01:12:17 PM | NAME=metatrain_og
+06/03 01:12:17 PM | NODES=3
+06/03 01:12:17 PM | NORMALIZER=softmax
+06/03 01:12:17 PM | NORMALIZER_T_MAX=1.0
+06/03 01:12:17 PM | NORMALIZER_T_MIN=0.05
+06/03 01:12:17 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:12:17 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:12:17 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:12:17 PM | PHI_LR=0.01
+06/03 01:12:17 PM | PHI_META_ANNEAL=1
+06/03 01:12:17 PM | PHI_META_LR=0.001
+06/03 01:12:17 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:12:17 PM | PHI_MOMENTUM=0.0
+06/03 01:12:17 PM | PHI_TASK_ANNEAL=0
+06/03 01:12:17 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:12:17 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:12:17 PM | PRETRAINED=none
+06/03 01:12:17 PM | PRINT_FREQ=50
+06/03 01:12:17 PM | Q=1
+06/03 01:12:17 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:12:17 PM | RESIDUAL=residual
+06/03 01:12:17 PM | SEED=2
+06/03 01:12:17 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:12:17 PM | START_EPOCH=1
+06/03 01:12:17 PM | TASK_TRAIN_STEPS=5
+06/03 01:12:17 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:12:17 PM | TEST_META_BATCH_SIZE=25
+06/03 01:12:17 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:12:17 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:12:17 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:12:17 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:12:17 PM | USE_HP_SETTING=1
+06/03 01:12:17 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:12:17 PM | USE_TORCHMETA_LOADER=True
+06/03 01:12:17 PM | USE_VINYALS_SPLIT=False
+06/03 01:12:17 PM | W_GRAD_CLIP=1000000.0
+06/03 01:12:17 PM | W_LR=0.005
+06/03 01:12:17 PM | W_META_ANNEAL=0
+06/03 01:12:17 PM | W_META_LR=1.0
+06/03 01:12:17 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:12:17 PM | W_MOMENTUM=0.0
+06/03 01:12:17 PM | W_TASK_ANNEAL=0
+06/03 01:12:17 PM | W_WEIGHT_DECAY=0.0
+06/03 01:12:17 PM | WARM_UP_EPOCHS=0
+06/03 01:12:17 PM | WORKERS=0
+06/03 01:12:17 PM | 
+06/03 01:13:14 PM | train steps for evaluation:50 
+06/03 01:13:27 PM | Test data evaluation:: [ 0/1] Test-TestLoss 1.175 Test-TestPrec@(1,) (65.4%, 100.0%) 
+ Sparse_num_params (mean, min, max): 23829.0, 23829, 23829
+06/03 01:13:27 PM | Finished meta architecture search
+06/03 01:14:36 PM | Start meta architecture search
+06/03 01:14:38 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:14:38 PM | 
+06/03 01:14:38 PM | Parameters:
+06/03 01:14:38 PM | A_META_ANNEAL=0
+06/03 01:14:38 PM | A_META_LR=0.6
+06/03 01:14:38 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:14:38 PM | A_TASK_ANNEAL=0
+06/03 01:14:38 PM | ALPHA_LR=0.005
+06/03 01:14:38 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:14:38 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:14:38 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:14:38 PM | BATCH_SIZE=20
+06/03 01:14:38 PM | BATCH_SIZE_TEST=10
+06/03 01:14:38 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:14:38 PM | DATASET=omniglot
+06/03 01:14:38 PM | DEVICE=cuda
+06/03 01:14:38 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:14:38 PM | DROP_PATH_PROB=0.2
+06/03 01:14:38 PM | EVAL=False
+06/03 01:14:38 PM | EVAL_EPOCHS=1
+06/03 01:14:38 PM | EVAL_FREQ=1000
+06/03 01:14:38 PM | EVAL_PREFIX=
+06/03 01:14:38 PM | GPUS=[0]
+06/03 01:14:38 PM | HP_SETTING=og_metanas
+06/03 01:14:38 PM | INIT_CHANNELS=28
+06/03 01:14:38 PM | JOB_ID=0
+06/03 01:14:38 PM | K=20
+06/03 01:14:38 PM | LAYERS=4
+06/03 01:14:38 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:14:38 PM | LOSS_NN=loss_nn
+06/03 01:14:38 PM | LOSS_PROXY=mse
+06/03 01:14:38 PM | META_BATCH_SIZE=10
+06/03 01:14:38 PM | META_EPOCHS=20
+06/03 01:14:38 PM | META_MODEL=maml
+06/03 01:14:38 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:14:38 PM | MODEL_PATH=None
+06/03 01:14:38 PM | N=5
+06/03 01:14:38 PM | N_TRAIN=15
+06/03 01:14:38 PM | NAME=metatrain_og
+06/03 01:14:38 PM | NODES=3
+06/03 01:14:38 PM | NORMALIZER=softmax
+06/03 01:14:38 PM | NORMALIZER_T_MAX=1.0
+06/03 01:14:38 PM | NORMALIZER_T_MIN=0.05
+06/03 01:14:38 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:14:38 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:14:38 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:14:38 PM | PHI_LR=0.01
+06/03 01:14:38 PM | PHI_META_ANNEAL=1
+06/03 01:14:38 PM | PHI_META_LR=0.001
+06/03 01:14:38 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:14:38 PM | PHI_MOMENTUM=0.0
+06/03 01:14:38 PM | PHI_TASK_ANNEAL=0
+06/03 01:14:38 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:14:38 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:14:38 PM | PRETRAINED=none
+06/03 01:14:38 PM | PRINT_FREQ=50
+06/03 01:14:38 PM | Q=1
+06/03 01:14:38 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:14:38 PM | RESIDUAL=residual
+06/03 01:14:38 PM | SEED=2
+06/03 01:14:38 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:14:38 PM | START_EPOCH=1
+06/03 01:14:38 PM | TASK_TRAIN_STEPS=5
+06/03 01:14:38 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:14:38 PM | TEST_META_BATCH_SIZE=25
+06/03 01:14:38 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:14:38 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:14:38 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:14:38 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:14:38 PM | USE_HP_SETTING=1
+06/03 01:14:38 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:14:38 PM | USE_TORCHMETA_LOADER=True
+06/03 01:14:38 PM | USE_VINYALS_SPLIT=False
+06/03 01:14:38 PM | W_GRAD_CLIP=1000000.0
+06/03 01:14:38 PM | W_LR=0.005
+06/03 01:14:38 PM | W_META_ANNEAL=0
+06/03 01:14:38 PM | W_META_LR=1.0
+06/03 01:14:38 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:14:38 PM | W_MOMENTUM=0.0
+06/03 01:14:38 PM | W_TASK_ANNEAL=0
+06/03 01:14:38 PM | W_WEIGHT_DECAY=0.0
+06/03 01:14:38 PM | WARM_UP_EPOCHS=0
+06/03 01:14:38 PM | WORKERS=0
+06/03 01:14:38 PM | 
+06/03 01:16:30 PM | train steps for evaluation:50 
+06/03 01:16:43 PM | Test data evaluation:: [ 0/1] Test-TestLoss 0.982 Test-TestPrec@(1,) (74.2%, 100.0%) 
+ Sparse_num_params (mean, min, max): 23829.0, 23829, 23829
+06/03 01:16:43 PM | Finished meta architecture search
+06/03 01:19:12 PM | Start meta architecture search
+06/03 01:19:14 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:19:14 PM | 
+06/03 01:19:14 PM | Parameters:
+06/03 01:19:14 PM | A_META_ANNEAL=0
+06/03 01:19:14 PM | A_META_LR=0.6
+06/03 01:19:14 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:19:14 PM | A_TASK_ANNEAL=0
+06/03 01:19:14 PM | ALPHA_LR=0.005
+06/03 01:19:14 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:19:14 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:19:14 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:19:14 PM | BATCH_SIZE=20
+06/03 01:19:14 PM | BATCH_SIZE_TEST=10
+06/03 01:19:14 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:19:14 PM | DATASET=omniglot
+06/03 01:19:14 PM | DEVICE=cuda
+06/03 01:19:14 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:19:14 PM | DROP_PATH_PROB=0.2
+06/03 01:19:14 PM | EVAL=False
+06/03 01:19:14 PM | EVAL_EPOCHS=1
+06/03 01:19:14 PM | EVAL_FREQ=1000
+06/03 01:19:14 PM | EVAL_PREFIX=
+06/03 01:19:14 PM | GPUS=[0]
+06/03 01:19:14 PM | HP_SETTING=og_metanas
+06/03 01:19:14 PM | INIT_CHANNELS=28
+06/03 01:19:14 PM | JOB_ID=0
+06/03 01:19:14 PM | K=20
+06/03 01:19:14 PM | LAYERS=4
+06/03 01:19:14 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:19:14 PM | LOSS_NN=loss_nn
+06/03 01:19:14 PM | LOSS_PROXY=dot_product
+06/03 01:19:14 PM | META_BATCH_SIZE=10
+06/03 01:19:14 PM | META_EPOCHS=20
+06/03 01:19:14 PM | META_MODEL=maml
+06/03 01:19:14 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:19:14 PM | MODEL_PATH=None
+06/03 01:19:14 PM | N=5
+06/03 01:19:14 PM | N_TRAIN=15
+06/03 01:19:14 PM | NAME=metatrain_og
+06/03 01:19:14 PM | NODES=3
+06/03 01:19:14 PM | NORMALIZER=softmax
+06/03 01:19:14 PM | NORMALIZER_T_MAX=1.0
+06/03 01:19:14 PM | NORMALIZER_T_MIN=0.05
+06/03 01:19:14 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:19:14 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:19:14 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:19:14 PM | PHI_LR=0.01
+06/03 01:19:14 PM | PHI_META_ANNEAL=1
+06/03 01:19:14 PM | PHI_META_LR=0.001
+06/03 01:19:14 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:19:14 PM | PHI_MOMENTUM=0.0
+06/03 01:19:14 PM | PHI_TASK_ANNEAL=0
+06/03 01:19:14 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:19:14 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:19:14 PM | PRETRAINED=none
+06/03 01:19:14 PM | PRINT_FREQ=50
+06/03 01:19:14 PM | Q=1
+06/03 01:19:14 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:19:14 PM | RESIDUAL=residual
+06/03 01:19:14 PM | SEED=2
+06/03 01:19:14 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:19:14 PM | START_EPOCH=1
+06/03 01:19:14 PM | TASK_TRAIN_STEPS=5
+06/03 01:19:14 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:19:14 PM | TEST_META_BATCH_SIZE=25
+06/03 01:19:14 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:19:14 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:19:14 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:19:14 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:19:14 PM | USE_HP_SETTING=1
+06/03 01:19:14 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:19:14 PM | USE_TORCHMETA_LOADER=True
+06/03 01:19:14 PM | USE_VINYALS_SPLIT=False
+06/03 01:19:14 PM | W_GRAD_CLIP=1000000.0
+06/03 01:19:14 PM | W_LR=0.005
+06/03 01:19:14 PM | W_META_ANNEAL=0
+06/03 01:19:14 PM | W_META_LR=1.0
+06/03 01:19:14 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:19:14 PM | W_MOMENTUM=0.0
+06/03 01:19:14 PM | W_TASK_ANNEAL=0
+06/03 01:19:14 PM | W_WEIGHT_DECAY=0.0
+06/03 01:19:14 PM | WARM_UP_EPOCHS=0
+06/03 01:19:14 PM | WORKERS=0
+06/03 01:19:14 PM | 
+06/03 01:22:33 PM | Start meta architecture search
+06/03 01:22:35 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:22:35 PM | 
+06/03 01:22:35 PM | Parameters:
+06/03 01:22:35 PM | A_META_ANNEAL=0
+06/03 01:22:35 PM | A_META_LR=0.6
+06/03 01:22:35 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:22:35 PM | A_TASK_ANNEAL=0
+06/03 01:22:35 PM | ALPHA_LR=0.005
+06/03 01:22:35 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:22:35 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:22:35 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:22:35 PM | BATCH_SIZE=20
+06/03 01:22:35 PM | BATCH_SIZE_TEST=10
+06/03 01:22:35 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:22:35 PM | DATASET=omniglot
+06/03 01:22:35 PM | DEVICE=cuda
+06/03 01:22:35 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:22:35 PM | DROP_PATH_PROB=0.2
+06/03 01:22:35 PM | EVAL=False
+06/03 01:22:35 PM | EVAL_EPOCHS=1
+06/03 01:22:35 PM | EVAL_FREQ=1000
+06/03 01:22:35 PM | EVAL_PREFIX=
+06/03 01:22:35 PM | GPUS=[0]
+06/03 01:22:35 PM | HP_SETTING=og_metanas
+06/03 01:22:35 PM | INIT_CHANNELS=28
+06/03 01:22:35 PM | JOB_ID=0
+06/03 01:22:35 PM | K=20
+06/03 01:22:35 PM | LAYERS=4
+06/03 01:22:35 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:22:35 PM | LOSS_NN=loss_nn
+06/03 01:22:35 PM | LOSS_PROXY=dot_product
+06/03 01:22:35 PM | META_BATCH_SIZE=10
+06/03 01:22:35 PM | META_EPOCHS=20
+06/03 01:22:35 PM | META_MODEL=maml
+06/03 01:22:35 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:22:35 PM | MODEL_PATH=None
+06/03 01:22:35 PM | N=5
+06/03 01:22:35 PM | N_TRAIN=15
+06/03 01:22:35 PM | NAME=metatrain_og
+06/03 01:22:35 PM | NODES=3
+06/03 01:22:35 PM | NORMALIZER=softmax
+06/03 01:22:35 PM | NORMALIZER_T_MAX=1.0
+06/03 01:22:35 PM | NORMALIZER_T_MIN=0.05
+06/03 01:22:35 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:22:35 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:22:35 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:22:35 PM | PHI_LR=0.01
+06/03 01:22:35 PM | PHI_META_ANNEAL=1
+06/03 01:22:35 PM | PHI_META_LR=0.001
+06/03 01:22:35 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:22:35 PM | PHI_MOMENTUM=0.0
+06/03 01:22:35 PM | PHI_TASK_ANNEAL=0
+06/03 01:22:35 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:22:35 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:22:35 PM | PRETRAINED=none
+06/03 01:22:35 PM | PRINT_FREQ=50
+06/03 01:22:35 PM | Q=1
+06/03 01:22:35 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:22:35 PM | RESIDUAL=residual
+06/03 01:22:35 PM | SEED=2
+06/03 01:22:35 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:22:35 PM | START_EPOCH=1
+06/03 01:22:35 PM | TASK_TRAIN_STEPS=5
+06/03 01:22:35 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:22:35 PM | TEST_META_BATCH_SIZE=25
+06/03 01:22:35 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:22:35 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:22:35 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:22:35 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:22:35 PM | USE_HP_SETTING=1
+06/03 01:22:35 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:22:35 PM | USE_TORCHMETA_LOADER=True
+06/03 01:22:35 PM | USE_VINYALS_SPLIT=False
+06/03 01:22:35 PM | W_GRAD_CLIP=1000000.0
+06/03 01:22:35 PM | W_LR=0.005
+06/03 01:22:35 PM | W_META_ANNEAL=0
+06/03 01:22:35 PM | W_META_LR=1.0
+06/03 01:22:35 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:22:35 PM | W_MOMENTUM=0.0
+06/03 01:22:35 PM | W_TASK_ANNEAL=0
+06/03 01:22:35 PM | W_WEIGHT_DECAY=0.0
+06/03 01:22:35 PM | WARM_UP_EPOCHS=0
+06/03 01:22:35 PM | WORKERS=0
+06/03 01:22:35 PM | 
+06/03 01:25:18 PM | Start meta architecture search
+06/03 01:25:20 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:25:20 PM | 
+06/03 01:25:20 PM | Parameters:
+06/03 01:25:20 PM | A_META_ANNEAL=0
+06/03 01:25:20 PM | A_META_LR=0.6
+06/03 01:25:20 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:25:20 PM | A_TASK_ANNEAL=0
+06/03 01:25:20 PM | ALPHA_LR=0.005
+06/03 01:25:20 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:25:20 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:25:20 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:25:20 PM | BATCH_SIZE=20
+06/03 01:25:20 PM | BATCH_SIZE_TEST=10
+06/03 01:25:20 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:25:20 PM | DATASET=omniglot
+06/03 01:25:20 PM | DEVICE=cuda
+06/03 01:25:20 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:25:20 PM | DROP_PATH_PROB=0.2
+06/03 01:25:20 PM | EVAL=False
+06/03 01:25:20 PM | EVAL_EPOCHS=1
+06/03 01:25:20 PM | EVAL_FREQ=1000
+06/03 01:25:20 PM | EVAL_PREFIX=
+06/03 01:25:20 PM | GPUS=[0]
+06/03 01:25:20 PM | HP_SETTING=og_metanas
+06/03 01:25:20 PM | INIT_CHANNELS=28
+06/03 01:25:20 PM | JOB_ID=0
+06/03 01:25:20 PM | K=20
+06/03 01:25:20 PM | LAYERS=4
+06/03 01:25:20 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:25:20 PM | LOSS_NN=loss_nn
+06/03 01:25:20 PM | LOSS_PROXY=dot_product
+06/03 01:25:20 PM | META_BATCH_SIZE=10
+06/03 01:25:20 PM | META_EPOCHS=20
+06/03 01:25:20 PM | META_MODEL=maml
+06/03 01:25:20 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:25:20 PM | MODEL_PATH=None
+06/03 01:25:20 PM | N=5
+06/03 01:25:20 PM | N_TRAIN=15
+06/03 01:25:20 PM | NAME=metatrain_og
+06/03 01:25:20 PM | NODES=3
+06/03 01:25:20 PM | NORMALIZER=softmax
+06/03 01:25:20 PM | NORMALIZER_T_MAX=1.0
+06/03 01:25:20 PM | NORMALIZER_T_MIN=0.05
+06/03 01:25:20 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:25:20 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:25:20 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:25:20 PM | PHI_LR=0.01
+06/03 01:25:20 PM | PHI_META_ANNEAL=1
+06/03 01:25:20 PM | PHI_META_LR=0.001
+06/03 01:25:20 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:25:20 PM | PHI_MOMENTUM=0.0
+06/03 01:25:20 PM | PHI_TASK_ANNEAL=0
+06/03 01:25:20 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:25:20 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:25:20 PM | PRETRAINED=none
+06/03 01:25:20 PM | PRINT_FREQ=50
+06/03 01:25:20 PM | Q=1
+06/03 01:25:20 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:25:20 PM | RESIDUAL=residual
+06/03 01:25:20 PM | SEED=2
+06/03 01:25:20 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:25:20 PM | START_EPOCH=1
+06/03 01:25:20 PM | TASK_TRAIN_STEPS=5
+06/03 01:25:20 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:25:20 PM | TEST_META_BATCH_SIZE=25
+06/03 01:25:20 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:25:20 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:25:20 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:25:20 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:25:20 PM | USE_HP_SETTING=1
+06/03 01:25:20 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:25:20 PM | USE_TORCHMETA_LOADER=True
+06/03 01:25:20 PM | USE_VINYALS_SPLIT=False
+06/03 01:25:20 PM | W_GRAD_CLIP=1000000.0
+06/03 01:25:20 PM | W_LR=0.005
+06/03 01:25:20 PM | W_META_ANNEAL=0
+06/03 01:25:20 PM | W_META_LR=1.0
+06/03 01:25:20 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:25:20 PM | W_MOMENTUM=0.0
+06/03 01:25:20 PM | W_TASK_ANNEAL=0
+06/03 01:25:20 PM | W_WEIGHT_DECAY=0.0
+06/03 01:25:20 PM | WARM_UP_EPOCHS=0
+06/03 01:25:20 PM | WORKERS=0
+06/03 01:25:20 PM | 
+06/03 01:26:33 PM | Start meta architecture search
+06/03 01:26:35 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:26:35 PM | 
+06/03 01:26:35 PM | Parameters:
+06/03 01:26:35 PM | A_META_ANNEAL=0
+06/03 01:26:35 PM | A_META_LR=0.6
+06/03 01:26:35 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:26:35 PM | A_TASK_ANNEAL=0
+06/03 01:26:35 PM | ALPHA_LR=0.005
+06/03 01:26:35 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:26:35 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:26:35 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:26:35 PM | BATCH_SIZE=20
+06/03 01:26:35 PM | BATCH_SIZE_TEST=10
+06/03 01:26:35 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:26:35 PM | DATASET=omniglot
+06/03 01:26:35 PM | DEVICE=cuda
+06/03 01:26:35 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:26:35 PM | DROP_PATH_PROB=0.2
+06/03 01:26:35 PM | EVAL=False
+06/03 01:26:35 PM | EVAL_EPOCHS=1
+06/03 01:26:35 PM | EVAL_FREQ=1000
+06/03 01:26:35 PM | EVAL_PREFIX=
+06/03 01:26:35 PM | GPUS=[0]
+06/03 01:26:35 PM | HP_SETTING=og_metanas
+06/03 01:26:35 PM | INIT_CHANNELS=28
+06/03 01:26:35 PM | JOB_ID=0
+06/03 01:26:35 PM | K=20
+06/03 01:26:35 PM | LAYERS=4
+06/03 01:26:35 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:26:35 PM | LOSS_NN=loss_nn
+06/03 01:26:35 PM | LOSS_PROXY=dot_product
+06/03 01:26:35 PM | META_BATCH_SIZE=10
+06/03 01:26:35 PM | META_EPOCHS=20
+06/03 01:26:35 PM | META_MODEL=maml
+06/03 01:26:35 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:26:35 PM | MODEL_PATH=None
+06/03 01:26:35 PM | N=5
+06/03 01:26:35 PM | N_TRAIN=15
+06/03 01:26:35 PM | NAME=metatrain_og
+06/03 01:26:35 PM | NODES=3
+06/03 01:26:35 PM | NORMALIZER=softmax
+06/03 01:26:35 PM | NORMALIZER_T_MAX=1.0
+06/03 01:26:35 PM | NORMALIZER_T_MIN=0.05
+06/03 01:26:35 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:26:35 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:26:35 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:26:35 PM | PHI_LR=0.01
+06/03 01:26:35 PM | PHI_META_ANNEAL=1
+06/03 01:26:35 PM | PHI_META_LR=0.001
+06/03 01:26:35 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:26:35 PM | PHI_MOMENTUM=0.0
+06/03 01:26:35 PM | PHI_TASK_ANNEAL=0
+06/03 01:26:35 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:26:35 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:26:35 PM | PRETRAINED=none
+06/03 01:26:35 PM | PRINT_FREQ=50
+06/03 01:26:35 PM | Q=1
+06/03 01:26:35 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:26:35 PM | RESIDUAL=residual
+06/03 01:26:35 PM | SEED=2
+06/03 01:26:35 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:26:35 PM | START_EPOCH=1
+06/03 01:26:35 PM | TASK_TRAIN_STEPS=5
+06/03 01:26:35 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:26:35 PM | TEST_META_BATCH_SIZE=25
+06/03 01:26:35 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:26:35 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:26:35 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:26:35 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:26:35 PM | USE_HP_SETTING=1
+06/03 01:26:35 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:26:35 PM | USE_TORCHMETA_LOADER=True
+06/03 01:26:35 PM | USE_VINYALS_SPLIT=False
+06/03 01:26:35 PM | W_GRAD_CLIP=1000000.0
+06/03 01:26:35 PM | W_LR=0.005
+06/03 01:26:35 PM | W_META_ANNEAL=0
+06/03 01:26:35 PM | W_META_LR=1.0
+06/03 01:26:35 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:26:35 PM | W_MOMENTUM=0.0
+06/03 01:26:35 PM | W_TASK_ANNEAL=0
+06/03 01:26:35 PM | W_WEIGHT_DECAY=0.0
+06/03 01:26:35 PM | WARM_UP_EPOCHS=0
+06/03 01:26:35 PM | WORKERS=0
+06/03 01:26:35 PM | 
+06/03 01:28:05 PM | Start meta architecture search
+06/03 01:28:49 PM | Start meta architecture search
+06/03 01:28:51 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:28:51 PM | 
+06/03 01:28:51 PM | Parameters:
+06/03 01:28:51 PM | A_META_ANNEAL=0
+06/03 01:28:51 PM | A_META_LR=0.6
+06/03 01:28:51 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:28:51 PM | A_TASK_ANNEAL=0
+06/03 01:28:51 PM | ALPHA_LR=0.005
+06/03 01:28:51 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:28:51 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:28:51 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:28:51 PM | BATCH_SIZE=20
+06/03 01:28:51 PM | BATCH_SIZE_TEST=10
+06/03 01:28:51 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:28:51 PM | DATASET=omniglot
+06/03 01:28:51 PM | DEVICE=cuda
+06/03 01:28:51 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:28:51 PM | DROP_PATH_PROB=0.2
+06/03 01:28:51 PM | EVAL=False
+06/03 01:28:51 PM | EVAL_EPOCHS=1
+06/03 01:28:51 PM | EVAL_FREQ=1000
+06/03 01:28:51 PM | EVAL_PREFIX=
+06/03 01:28:51 PM | GPUS=[0]
+06/03 01:28:51 PM | HP_SETTING=og_metanas
+06/03 01:28:51 PM | INIT_CHANNELS=28
+06/03 01:28:51 PM | JOB_ID=0
+06/03 01:28:51 PM | K=20
+06/03 01:28:51 PM | LAYERS=4
+06/03 01:28:51 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:28:51 PM | LOSS_NN=loss_nn
+06/03 01:28:51 PM | LOSS_PROXY=mse
+06/03 01:28:51 PM | META_BATCH_SIZE=10
+06/03 01:28:51 PM | META_EPOCHS=20
+06/03 01:28:51 PM | META_MODEL=maml
+06/03 01:28:51 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:28:51 PM | MODEL_PATH=None
+06/03 01:28:51 PM | N=5
+06/03 01:28:51 PM | N_TRAIN=15
+06/03 01:28:51 PM | NAME=metatrain_og
+06/03 01:28:51 PM | NODES=3
+06/03 01:28:51 PM | NORMALIZER=softmax
+06/03 01:28:51 PM | NORMALIZER_T_MAX=1.0
+06/03 01:28:51 PM | NORMALIZER_T_MIN=0.05
+06/03 01:28:51 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:28:51 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:28:51 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:28:51 PM | PHI_LR=0.01
+06/03 01:28:51 PM | PHI_META_ANNEAL=1
+06/03 01:28:51 PM | PHI_META_LR=0.001
+06/03 01:28:51 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:28:51 PM | PHI_MOMENTUM=0.0
+06/03 01:28:51 PM | PHI_TASK_ANNEAL=0
+06/03 01:28:51 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:28:51 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:28:51 PM | PRETRAINED=pretrained
+06/03 01:28:51 PM | PRINT_FREQ=50
+06/03 01:28:51 PM | Q=1
+06/03 01:28:51 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:28:51 PM | RESIDUAL=residual
+06/03 01:28:51 PM | SEED=2
+06/03 01:28:51 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:28:51 PM | START_EPOCH=1
+06/03 01:28:51 PM | TASK_TRAIN_STEPS=5
+06/03 01:28:51 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:28:51 PM | TEST_META_BATCH_SIZE=25
+06/03 01:28:51 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:28:51 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:28:51 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:28:51 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:28:51 PM | USE_HP_SETTING=1
+06/03 01:28:51 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:28:51 PM | USE_TORCHMETA_LOADER=True
+06/03 01:28:51 PM | USE_VINYALS_SPLIT=False
+06/03 01:28:51 PM | W_GRAD_CLIP=1000000.0
+06/03 01:28:51 PM | W_LR=0.005
+06/03 01:28:51 PM | W_META_ANNEAL=0
+06/03 01:28:51 PM | W_META_LR=1.0
+06/03 01:28:51 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:28:51 PM | W_MOMENTUM=0.0
+06/03 01:28:51 PM | W_TASK_ANNEAL=0
+06/03 01:28:51 PM | W_WEIGHT_DECAY=0.0
+06/03 01:28:51 PM | WARM_UP_EPOCHS=0
+06/03 01:28:51 PM | WORKERS=0
+06/03 01:28:51 PM | 
+06/03 01:30:49 PM | Start meta architecture search
+06/03 01:30:51 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:30:51 PM | 
+06/03 01:30:51 PM | Parameters:
+06/03 01:30:51 PM | A_META_ANNEAL=0
+06/03 01:30:51 PM | A_META_LR=0.6
+06/03 01:30:51 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:30:51 PM | A_TASK_ANNEAL=0
+06/03 01:30:51 PM | ALPHA_LR=0.005
+06/03 01:30:51 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:30:51 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:30:51 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:30:51 PM | BATCH_SIZE=20
+06/03 01:30:51 PM | BATCH_SIZE_TEST=10
+06/03 01:30:51 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:30:51 PM | DATASET=omniglot
+06/03 01:30:51 PM | DEVICE=cuda
+06/03 01:30:51 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:30:51 PM | DROP_PATH_PROB=0.2
+06/03 01:30:51 PM | EVAL=False
+06/03 01:30:51 PM | EVAL_EPOCHS=1
+06/03 01:30:51 PM | EVAL_FREQ=1000
+06/03 01:30:51 PM | EVAL_PREFIX=
+06/03 01:30:51 PM | GPUS=[0]
+06/03 01:30:51 PM | HP_SETTING=og_metanas
+06/03 01:30:51 PM | INIT_CHANNELS=28
+06/03 01:30:51 PM | JOB_ID=0
+06/03 01:30:51 PM | K=20
+06/03 01:30:51 PM | LAYERS=4
+06/03 01:30:51 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:30:51 PM | LOSS_NN=loss_nn
+06/03 01:30:51 PM | LOSS_PROXY=mse
+06/03 01:30:51 PM | META_BATCH_SIZE=10
+06/03 01:30:51 PM | META_EPOCHS=20
+06/03 01:30:51 PM | META_MODEL=maml
+06/03 01:30:51 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:30:51 PM | MODEL_PATH=None
+06/03 01:30:51 PM | N=5
+06/03 01:30:51 PM | N_TRAIN=15
+06/03 01:30:51 PM | NAME=metatrain_og
+06/03 01:30:51 PM | NODES=3
+06/03 01:30:51 PM | NORMALIZER=softmax
+06/03 01:30:51 PM | NORMALIZER_T_MAX=1.0
+06/03 01:30:51 PM | NORMALIZER_T_MIN=0.05
+06/03 01:30:51 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:30:51 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:30:51 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:30:51 PM | PHI_LR=0.01
+06/03 01:30:51 PM | PHI_META_ANNEAL=1
+06/03 01:30:51 PM | PHI_META_LR=0.001
+06/03 01:30:51 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:30:51 PM | PHI_MOMENTUM=0.0
+06/03 01:30:51 PM | PHI_TASK_ANNEAL=0
+06/03 01:30:51 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:30:51 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:30:51 PM | PRETRAINED=pretrained
+06/03 01:30:51 PM | PRINT_FREQ=50
+06/03 01:30:51 PM | Q=1
+06/03 01:30:51 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:30:51 PM | RESIDUAL=residual
+06/03 01:30:51 PM | SEED=2
+06/03 01:30:51 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:30:51 PM | START_EPOCH=1
+06/03 01:30:51 PM | TASK_TRAIN_STEPS=5
+06/03 01:30:51 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:30:51 PM | TEST_META_BATCH_SIZE=25
+06/03 01:30:51 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:30:51 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:30:51 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:30:51 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:30:51 PM | USE_HP_SETTING=1
+06/03 01:30:51 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:30:51 PM | USE_TORCHMETA_LOADER=True
+06/03 01:30:51 PM | USE_VINYALS_SPLIT=False
+06/03 01:30:51 PM | W_GRAD_CLIP=1000000.0
+06/03 01:30:51 PM | W_LR=0.005
+06/03 01:30:51 PM | W_META_ANNEAL=0
+06/03 01:30:51 PM | W_META_LR=1.0
+06/03 01:30:51 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:30:51 PM | W_MOMENTUM=0.0
+06/03 01:30:51 PM | W_TASK_ANNEAL=0
+06/03 01:30:51 PM | W_WEIGHT_DECAY=0.0
+06/03 01:30:51 PM | WARM_UP_EPOCHS=0
+06/03 01:30:51 PM | WORKERS=0
+06/03 01:30:51 PM | 
+06/03 01:33:26 PM | Start meta architecture search
+06/03 01:33:28 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:33:28 PM | 
+06/03 01:33:28 PM | Parameters:
+06/03 01:33:28 PM | A_META_ANNEAL=0
+06/03 01:33:28 PM | A_META_LR=0.6
+06/03 01:33:28 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:33:28 PM | A_TASK_ANNEAL=0
+06/03 01:33:28 PM | ALPHA_LR=0.005
+06/03 01:33:28 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:33:28 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:33:28 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:33:28 PM | BATCH_SIZE=20
+06/03 01:33:28 PM | BATCH_SIZE_TEST=10
+06/03 01:33:28 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:33:28 PM | DATASET=omniglot
+06/03 01:33:28 PM | DEVICE=cuda
+06/03 01:33:28 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:33:28 PM | DROP_PATH_PROB=0.2
+06/03 01:33:28 PM | EVAL=False
+06/03 01:33:28 PM | EVAL_EPOCHS=1
+06/03 01:33:28 PM | EVAL_FREQ=1000
+06/03 01:33:28 PM | EVAL_PREFIX=
+06/03 01:33:28 PM | GPUS=[0]
+06/03 01:33:28 PM | HP_SETTING=og_metanas
+06/03 01:33:28 PM | INIT_CHANNELS=28
+06/03 01:33:28 PM | JOB_ID=0
+06/03 01:33:28 PM | K=20
+06/03 01:33:28 PM | LAYERS=4
+06/03 01:33:28 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:33:28 PM | LOSS_NN=loss_nn
+06/03 01:33:28 PM | LOSS_PROXY=mse
+06/03 01:33:28 PM | META_BATCH_SIZE=10
+06/03 01:33:28 PM | META_EPOCHS=20
+06/03 01:33:28 PM | META_MODEL=maml
+06/03 01:33:28 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:33:28 PM | MODEL_PATH=None
+06/03 01:33:28 PM | N=5
+06/03 01:33:28 PM | N_TRAIN=15
+06/03 01:33:28 PM | NAME=metatrain_og
+06/03 01:33:28 PM | NODES=3
+06/03 01:33:28 PM | NORMALIZER=softmax
+06/03 01:33:28 PM | NORMALIZER_T_MAX=1.0
+06/03 01:33:28 PM | NORMALIZER_T_MIN=0.05
+06/03 01:33:28 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:33:28 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:33:28 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:33:28 PM | PHI_LR=0.01
+06/03 01:33:28 PM | PHI_META_ANNEAL=1
+06/03 01:33:28 PM | PHI_META_LR=0.001
+06/03 01:33:28 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:33:28 PM | PHI_MOMENTUM=0.0
+06/03 01:33:28 PM | PHI_TASK_ANNEAL=0
+06/03 01:33:28 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:33:28 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:33:28 PM | PRETRAINED=pretrained
+06/03 01:33:28 PM | PRINT_FREQ=50
+06/03 01:33:28 PM | Q=1
+06/03 01:33:28 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:33:28 PM | RESIDUAL=residual
+06/03 01:33:28 PM | SEED=2
+06/03 01:33:28 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:33:28 PM | START_EPOCH=1
+06/03 01:33:28 PM | TASK_TRAIN_STEPS=5
+06/03 01:33:28 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:33:28 PM | TEST_META_BATCH_SIZE=25
+06/03 01:33:28 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:33:28 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:33:28 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:33:28 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:33:28 PM | USE_HP_SETTING=1
+06/03 01:33:28 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:33:28 PM | USE_TORCHMETA_LOADER=True
+06/03 01:33:28 PM | USE_VINYALS_SPLIT=False
+06/03 01:33:28 PM | W_GRAD_CLIP=1000000.0
+06/03 01:33:28 PM | W_LR=0.005
+06/03 01:33:28 PM | W_META_ANNEAL=0
+06/03 01:33:28 PM | W_META_LR=1.0
+06/03 01:33:28 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:33:28 PM | W_MOMENTUM=0.0
+06/03 01:33:28 PM | W_TASK_ANNEAL=0
+06/03 01:33:28 PM | W_WEIGHT_DECAY=0.0
+06/03 01:33:28 PM | WARM_UP_EPOCHS=0
+06/03 01:33:28 PM | WORKERS=0
+06/03 01:33:28 PM | 
+06/03 01:34:44 PM | Start meta architecture search
+06/03 01:34:46 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:34:46 PM | 
+06/03 01:34:46 PM | Parameters:
+06/03 01:34:46 PM | A_META_ANNEAL=0
+06/03 01:34:46 PM | A_META_LR=0.6
+06/03 01:34:46 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:34:46 PM | A_TASK_ANNEAL=0
+06/03 01:34:46 PM | ALPHA_LR=0.005
+06/03 01:34:46 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:34:46 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:34:46 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:34:46 PM | BATCH_SIZE=20
+06/03 01:34:46 PM | BATCH_SIZE_TEST=10
+06/03 01:34:46 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:34:46 PM | DATASET=omniglot
+06/03 01:34:46 PM | DEVICE=cuda
+06/03 01:34:46 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:34:46 PM | DROP_PATH_PROB=0.2
+06/03 01:34:46 PM | EVAL=False
+06/03 01:34:46 PM | EVAL_EPOCHS=1
+06/03 01:34:46 PM | EVAL_FREQ=1000
+06/03 01:34:46 PM | EVAL_PREFIX=
+06/03 01:34:46 PM | GPUS=[0]
+06/03 01:34:46 PM | HP_SETTING=og_metanas
+06/03 01:34:46 PM | INIT_CHANNELS=28
+06/03 01:34:46 PM | JOB_ID=0
+06/03 01:34:46 PM | K=20
+06/03 01:34:46 PM | LAYERS=4
+06/03 01:34:46 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:34:46 PM | LOSS_NN=loss_nn
+06/03 01:34:46 PM | LOSS_PROXY=mse
+06/03 01:34:46 PM | META_BATCH_SIZE=10
+06/03 01:34:46 PM | META_EPOCHS=20
+06/03 01:34:46 PM | META_MODEL=maml
+06/03 01:34:46 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:34:46 PM | MODEL_PATH=None
+06/03 01:34:46 PM | N=5
+06/03 01:34:46 PM | N_TRAIN=15
+06/03 01:34:46 PM | NAME=metatrain_og
+06/03 01:34:46 PM | NODES=3
+06/03 01:34:46 PM | NORMALIZER=softmax
+06/03 01:34:46 PM | NORMALIZER_T_MAX=1.0
+06/03 01:34:46 PM | NORMALIZER_T_MIN=0.05
+06/03 01:34:46 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:34:46 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:34:46 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:34:46 PM | PHI_LR=0.01
+06/03 01:34:46 PM | PHI_META_ANNEAL=1
+06/03 01:34:46 PM | PHI_META_LR=0.001
+06/03 01:34:46 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:34:46 PM | PHI_MOMENTUM=0.0
+06/03 01:34:46 PM | PHI_TASK_ANNEAL=0
+06/03 01:34:46 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:34:46 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:34:46 PM | PRETRAINED=pretrained
+06/03 01:34:46 PM | PRINT_FREQ=50
+06/03 01:34:46 PM | Q=1
+06/03 01:34:46 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:34:46 PM | RESIDUAL=residual
+06/03 01:34:46 PM | SEED=2
+06/03 01:34:46 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:34:46 PM | START_EPOCH=1
+06/03 01:34:46 PM | TASK_TRAIN_STEPS=5
+06/03 01:34:46 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:34:46 PM | TEST_META_BATCH_SIZE=25
+06/03 01:34:46 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:34:46 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:34:46 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:34:46 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:34:46 PM | USE_HP_SETTING=1
+06/03 01:34:46 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:34:46 PM | USE_TORCHMETA_LOADER=True
+06/03 01:34:46 PM | USE_VINYALS_SPLIT=False
+06/03 01:34:46 PM | W_GRAD_CLIP=1000000.0
+06/03 01:34:46 PM | W_LR=0.005
+06/03 01:34:46 PM | W_META_ANNEAL=0
+06/03 01:34:46 PM | W_META_LR=1.0
+06/03 01:34:46 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:34:46 PM | W_MOMENTUM=0.0
+06/03 01:34:46 PM | W_TASK_ANNEAL=0
+06/03 01:34:46 PM | W_WEIGHT_DECAY=0.0
+06/03 01:34:46 PM | WARM_UP_EPOCHS=0
+06/03 01:34:46 PM | WORKERS=0
+06/03 01:34:46 PM | 
+06/03 01:35:12 PM | Start meta architecture search
+06/03 01:35:14 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:35:14 PM | 
+06/03 01:35:14 PM | Parameters:
+06/03 01:35:14 PM | A_META_ANNEAL=0
+06/03 01:35:14 PM | A_META_LR=0.6
+06/03 01:35:14 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:35:14 PM | A_TASK_ANNEAL=0
+06/03 01:35:14 PM | ALPHA_LR=0.005
+06/03 01:35:14 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:35:14 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:35:14 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:35:14 PM | BATCH_SIZE=20
+06/03 01:35:14 PM | BATCH_SIZE_TEST=10
+06/03 01:35:14 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:35:14 PM | DATASET=omniglot
+06/03 01:35:14 PM | DEVICE=cuda
+06/03 01:35:14 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:35:14 PM | DROP_PATH_PROB=0.2
+06/03 01:35:14 PM | EVAL=False
+06/03 01:35:14 PM | EVAL_EPOCHS=1
+06/03 01:35:14 PM | EVAL_FREQ=1000
+06/03 01:35:14 PM | EVAL_PREFIX=
+06/03 01:35:14 PM | GPUS=[0]
+06/03 01:35:14 PM | HP_SETTING=og_metanas
+06/03 01:35:14 PM | INIT_CHANNELS=28
+06/03 01:35:14 PM | JOB_ID=0
+06/03 01:35:14 PM | K=20
+06/03 01:35:14 PM | LAYERS=4
+06/03 01:35:14 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:35:14 PM | LOSS_NN=loss_nn
+06/03 01:35:14 PM | LOSS_PROXY=mse
+06/03 01:35:14 PM | META_BATCH_SIZE=10
+06/03 01:35:14 PM | META_EPOCHS=20
+06/03 01:35:14 PM | META_MODEL=maml
+06/03 01:35:14 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:35:14 PM | MODEL_PATH=None
+06/03 01:35:14 PM | N=5
+06/03 01:35:14 PM | N_TRAIN=15
+06/03 01:35:14 PM | NAME=metatrain_og
+06/03 01:35:14 PM | NODES=3
+06/03 01:35:14 PM | NORMALIZER=softmax
+06/03 01:35:14 PM | NORMALIZER_T_MAX=1.0
+06/03 01:35:14 PM | NORMALIZER_T_MIN=0.05
+06/03 01:35:14 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:35:14 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:35:14 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:35:14 PM | PHI_LR=0.01
+06/03 01:35:14 PM | PHI_META_ANNEAL=1
+06/03 01:35:14 PM | PHI_META_LR=0.001
+06/03 01:35:14 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:35:14 PM | PHI_MOMENTUM=0.0
+06/03 01:35:14 PM | PHI_TASK_ANNEAL=0
+06/03 01:35:14 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:35:14 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:35:14 PM | PRETRAINED=pretrained
+06/03 01:35:14 PM | PRINT_FREQ=50
+06/03 01:35:14 PM | Q=1
+06/03 01:35:14 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:35:14 PM | RESIDUAL=residual
+06/03 01:35:14 PM | SEED=2
+06/03 01:35:14 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:35:14 PM | START_EPOCH=1
+06/03 01:35:14 PM | TASK_TRAIN_STEPS=5
+06/03 01:35:14 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:35:14 PM | TEST_META_BATCH_SIZE=25
+06/03 01:35:14 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:35:14 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:35:14 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:35:14 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:35:14 PM | USE_HP_SETTING=1
+06/03 01:35:14 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:35:14 PM | USE_TORCHMETA_LOADER=True
+06/03 01:35:14 PM | USE_VINYALS_SPLIT=False
+06/03 01:35:14 PM | W_GRAD_CLIP=1000000.0
+06/03 01:35:14 PM | W_LR=0.005
+06/03 01:35:14 PM | W_META_ANNEAL=0
+06/03 01:35:14 PM | W_META_LR=1.0
+06/03 01:35:14 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:35:14 PM | W_MOMENTUM=0.0
+06/03 01:35:14 PM | W_TASK_ANNEAL=0
+06/03 01:35:14 PM | W_WEIGHT_DECAY=0.0
+06/03 01:35:14 PM | WARM_UP_EPOCHS=0
+06/03 01:35:14 PM | WORKERS=0
+06/03 01:35:14 PM | 
+06/03 01:36:23 PM | Start meta architecture search
+06/03 01:36:26 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:36:26 PM | 
+06/03 01:36:26 PM | Parameters:
+06/03 01:36:26 PM | A_META_ANNEAL=0
+06/03 01:36:26 PM | A_META_LR=0.6
+06/03 01:36:26 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:36:26 PM | A_TASK_ANNEAL=0
+06/03 01:36:26 PM | ALPHA_LR=0.005
+06/03 01:36:26 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:36:26 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:36:26 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:36:26 PM | BATCH_SIZE=20
+06/03 01:36:26 PM | BATCH_SIZE_TEST=10
+06/03 01:36:26 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:36:26 PM | DATASET=omniglot
+06/03 01:36:26 PM | DEVICE=cuda
+06/03 01:36:26 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:36:26 PM | DROP_PATH_PROB=0.2
+06/03 01:36:26 PM | EVAL=False
+06/03 01:36:26 PM | EVAL_EPOCHS=1
+06/03 01:36:26 PM | EVAL_FREQ=1000
+06/03 01:36:26 PM | EVAL_PREFIX=
+06/03 01:36:26 PM | GPUS=[0]
+06/03 01:36:26 PM | HP_SETTING=og_metanas
+06/03 01:36:26 PM | INIT_CHANNELS=28
+06/03 01:36:26 PM | JOB_ID=0
+06/03 01:36:26 PM | K=20
+06/03 01:36:26 PM | LAYERS=4
+06/03 01:36:26 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:36:26 PM | LOSS_NN=loss_nn
+06/03 01:36:26 PM | LOSS_PROXY=mse
+06/03 01:36:26 PM | META_BATCH_SIZE=10
+06/03 01:36:26 PM | META_EPOCHS=20
+06/03 01:36:26 PM | META_MODEL=maml
+06/03 01:36:26 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:36:26 PM | MODEL_PATH=None
+06/03 01:36:26 PM | N=5
+06/03 01:36:26 PM | N_TRAIN=15
+06/03 01:36:26 PM | NAME=metatrain_og
+06/03 01:36:26 PM | NODES=3
+06/03 01:36:26 PM | NORMALIZER=softmax
+06/03 01:36:26 PM | NORMALIZER_T_MAX=1.0
+06/03 01:36:26 PM | NORMALIZER_T_MIN=0.05
+06/03 01:36:26 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:36:26 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:36:26 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:36:26 PM | PHI_LR=0.01
+06/03 01:36:26 PM | PHI_META_ANNEAL=1
+06/03 01:36:26 PM | PHI_META_LR=0.001
+06/03 01:36:26 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:36:26 PM | PHI_MOMENTUM=0.0
+06/03 01:36:26 PM | PHI_TASK_ANNEAL=0
+06/03 01:36:26 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:36:26 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:36:26 PM | PRETRAINED=pretrained
+06/03 01:36:26 PM | PRINT_FREQ=50
+06/03 01:36:26 PM | Q=1
+06/03 01:36:26 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:36:26 PM | RESIDUAL=residual
+06/03 01:36:26 PM | SEED=2
+06/03 01:36:26 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:36:26 PM | START_EPOCH=1
+06/03 01:36:26 PM | TASK_TRAIN_STEPS=5
+06/03 01:36:26 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:36:26 PM | TEST_META_BATCH_SIZE=25
+06/03 01:36:26 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:36:26 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:36:26 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:36:26 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:36:26 PM | USE_HP_SETTING=1
+06/03 01:36:26 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:36:26 PM | USE_TORCHMETA_LOADER=True
+06/03 01:36:26 PM | USE_VINYALS_SPLIT=False
+06/03 01:36:26 PM | W_GRAD_CLIP=1000000.0
+06/03 01:36:26 PM | W_LR=0.005
+06/03 01:36:26 PM | W_META_ANNEAL=0
+06/03 01:36:26 PM | W_META_LR=1.0
+06/03 01:36:26 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:36:26 PM | W_MOMENTUM=0.0
+06/03 01:36:26 PM | W_TASK_ANNEAL=0
+06/03 01:36:26 PM | W_WEIGHT_DECAY=0.0
+06/03 01:36:26 PM | WARM_UP_EPOCHS=0
+06/03 01:36:26 PM | WORKERS=0
+06/03 01:36:26 PM | 
+06/03 01:47:03 PM | train steps for evaluation:50 
+06/03 01:50:18 PM | Start meta architecture search
+06/03 01:50:20 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 01:50:20 PM | 
+06/03 01:50:20 PM | Parameters:
+06/03 01:50:20 PM | A_META_ANNEAL=0
+06/03 01:50:20 PM | A_META_LR=0.6
+06/03 01:50:20 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:50:20 PM | A_TASK_ANNEAL=0
+06/03 01:50:20 PM | ALPHA_LR=0.005
+06/03 01:50:20 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 01:50:20 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 01:50:20 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 01:50:20 PM | BATCH_SIZE=20
+06/03 01:50:20 PM | BATCH_SIZE_TEST=10
+06/03 01:50:20 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 01:50:20 PM | DATASET=omniglot
+06/03 01:50:20 PM | DEVICE=cuda
+06/03 01:50:20 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 01:50:20 PM | DROP_PATH_PROB=0.2
+06/03 01:50:20 PM | EVAL=False
+06/03 01:50:20 PM | EVAL_EPOCHS=1
+06/03 01:50:20 PM | EVAL_FREQ=1000
+06/03 01:50:20 PM | EVAL_PREFIX=
+06/03 01:50:20 PM | GPUS=[0]
+06/03 01:50:20 PM | HP_SETTING=og_metanas
+06/03 01:50:20 PM | INIT_CHANNELS=28
+06/03 01:50:20 PM | JOB_ID=0
+06/03 01:50:20 PM | K=20
+06/03 01:50:20 PM | LAYERS=4
+06/03 01:50:20 PM | LOGGER=<Logger darts (INFO)>
+06/03 01:50:20 PM | LOSS_NN=loss_nn
+06/03 01:50:20 PM | LOSS_PROXY=mse
+06/03 01:50:20 PM | META_BATCH_SIZE=10
+06/03 01:50:20 PM | META_EPOCHS=20
+06/03 01:50:20 PM | META_MODEL=maml
+06/03 01:50:20 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 01:50:20 PM | MODEL_PATH=None
+06/03 01:50:20 PM | N=5
+06/03 01:50:20 PM | N_TRAIN=15
+06/03 01:50:20 PM | NAME=metatrain_og
+06/03 01:50:20 PM | NODES=3
+06/03 01:50:20 PM | NORMALIZER=softmax
+06/03 01:50:20 PM | NORMALIZER_T_MAX=1.0
+06/03 01:50:20 PM | NORMALIZER_T_MIN=0.05
+06/03 01:50:20 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 01:50:20 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 01:50:20 PM | PHI_GRAD_CLIP=1000000.0
+06/03 01:50:20 PM | PHI_LR=0.01
+06/03 01:50:20 PM | PHI_META_ANNEAL=1
+06/03 01:50:20 PM | PHI_META_LR=0.001
+06/03 01:50:20 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:50:20 PM | PHI_MOMENTUM=0.0
+06/03 01:50:20 PM | PHI_TASK_ANNEAL=0
+06/03 01:50:20 PM | PHI_WEIGHT_DECAY=0.0
+06/03 01:50:20 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 01:50:20 PM | PRETRAINED=pretrained
+06/03 01:50:20 PM | PRINT_FREQ=50
+06/03 01:50:20 PM | Q=1
+06/03 01:50:20 PM | REDUCTION_LAYERS=[1, 3]
+06/03 01:50:20 PM | RESIDUAL=residual
+06/03 01:50:20 PM | SEED=2
+06/03 01:50:20 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 01:50:20 PM | START_EPOCH=1
+06/03 01:50:20 PM | TASK_TRAIN_STEPS=5
+06/03 01:50:20 PM | TEST_ADAPT_STEPS=1.0
+06/03 01:50:20 PM | TEST_META_BATCH_SIZE=25
+06/03 01:50:20 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 01:50:20 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 01:50:20 PM | USE_FIRST_ORDER_DARTS=True
+06/03 01:50:20 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 01:50:20 PM | USE_HP_SETTING=1
+06/03 01:50:20 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 01:50:20 PM | USE_TORCHMETA_LOADER=True
+06/03 01:50:20 PM | USE_VINYALS_SPLIT=False
+06/03 01:50:20 PM | W_GRAD_CLIP=1000000.0
+06/03 01:50:20 PM | W_LR=0.005
+06/03 01:50:20 PM | W_META_ANNEAL=0
+06/03 01:50:20 PM | W_META_LR=1.0
+06/03 01:50:20 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 01:50:20 PM | W_MOMENTUM=0.0
+06/03 01:50:20 PM | W_TASK_ANNEAL=0
+06/03 01:50:20 PM | W_WEIGHT_DECAY=0.0
+06/03 01:50:20 PM | WARM_UP_EPOCHS=0
+06/03 01:50:20 PM | WORKERS=0
+06/03 01:50:20 PM | 
+06/03 02:02:27 PM | train steps for evaluation:50 
+06/03 02:06:28 PM | Test data evaluation:: [ 0/1] Test-TestLoss -196262.242 Test-TestPrec@(1,) (5.4%, 100.0%) 
+ Sparse_num_params (mean, min, max): 710180.0, 710180, 710180
+06/03 02:06:28 PM | Finished meta architecture search
+06/03 07:29:02 PM | Start meta architecture search
+06/03 07:29:04 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 07:29:04 PM | 
+06/03 07:29:04 PM | Parameters:
+06/03 07:29:04 PM | A_META_ANNEAL=0
+06/03 07:29:04 PM | A_META_LR=0.6
+06/03 07:29:04 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:29:04 PM | A_TASK_ANNEAL=0
+06/03 07:29:04 PM | ALPHA_LR=0.005
+06/03 07:29:04 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 07:29:04 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 07:29:04 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 07:29:04 PM | BATCH_SIZE=20
+06/03 07:29:04 PM | BATCH_SIZE_TEST=10
+06/03 07:29:04 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 07:29:04 PM | DATASET=omniglot
+06/03 07:29:04 PM | DEVICE=cuda
+06/03 07:29:04 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 07:29:04 PM | DROP_PATH_PROB=0.2
+06/03 07:29:04 PM | EVAL=False
+06/03 07:29:04 PM | EVAL_EPOCHS=1
+06/03 07:29:04 PM | EVAL_FREQ=1000
+06/03 07:29:04 PM | EVAL_PREFIX=
+06/03 07:29:04 PM | GPUS=[0]
+06/03 07:29:04 PM | HP_SETTING=og_metanas
+06/03 07:29:04 PM | INIT_CHANNELS=28
+06/03 07:29:04 PM | JOB_ID=0
+06/03 07:29:04 PM | K=20
+06/03 07:29:04 PM | LAYERS=4
+06/03 07:29:04 PM | LOGGER=<Logger darts (INFO)>
+06/03 07:29:04 PM | LOSS_NN=loss_nn
+06/03 07:29:04 PM | LOSS_PROXY=mse
+06/03 07:29:04 PM | META_BATCH_SIZE=10
+06/03 07:29:04 PM | META_EPOCHS=20
+06/03 07:29:04 PM | META_MODEL=maml
+06/03 07:29:04 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 07:29:04 PM | MODEL_PATH=None
+06/03 07:29:04 PM | N=5
+06/03 07:29:04 PM | N_TRAIN=15
+06/03 07:29:04 PM | NAME=metatrain_og
+06/03 07:29:04 PM | NODES=3
+06/03 07:29:04 PM | NORMALIZER=softmax
+06/03 07:29:04 PM | NORMALIZER_T_MAX=1.0
+06/03 07:29:04 PM | NORMALIZER_T_MIN=0.05
+06/03 07:29:04 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 07:29:04 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 07:29:04 PM | PHI_GRAD_CLIP=1000000.0
+06/03 07:29:04 PM | PHI_LR=0.01
+06/03 07:29:04 PM | PHI_META_ANNEAL=1
+06/03 07:29:04 PM | PHI_META_LR=0.001
+06/03 07:29:04 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:29:04 PM | PHI_MOMENTUM=0.0
+06/03 07:29:04 PM | PHI_TASK_ANNEAL=0
+06/03 07:29:04 PM | PHI_WEIGHT_DECAY=0.0
+06/03 07:29:04 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 07:29:04 PM | PRETRAINED=pretrained
+06/03 07:29:04 PM | PRINT_FREQ=50
+06/03 07:29:04 PM | Q=1
+06/03 07:29:04 PM | REDUCTION_LAYERS=[1, 3]
+06/03 07:29:04 PM | RESIDUAL=residual
+06/03 07:29:04 PM | SEED=2
+06/03 07:29:04 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 07:29:04 PM | START_EPOCH=1
+06/03 07:29:04 PM | TASK_TRAIN_STEPS=5
+06/03 07:29:04 PM | TEST_ADAPT_STEPS=1.0
+06/03 07:29:04 PM | TEST_META_BATCH_SIZE=25
+06/03 07:29:04 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 07:29:04 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 07:29:04 PM | USE_FIRST_ORDER_DARTS=True
+06/03 07:29:04 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 07:29:04 PM | USE_HP_SETTING=1
+06/03 07:29:04 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 07:29:04 PM | USE_TORCHMETA_LOADER=True
+06/03 07:29:04 PM | USE_VINYALS_SPLIT=False
+06/03 07:29:04 PM | W_GRAD_CLIP=1000000.0
+06/03 07:29:04 PM | W_LR=0.005
+06/03 07:29:04 PM | W_META_ANNEAL=0
+06/03 07:29:04 PM | W_META_LR=1.0
+06/03 07:29:04 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:29:04 PM | W_MOMENTUM=0.0
+06/03 07:29:04 PM | W_TASK_ANNEAL=0
+06/03 07:29:04 PM | W_WEIGHT_DECAY=0.0
+06/03 07:29:04 PM | WARM_UP_EPOCHS=0
+06/03 07:29:04 PM | WORKERS=0
+06/03 07:29:04 PM | 
+06/03 07:29:57 PM | Start meta architecture search
+06/03 07:29:59 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 07:29:59 PM | 
+06/03 07:29:59 PM | Parameters:
+06/03 07:29:59 PM | A_META_ANNEAL=0
+06/03 07:29:59 PM | A_META_LR=0.6
+06/03 07:29:59 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:29:59 PM | A_TASK_ANNEAL=0
+06/03 07:29:59 PM | ALPHA_LR=0.005
+06/03 07:29:59 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 07:29:59 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 07:29:59 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 07:29:59 PM | BATCH_SIZE=20
+06/03 07:29:59 PM | BATCH_SIZE_TEST=10
+06/03 07:29:59 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 07:29:59 PM | DATASET=omniglot
+06/03 07:29:59 PM | DEVICE=cuda
+06/03 07:29:59 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 07:29:59 PM | DROP_PATH_PROB=0.2
+06/03 07:29:59 PM | EVAL=False
+06/03 07:29:59 PM | EVAL_EPOCHS=1
+06/03 07:29:59 PM | EVAL_FREQ=1000
+06/03 07:29:59 PM | EVAL_PREFIX=
+06/03 07:29:59 PM | GPUS=[0]
+06/03 07:29:59 PM | HP_SETTING=og_metanas
+06/03 07:29:59 PM | INIT_CHANNELS=28
+06/03 07:29:59 PM | JOB_ID=0
+06/03 07:29:59 PM | K=20
+06/03 07:29:59 PM | LAYERS=4
+06/03 07:29:59 PM | LOGGER=<Logger darts (INFO)>
+06/03 07:29:59 PM | LOSS_NN=loss_nn
+06/03 07:29:59 PM | LOSS_PROXY=mse
+06/03 07:29:59 PM | META_BATCH_SIZE=10
+06/03 07:29:59 PM | META_EPOCHS=20
+06/03 07:29:59 PM | META_MODEL=maml
+06/03 07:29:59 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 07:29:59 PM | MODEL_PATH=None
+06/03 07:29:59 PM | N=5
+06/03 07:29:59 PM | N_TRAIN=15
+06/03 07:29:59 PM | NAME=metatrain_og
+06/03 07:29:59 PM | NODES=3
+06/03 07:29:59 PM | NORMALIZER=softmax
+06/03 07:29:59 PM | NORMALIZER_T_MAX=1.0
+06/03 07:29:59 PM | NORMALIZER_T_MIN=0.05
+06/03 07:29:59 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 07:29:59 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 07:29:59 PM | PHI_GRAD_CLIP=1000000.0
+06/03 07:29:59 PM | PHI_LR=0.01
+06/03 07:29:59 PM | PHI_META_ANNEAL=1
+06/03 07:29:59 PM | PHI_META_LR=0.001
+06/03 07:29:59 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:29:59 PM | PHI_MOMENTUM=0.0
+06/03 07:29:59 PM | PHI_TASK_ANNEAL=0
+06/03 07:29:59 PM | PHI_WEIGHT_DECAY=0.0
+06/03 07:29:59 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 07:29:59 PM | PRETRAINED=pretrained
+06/03 07:29:59 PM | PRINT_FREQ=50
+06/03 07:29:59 PM | Q=1
+06/03 07:29:59 PM | REDUCTION_LAYERS=[1, 3]
+06/03 07:29:59 PM | RESIDUAL=residual
+06/03 07:29:59 PM | SEED=2
+06/03 07:29:59 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 07:29:59 PM | START_EPOCH=1
+06/03 07:29:59 PM | TASK_TRAIN_STEPS=5
+06/03 07:29:59 PM | TEST_ADAPT_STEPS=1.0
+06/03 07:29:59 PM | TEST_META_BATCH_SIZE=25
+06/03 07:29:59 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 07:29:59 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 07:29:59 PM | USE_FIRST_ORDER_DARTS=True
+06/03 07:29:59 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 07:29:59 PM | USE_HP_SETTING=1
+06/03 07:29:59 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 07:29:59 PM | USE_TORCHMETA_LOADER=True
+06/03 07:29:59 PM | USE_VINYALS_SPLIT=False
+06/03 07:29:59 PM | W_GRAD_CLIP=1000000.0
+06/03 07:29:59 PM | W_LR=0.005
+06/03 07:29:59 PM | W_META_ANNEAL=0
+06/03 07:29:59 PM | W_META_LR=1.0
+06/03 07:29:59 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:29:59 PM | W_MOMENTUM=0.0
+06/03 07:29:59 PM | W_TASK_ANNEAL=0
+06/03 07:29:59 PM | W_WEIGHT_DECAY=0.0
+06/03 07:29:59 PM | WARM_UP_EPOCHS=0
+06/03 07:29:59 PM | WORKERS=0
+06/03 07:29:59 PM | 
+06/03 07:31:45 PM | Start meta architecture search
+06/03 07:31:48 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 07:31:48 PM | 
+06/03 07:31:48 PM | Parameters:
+06/03 07:31:48 PM | A_META_ANNEAL=0
+06/03 07:31:48 PM | A_META_LR=0.6
+06/03 07:31:48 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:31:48 PM | A_TASK_ANNEAL=0
+06/03 07:31:48 PM | ALPHA_LR=0.005
+06/03 07:31:48 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 07:31:48 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 07:31:48 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 07:31:48 PM | BATCH_SIZE=20
+06/03 07:31:48 PM | BATCH_SIZE_TEST=10
+06/03 07:31:48 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 07:31:48 PM | DATASET=omniglot
+06/03 07:31:48 PM | DEVICE=cuda
+06/03 07:31:48 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 07:31:48 PM | DROP_PATH_PROB=0.2
+06/03 07:31:48 PM | EVAL=False
+06/03 07:31:48 PM | EVAL_EPOCHS=1
+06/03 07:31:48 PM | EVAL_FREQ=1000
+06/03 07:31:48 PM | EVAL_PREFIX=
+06/03 07:31:48 PM | GPUS=[0]
+06/03 07:31:48 PM | HP_SETTING=og_metanas
+06/03 07:31:48 PM | INIT_CHANNELS=28
+06/03 07:31:48 PM | JOB_ID=0
+06/03 07:31:48 PM | K=20
+06/03 07:31:48 PM | LAYERS=4
+06/03 07:31:48 PM | LOGGER=<Logger darts (INFO)>
+06/03 07:31:48 PM | LOSS_NN=loss_nn
+06/03 07:31:48 PM | LOSS_PROXY=mse
+06/03 07:31:48 PM | META_BATCH_SIZE=10
+06/03 07:31:48 PM | META_EPOCHS=20
+06/03 07:31:48 PM | META_MODEL=maml
+06/03 07:31:48 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 07:31:48 PM | MODEL_PATH=None
+06/03 07:31:48 PM | N=5
+06/03 07:31:48 PM | N_TRAIN=15
+06/03 07:31:48 PM | NAME=metatrain_og
+06/03 07:31:48 PM | NODES=3
+06/03 07:31:48 PM | NORMALIZER=softmax
+06/03 07:31:48 PM | NORMALIZER_T_MAX=1.0
+06/03 07:31:48 PM | NORMALIZER_T_MIN=0.05
+06/03 07:31:48 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 07:31:48 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 07:31:48 PM | PHI_GRAD_CLIP=1000000.0
+06/03 07:31:48 PM | PHI_LR=0.01
+06/03 07:31:48 PM | PHI_META_ANNEAL=1
+06/03 07:31:48 PM | PHI_META_LR=0.001
+06/03 07:31:48 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:31:48 PM | PHI_MOMENTUM=0.0
+06/03 07:31:48 PM | PHI_TASK_ANNEAL=0
+06/03 07:31:48 PM | PHI_WEIGHT_DECAY=0.0
+06/03 07:31:48 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 07:31:48 PM | PRETRAINED=pretrained
+06/03 07:31:48 PM | PRINT_FREQ=50
+06/03 07:31:48 PM | Q=1
+06/03 07:31:48 PM | REDUCTION_LAYERS=[1, 3]
+06/03 07:31:48 PM | RESIDUAL=residual
+06/03 07:31:48 PM | SEED=2
+06/03 07:31:48 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 07:31:48 PM | START_EPOCH=1
+06/03 07:31:48 PM | TASK_TRAIN_STEPS=5
+06/03 07:31:48 PM | TEST_ADAPT_STEPS=1.0
+06/03 07:31:48 PM | TEST_META_BATCH_SIZE=25
+06/03 07:31:48 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 07:31:48 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 07:31:48 PM | USE_FIRST_ORDER_DARTS=True
+06/03 07:31:48 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 07:31:48 PM | USE_HP_SETTING=1
+06/03 07:31:48 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 07:31:48 PM | USE_TORCHMETA_LOADER=True
+06/03 07:31:48 PM | USE_VINYALS_SPLIT=False
+06/03 07:31:48 PM | W_GRAD_CLIP=1000000.0
+06/03 07:31:48 PM | W_LR=0.005
+06/03 07:31:48 PM | W_META_ANNEAL=0
+06/03 07:31:48 PM | W_META_LR=1.0
+06/03 07:31:48 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:31:48 PM | W_MOMENTUM=0.0
+06/03 07:31:48 PM | W_TASK_ANNEAL=0
+06/03 07:31:48 PM | W_WEIGHT_DECAY=0.0
+06/03 07:31:48 PM | WARM_UP_EPOCHS=0
+06/03 07:31:48 PM | WORKERS=0
+06/03 07:31:48 PM | 
+06/03 07:32:30 PM | Start meta architecture search
+06/03 07:32:32 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 07:32:32 PM | 
+06/03 07:32:32 PM | Parameters:
+06/03 07:32:32 PM | A_META_ANNEAL=0
+06/03 07:32:32 PM | A_META_LR=0.6
+06/03 07:32:32 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:32:32 PM | A_TASK_ANNEAL=0
+06/03 07:32:32 PM | ALPHA_LR=0.005
+06/03 07:32:32 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 07:32:32 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 07:32:32 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 07:32:32 PM | BATCH_SIZE=20
+06/03 07:32:32 PM | BATCH_SIZE_TEST=10
+06/03 07:32:32 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 07:32:32 PM | DATASET=omniglot
+06/03 07:32:32 PM | DEVICE=cuda
+06/03 07:32:32 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 07:32:32 PM | DROP_PATH_PROB=0.2
+06/03 07:32:32 PM | EVAL=False
+06/03 07:32:32 PM | EVAL_EPOCHS=1
+06/03 07:32:32 PM | EVAL_FREQ=1000
+06/03 07:32:32 PM | EVAL_PREFIX=
+06/03 07:32:32 PM | GPUS=[0]
+06/03 07:32:32 PM | HP_SETTING=og_metanas
+06/03 07:32:32 PM | INIT_CHANNELS=28
+06/03 07:32:32 PM | JOB_ID=0
+06/03 07:32:32 PM | K=20
+06/03 07:32:32 PM | LAYERS=4
+06/03 07:32:32 PM | LOGGER=<Logger darts (INFO)>
+06/03 07:32:32 PM | LOSS_NN=loss_nn
+06/03 07:32:32 PM | LOSS_PROXY=mse
+06/03 07:32:32 PM | META_BATCH_SIZE=10
+06/03 07:32:32 PM | META_EPOCHS=20
+06/03 07:32:32 PM | META_MODEL=maml
+06/03 07:32:32 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 07:32:32 PM | MODEL_PATH=None
+06/03 07:32:32 PM | N=5
+06/03 07:32:32 PM | N_TRAIN=15
+06/03 07:32:32 PM | NAME=metatrain_og
+06/03 07:32:32 PM | NODES=3
+06/03 07:32:32 PM | NORMALIZER=softmax
+06/03 07:32:32 PM | NORMALIZER_T_MAX=1.0
+06/03 07:32:32 PM | NORMALIZER_T_MIN=0.05
+06/03 07:32:32 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 07:32:32 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 07:32:32 PM | PHI_GRAD_CLIP=1000000.0
+06/03 07:32:32 PM | PHI_LR=0.01
+06/03 07:32:32 PM | PHI_META_ANNEAL=1
+06/03 07:32:32 PM | PHI_META_LR=0.001
+06/03 07:32:32 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:32:32 PM | PHI_MOMENTUM=0.0
+06/03 07:32:32 PM | PHI_TASK_ANNEAL=0
+06/03 07:32:32 PM | PHI_WEIGHT_DECAY=0.0
+06/03 07:32:32 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 07:32:32 PM | PRETRAINED=pretrained
+06/03 07:32:32 PM | PRINT_FREQ=50
+06/03 07:32:32 PM | Q=1
+06/03 07:32:32 PM | REDUCTION_LAYERS=[1, 3]
+06/03 07:32:32 PM | RESIDUAL=residual
+06/03 07:32:32 PM | SEED=2
+06/03 07:32:32 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 07:32:32 PM | START_EPOCH=1
+06/03 07:32:32 PM | TASK_TRAIN_STEPS=5
+06/03 07:32:32 PM | TEST_ADAPT_STEPS=1.0
+06/03 07:32:32 PM | TEST_META_BATCH_SIZE=25
+06/03 07:32:32 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 07:32:32 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 07:32:32 PM | USE_FIRST_ORDER_DARTS=True
+06/03 07:32:32 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 07:32:32 PM | USE_HP_SETTING=1
+06/03 07:32:32 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 07:32:32 PM | USE_TORCHMETA_LOADER=True
+06/03 07:32:32 PM | USE_VINYALS_SPLIT=False
+06/03 07:32:32 PM | W_GRAD_CLIP=1000000.0
+06/03 07:32:32 PM | W_LR=0.005
+06/03 07:32:32 PM | W_META_ANNEAL=0
+06/03 07:32:32 PM | W_META_LR=1.0
+06/03 07:32:32 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:32:32 PM | W_MOMENTUM=0.0
+06/03 07:32:32 PM | W_TASK_ANNEAL=0
+06/03 07:32:32 PM | W_WEIGHT_DECAY=0.0
+06/03 07:32:32 PM | WARM_UP_EPOCHS=0
+06/03 07:32:32 PM | WORKERS=0
+06/03 07:32:32 PM | 
+06/03 07:44:29 PM | train steps for evaluation:50 
+06/03 07:47:26 PM | Start meta architecture search
+06/03 07:47:28 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 07:47:28 PM | 
+06/03 07:47:28 PM | Parameters:
+06/03 07:47:28 PM | A_META_ANNEAL=0
+06/03 07:47:28 PM | A_META_LR=0.6
+06/03 07:47:28 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:47:28 PM | A_TASK_ANNEAL=0
+06/03 07:47:28 PM | ALPHA_LR=0.005
+06/03 07:47:28 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 07:47:28 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 07:47:28 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 07:47:28 PM | BATCH_SIZE=20
+06/03 07:47:28 PM | BATCH_SIZE_TEST=10
+06/03 07:47:28 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 07:47:28 PM | DATASET=omniglot
+06/03 07:47:28 PM | DEVICE=cuda
+06/03 07:47:28 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 07:47:28 PM | DROP_PATH_PROB=0.2
+06/03 07:47:28 PM | EVAL=False
+06/03 07:47:28 PM | EVAL_EPOCHS=1
+06/03 07:47:28 PM | EVAL_FREQ=1000
+06/03 07:47:28 PM | EVAL_PREFIX=
+06/03 07:47:28 PM | GPUS=[0]
+06/03 07:47:28 PM | HP_SETTING=og_metanas
+06/03 07:47:28 PM | INIT_CHANNELS=28
+06/03 07:47:28 PM | JOB_ID=0
+06/03 07:47:28 PM | K=20
+06/03 07:47:28 PM | LAYERS=4
+06/03 07:47:28 PM | LOGGER=<Logger darts (INFO)>
+06/03 07:47:28 PM | LOSS_NN=loss_nn
+06/03 07:47:28 PM | LOSS_PROXY=mse
+06/03 07:47:28 PM | META_BATCH_SIZE=10
+06/03 07:47:28 PM | META_EPOCHS=20
+06/03 07:47:28 PM | META_MODEL=maml
+06/03 07:47:28 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 07:47:28 PM | MODEL_PATH=None
+06/03 07:47:28 PM | N=5
+06/03 07:47:28 PM | N_TRAIN=15
+06/03 07:47:28 PM | NAME=metatrain_og
+06/03 07:47:28 PM | NODES=3
+06/03 07:47:28 PM | NORMALIZER=softmax
+06/03 07:47:28 PM | NORMALIZER_T_MAX=1.0
+06/03 07:47:28 PM | NORMALIZER_T_MIN=0.05
+06/03 07:47:28 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 07:47:28 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 07:47:28 PM | PHI_GRAD_CLIP=1000000.0
+06/03 07:47:28 PM | PHI_LR=0.01
+06/03 07:47:28 PM | PHI_META_ANNEAL=1
+06/03 07:47:28 PM | PHI_META_LR=0.001
+06/03 07:47:28 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:47:28 PM | PHI_MOMENTUM=0.0
+06/03 07:47:28 PM | PHI_TASK_ANNEAL=0
+06/03 07:47:28 PM | PHI_WEIGHT_DECAY=0.0
+06/03 07:47:28 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 07:47:28 PM | PRETRAINED=pretrained
+06/03 07:47:28 PM | PRINT_FREQ=50
+06/03 07:47:28 PM | Q=1
+06/03 07:47:28 PM | REDUCTION_LAYERS=[1, 3]
+06/03 07:47:28 PM | RESIDUAL=residual
+06/03 07:47:28 PM | SEED=2
+06/03 07:47:28 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 07:47:28 PM | START_EPOCH=1
+06/03 07:47:28 PM | TASK_TRAIN_STEPS=5
+06/03 07:47:28 PM | TEST_ADAPT_STEPS=1.0
+06/03 07:47:28 PM | TEST_META_BATCH_SIZE=25
+06/03 07:47:28 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 07:47:28 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 07:47:28 PM | USE_FIRST_ORDER_DARTS=True
+06/03 07:47:28 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 07:47:28 PM | USE_HP_SETTING=1
+06/03 07:47:28 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 07:47:28 PM | USE_TORCHMETA_LOADER=True
+06/03 07:47:28 PM | USE_VINYALS_SPLIT=False
+06/03 07:47:28 PM | W_GRAD_CLIP=1000000.0
+06/03 07:47:28 PM | W_LR=0.005
+06/03 07:47:28 PM | W_META_ANNEAL=0
+06/03 07:47:28 PM | W_META_LR=1.0
+06/03 07:47:28 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:47:28 PM | W_MOMENTUM=0.0
+06/03 07:47:28 PM | W_TASK_ANNEAL=0
+06/03 07:47:28 PM | W_WEIGHT_DECAY=0.0
+06/03 07:47:28 PM | WARM_UP_EPOCHS=0
+06/03 07:47:28 PM | WORKERS=0
+06/03 07:47:28 PM | 
+06/03 07:50:48 PM | Start meta architecture search
+06/03 07:50:50 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 07:50:50 PM | 
+06/03 07:50:50 PM | Parameters:
+06/03 07:50:50 PM | A_META_ANNEAL=0
+06/03 07:50:50 PM | A_META_LR=0.6
+06/03 07:50:50 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:50:50 PM | A_TASK_ANNEAL=0
+06/03 07:50:50 PM | ALPHA_LR=0.005
+06/03 07:50:50 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 07:50:50 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 07:50:50 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 07:50:50 PM | BATCH_SIZE=20
+06/03 07:50:50 PM | BATCH_SIZE_TEST=10
+06/03 07:50:50 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 07:50:50 PM | DATASET=omniglot
+06/03 07:50:50 PM | DEVICE=cuda
+06/03 07:50:50 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 07:50:50 PM | DROP_PATH_PROB=0.2
+06/03 07:50:50 PM | EVAL=False
+06/03 07:50:50 PM | EVAL_EPOCHS=1
+06/03 07:50:50 PM | EVAL_FREQ=1000
+06/03 07:50:50 PM | EVAL_PREFIX=
+06/03 07:50:50 PM | GPUS=[0]
+06/03 07:50:50 PM | HP_SETTING=og_metanas
+06/03 07:50:50 PM | INIT_CHANNELS=28
+06/03 07:50:50 PM | JOB_ID=0
+06/03 07:50:50 PM | K=20
+06/03 07:50:50 PM | LAYERS=4
+06/03 07:50:50 PM | LOGGER=<Logger darts (INFO)>
+06/03 07:50:50 PM | LOSS_NN=loss_nn
+06/03 07:50:50 PM | LOSS_PROXY=mse
+06/03 07:50:50 PM | META_BATCH_SIZE=10
+06/03 07:50:50 PM | META_EPOCHS=20
+06/03 07:50:50 PM | META_MODEL=maml
+06/03 07:50:50 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 07:50:50 PM | MODEL_PATH=None
+06/03 07:50:50 PM | N=5
+06/03 07:50:50 PM | N_TRAIN=15
+06/03 07:50:50 PM | NAME=metatrain_og
+06/03 07:50:50 PM | NODES=3
+06/03 07:50:50 PM | NORMALIZER=softmax
+06/03 07:50:50 PM | NORMALIZER_T_MAX=1.0
+06/03 07:50:50 PM | NORMALIZER_T_MIN=0.05
+06/03 07:50:50 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 07:50:50 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 07:50:50 PM | PHI_GRAD_CLIP=1000000.0
+06/03 07:50:50 PM | PHI_LR=0.01
+06/03 07:50:50 PM | PHI_META_ANNEAL=1
+06/03 07:50:50 PM | PHI_META_LR=0.001
+06/03 07:50:50 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:50:50 PM | PHI_MOMENTUM=0.0
+06/03 07:50:50 PM | PHI_TASK_ANNEAL=0
+06/03 07:50:50 PM | PHI_WEIGHT_DECAY=0.0
+06/03 07:50:50 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 07:50:50 PM | PRETRAINED=pretrained
+06/03 07:50:50 PM | PRINT_FREQ=50
+06/03 07:50:50 PM | Q=1
+06/03 07:50:50 PM | REDUCTION_LAYERS=[1, 3]
+06/03 07:50:50 PM | RESIDUAL=residual
+06/03 07:50:50 PM | SEED=2
+06/03 07:50:50 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 07:50:50 PM | START_EPOCH=1
+06/03 07:50:50 PM | TASK_TRAIN_STEPS=5
+06/03 07:50:50 PM | TEST_ADAPT_STEPS=1.0
+06/03 07:50:50 PM | TEST_META_BATCH_SIZE=25
+06/03 07:50:50 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 07:50:50 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 07:50:50 PM | USE_FIRST_ORDER_DARTS=True
+06/03 07:50:50 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 07:50:50 PM | USE_HP_SETTING=1
+06/03 07:50:50 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 07:50:50 PM | USE_TORCHMETA_LOADER=True
+06/03 07:50:50 PM | USE_VINYALS_SPLIT=False
+06/03 07:50:50 PM | W_GRAD_CLIP=1000000.0
+06/03 07:50:50 PM | W_LR=0.005
+06/03 07:50:50 PM | W_META_ANNEAL=0
+06/03 07:50:50 PM | W_META_LR=1.0
+06/03 07:50:50 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:50:50 PM | W_MOMENTUM=0.0
+06/03 07:50:50 PM | W_TASK_ANNEAL=0
+06/03 07:50:50 PM | W_WEIGHT_DECAY=0.0
+06/03 07:50:50 PM | WARM_UP_EPOCHS=0
+06/03 07:50:50 PM | WORKERS=0
+06/03 07:50:50 PM | 
+06/03 07:51:32 PM | Start meta architecture search
+06/03 07:51:34 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 07:51:34 PM | 
+06/03 07:51:34 PM | Parameters:
+06/03 07:51:34 PM | A_META_ANNEAL=0
+06/03 07:51:34 PM | A_META_LR=0.6
+06/03 07:51:34 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:51:34 PM | A_TASK_ANNEAL=0
+06/03 07:51:34 PM | ALPHA_LR=0.005
+06/03 07:51:34 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 07:51:34 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 07:51:34 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 07:51:34 PM | BATCH_SIZE=20
+06/03 07:51:34 PM | BATCH_SIZE_TEST=10
+06/03 07:51:34 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 07:51:34 PM | DATASET=omniglot
+06/03 07:51:34 PM | DEVICE=cuda
+06/03 07:51:34 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 07:51:34 PM | DROP_PATH_PROB=0.2
+06/03 07:51:34 PM | EVAL=False
+06/03 07:51:34 PM | EVAL_EPOCHS=1
+06/03 07:51:34 PM | EVAL_FREQ=1000
+06/03 07:51:34 PM | EVAL_PREFIX=
+06/03 07:51:34 PM | GPUS=[0]
+06/03 07:51:34 PM | HP_SETTING=og_metanas
+06/03 07:51:34 PM | INIT_CHANNELS=28
+06/03 07:51:34 PM | JOB_ID=0
+06/03 07:51:34 PM | K=20
+06/03 07:51:34 PM | LAYERS=4
+06/03 07:51:34 PM | LOGGER=<Logger darts (INFO)>
+06/03 07:51:34 PM | LOSS_NN=loss_nn
+06/03 07:51:34 PM | LOSS_PROXY=mse
+06/03 07:51:34 PM | META_BATCH_SIZE=10
+06/03 07:51:34 PM | META_EPOCHS=20
+06/03 07:51:34 PM | META_MODEL=maml
+06/03 07:51:34 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 07:51:34 PM | MODEL_PATH=None
+06/03 07:51:34 PM | N=5
+06/03 07:51:34 PM | N_TRAIN=15
+06/03 07:51:34 PM | NAME=metatrain_og
+06/03 07:51:34 PM | NODES=3
+06/03 07:51:34 PM | NORMALIZER=softmax
+06/03 07:51:34 PM | NORMALIZER_T_MAX=1.0
+06/03 07:51:34 PM | NORMALIZER_T_MIN=0.05
+06/03 07:51:34 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 07:51:34 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 07:51:34 PM | PHI_GRAD_CLIP=1000000.0
+06/03 07:51:34 PM | PHI_LR=0.01
+06/03 07:51:34 PM | PHI_META_ANNEAL=1
+06/03 07:51:34 PM | PHI_META_LR=0.001
+06/03 07:51:34 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:51:34 PM | PHI_MOMENTUM=0.0
+06/03 07:51:34 PM | PHI_TASK_ANNEAL=0
+06/03 07:51:34 PM | PHI_WEIGHT_DECAY=0.0
+06/03 07:51:34 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 07:51:34 PM | PRETRAINED=pretrained
+06/03 07:51:34 PM | PRINT_FREQ=50
+06/03 07:51:34 PM | Q=1
+06/03 07:51:34 PM | REDUCTION_LAYERS=[1, 3]
+06/03 07:51:34 PM | RESIDUAL=residual
+06/03 07:51:34 PM | SEED=2
+06/03 07:51:34 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 07:51:34 PM | START_EPOCH=1
+06/03 07:51:34 PM | TASK_TRAIN_STEPS=5
+06/03 07:51:34 PM | TEST_ADAPT_STEPS=1.0
+06/03 07:51:34 PM | TEST_META_BATCH_SIZE=25
+06/03 07:51:34 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 07:51:34 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 07:51:34 PM | USE_FIRST_ORDER_DARTS=True
+06/03 07:51:34 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 07:51:34 PM | USE_HP_SETTING=1
+06/03 07:51:34 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 07:51:34 PM | USE_TORCHMETA_LOADER=True
+06/03 07:51:34 PM | USE_VINYALS_SPLIT=False
+06/03 07:51:34 PM | W_GRAD_CLIP=1000000.0
+06/03 07:51:34 PM | W_LR=0.005
+06/03 07:51:34 PM | W_META_ANNEAL=0
+06/03 07:51:34 PM | W_META_LR=1.0
+06/03 07:51:34 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:51:34 PM | W_MOMENTUM=0.0
+06/03 07:51:34 PM | W_TASK_ANNEAL=0
+06/03 07:51:34 PM | W_WEIGHT_DECAY=0.0
+06/03 07:51:34 PM | WARM_UP_EPOCHS=0
+06/03 07:51:34 PM | WORKERS=0
+06/03 07:51:34 PM | 
+06/03 07:57:29 PM | Start meta architecture search
+06/03 07:57:31 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 07:57:31 PM | 
+06/03 07:57:31 PM | Parameters:
+06/03 07:57:31 PM | A_META_ANNEAL=0
+06/03 07:57:31 PM | A_META_LR=0.6
+06/03 07:57:31 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:57:31 PM | A_TASK_ANNEAL=0
+06/03 07:57:31 PM | ALPHA_LR=0.005
+06/03 07:57:31 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 07:57:31 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 07:57:31 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 07:57:31 PM | BATCH_SIZE=20
+06/03 07:57:31 PM | BATCH_SIZE_TEST=10
+06/03 07:57:31 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 07:57:31 PM | DATASET=omniglot
+06/03 07:57:31 PM | DEVICE=cuda
+06/03 07:57:31 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 07:57:31 PM | DROP_PATH_PROB=0.2
+06/03 07:57:31 PM | EVAL=False
+06/03 07:57:31 PM | EVAL_EPOCHS=1
+06/03 07:57:31 PM | EVAL_FREQ=1000
+06/03 07:57:31 PM | EVAL_PREFIX=
+06/03 07:57:31 PM | GPUS=[0]
+06/03 07:57:31 PM | HP_SETTING=og_metanas
+06/03 07:57:31 PM | INIT_CHANNELS=28
+06/03 07:57:31 PM | JOB_ID=0
+06/03 07:57:31 PM | K=20
+06/03 07:57:31 PM | LAYERS=4
+06/03 07:57:31 PM | LOGGER=<Logger darts (INFO)>
+06/03 07:57:31 PM | LOSS_NN=loss_nn
+06/03 07:57:31 PM | LOSS_PROXY=mse
+06/03 07:57:31 PM | META_BATCH_SIZE=10
+06/03 07:57:31 PM | META_EPOCHS=20
+06/03 07:57:31 PM | META_MODEL=maml
+06/03 07:57:31 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 07:57:31 PM | MODEL_PATH=None
+06/03 07:57:31 PM | N=5
+06/03 07:57:31 PM | N_TRAIN=15
+06/03 07:57:31 PM | NAME=metatrain_og
+06/03 07:57:31 PM | NODES=3
+06/03 07:57:31 PM | NORMALIZER=softmax
+06/03 07:57:31 PM | NORMALIZER_T_MAX=1.0
+06/03 07:57:31 PM | NORMALIZER_T_MIN=0.05
+06/03 07:57:31 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 07:57:31 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 07:57:31 PM | PHI_GRAD_CLIP=1000000.0
+06/03 07:57:31 PM | PHI_LR=0.01
+06/03 07:57:31 PM | PHI_META_ANNEAL=1
+06/03 07:57:31 PM | PHI_META_LR=0.001
+06/03 07:57:31 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:57:31 PM | PHI_MOMENTUM=0.0
+06/03 07:57:31 PM | PHI_TASK_ANNEAL=0
+06/03 07:57:31 PM | PHI_WEIGHT_DECAY=0.0
+06/03 07:57:31 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 07:57:31 PM | PRETRAINED=pretrained
+06/03 07:57:31 PM | PRINT_FREQ=50
+06/03 07:57:31 PM | Q=1
+06/03 07:57:31 PM | REDUCTION_LAYERS=[1, 3]
+06/03 07:57:31 PM | RESIDUAL=residual
+06/03 07:57:31 PM | SEED=2
+06/03 07:57:31 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 07:57:31 PM | START_EPOCH=1
+06/03 07:57:31 PM | TASK_TRAIN_STEPS=5
+06/03 07:57:31 PM | TEST_ADAPT_STEPS=1.0
+06/03 07:57:31 PM | TEST_META_BATCH_SIZE=25
+06/03 07:57:31 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 07:57:31 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 07:57:31 PM | USE_FIRST_ORDER_DARTS=True
+06/03 07:57:31 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 07:57:31 PM | USE_HP_SETTING=1
+06/03 07:57:31 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 07:57:31 PM | USE_TORCHMETA_LOADER=True
+06/03 07:57:31 PM | USE_VINYALS_SPLIT=False
+06/03 07:57:31 PM | W_GRAD_CLIP=1000000.0
+06/03 07:57:31 PM | W_LR=0.005
+06/03 07:57:31 PM | W_META_ANNEAL=0
+06/03 07:57:31 PM | W_META_LR=1.0
+06/03 07:57:31 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:57:31 PM | W_MOMENTUM=0.0
+06/03 07:57:31 PM | W_TASK_ANNEAL=0
+06/03 07:57:31 PM | W_WEIGHT_DECAY=0.0
+06/03 07:57:31 PM | WARM_UP_EPOCHS=0
+06/03 07:57:31 PM | WORKERS=0
+06/03 07:57:31 PM | 
+06/03 07:58:30 PM | Start meta architecture search
+06/03 07:58:32 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 07:58:32 PM | 
+06/03 07:58:32 PM | Parameters:
+06/03 07:58:32 PM | A_META_ANNEAL=0
+06/03 07:58:32 PM | A_META_LR=0.6
+06/03 07:58:32 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:58:32 PM | A_TASK_ANNEAL=0
+06/03 07:58:32 PM | ALPHA_LR=0.005
+06/03 07:58:32 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 07:58:32 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 07:58:32 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 07:58:32 PM | BATCH_SIZE=20
+06/03 07:58:32 PM | BATCH_SIZE_TEST=10
+06/03 07:58:32 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 07:58:32 PM | DATASET=omniglot
+06/03 07:58:32 PM | DEVICE=cuda
+06/03 07:58:32 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 07:58:32 PM | DROP_PATH_PROB=0.2
+06/03 07:58:32 PM | EVAL=False
+06/03 07:58:32 PM | EVAL_EPOCHS=1
+06/03 07:58:32 PM | EVAL_FREQ=1000
+06/03 07:58:32 PM | EVAL_PREFIX=
+06/03 07:58:32 PM | GPUS=[0]
+06/03 07:58:32 PM | HP_SETTING=og_metanas
+06/03 07:58:32 PM | INIT_CHANNELS=28
+06/03 07:58:32 PM | JOB_ID=0
+06/03 07:58:32 PM | K=20
+06/03 07:58:32 PM | LAYERS=4
+06/03 07:58:32 PM | LOGGER=<Logger darts (INFO)>
+06/03 07:58:32 PM | LOSS_NN=loss_nn
+06/03 07:58:32 PM | LOSS_PROXY=mse
+06/03 07:58:32 PM | META_BATCH_SIZE=10
+06/03 07:58:32 PM | META_EPOCHS=20
+06/03 07:58:32 PM | META_MODEL=maml
+06/03 07:58:32 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 07:58:32 PM | MODEL_PATH=None
+06/03 07:58:32 PM | N=5
+06/03 07:58:32 PM | N_TRAIN=15
+06/03 07:58:32 PM | NAME=metatrain_og
+06/03 07:58:32 PM | NODES=3
+06/03 07:58:32 PM | NORMALIZER=softmax
+06/03 07:58:32 PM | NORMALIZER_T_MAX=1.0
+06/03 07:58:32 PM | NORMALIZER_T_MIN=0.05
+06/03 07:58:32 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 07:58:32 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 07:58:32 PM | PHI_GRAD_CLIP=1000000.0
+06/03 07:58:32 PM | PHI_LR=0.01
+06/03 07:58:32 PM | PHI_META_ANNEAL=1
+06/03 07:58:32 PM | PHI_META_LR=0.001
+06/03 07:58:32 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:58:32 PM | PHI_MOMENTUM=0.0
+06/03 07:58:32 PM | PHI_TASK_ANNEAL=0
+06/03 07:58:32 PM | PHI_WEIGHT_DECAY=0.0
+06/03 07:58:32 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 07:58:32 PM | PRETRAINED=pretrained
+06/03 07:58:32 PM | PRINT_FREQ=50
+06/03 07:58:32 PM | Q=1
+06/03 07:58:32 PM | REDUCTION_LAYERS=[1, 3]
+06/03 07:58:32 PM | RESIDUAL=residual
+06/03 07:58:32 PM | SEED=2
+06/03 07:58:32 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 07:58:32 PM | START_EPOCH=1
+06/03 07:58:32 PM | TASK_TRAIN_STEPS=5
+06/03 07:58:32 PM | TEST_ADAPT_STEPS=1.0
+06/03 07:58:32 PM | TEST_META_BATCH_SIZE=25
+06/03 07:58:32 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 07:58:32 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 07:58:32 PM | USE_FIRST_ORDER_DARTS=True
+06/03 07:58:32 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 07:58:32 PM | USE_HP_SETTING=1
+06/03 07:58:32 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 07:58:32 PM | USE_TORCHMETA_LOADER=True
+06/03 07:58:32 PM | USE_VINYALS_SPLIT=False
+06/03 07:58:32 PM | W_GRAD_CLIP=1000000.0
+06/03 07:58:32 PM | W_LR=0.005
+06/03 07:58:32 PM | W_META_ANNEAL=0
+06/03 07:58:32 PM | W_META_LR=1.0
+06/03 07:58:32 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 07:58:32 PM | W_MOMENTUM=0.0
+06/03 07:58:32 PM | W_TASK_ANNEAL=0
+06/03 07:58:32 PM | W_WEIGHT_DECAY=0.0
+06/03 07:58:32 PM | WARM_UP_EPOCHS=0
+06/03 07:58:32 PM | WORKERS=0
+06/03 07:58:32 PM | 
+06/03 08:02:15 PM | Start meta architecture search
+06/03 08:02:17 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 08:02:17 PM | 
+06/03 08:02:17 PM | Parameters:
+06/03 08:02:17 PM | A_META_ANNEAL=0
+06/03 08:02:17 PM | A_META_LR=0.6
+06/03 08:02:17 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:02:17 PM | A_TASK_ANNEAL=0
+06/03 08:02:17 PM | ALPHA_LR=0.005
+06/03 08:02:17 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 08:02:17 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 08:02:17 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 08:02:17 PM | BATCH_SIZE=20
+06/03 08:02:17 PM | BATCH_SIZE_TEST=10
+06/03 08:02:17 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 08:02:17 PM | DATASET=omniglot
+06/03 08:02:17 PM | DEVICE=cuda
+06/03 08:02:17 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 08:02:17 PM | DROP_PATH_PROB=0.2
+06/03 08:02:17 PM | EVAL=False
+06/03 08:02:17 PM | EVAL_EPOCHS=1
+06/03 08:02:17 PM | EVAL_FREQ=1000
+06/03 08:02:17 PM | EVAL_PREFIX=
+06/03 08:02:17 PM | GPUS=[0]
+06/03 08:02:17 PM | HP_SETTING=og_metanas
+06/03 08:02:17 PM | INIT_CHANNELS=28
+06/03 08:02:17 PM | JOB_ID=0
+06/03 08:02:17 PM | K=20
+06/03 08:02:17 PM | LAYERS=4
+06/03 08:02:17 PM | LOGGER=<Logger darts (INFO)>
+06/03 08:02:17 PM | LOSS_NN=loss_nn
+06/03 08:02:17 PM | LOSS_PROXY=mse
+06/03 08:02:17 PM | META_BATCH_SIZE=10
+06/03 08:02:17 PM | META_EPOCHS=20
+06/03 08:02:17 PM | META_MODEL=maml
+06/03 08:02:17 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 08:02:17 PM | MODEL_PATH=None
+06/03 08:02:17 PM | N=5
+06/03 08:02:17 PM | N_TRAIN=15
+06/03 08:02:17 PM | NAME=metatrain_og
+06/03 08:02:17 PM | NODES=3
+06/03 08:02:17 PM | NORMALIZER=softmax
+06/03 08:02:17 PM | NORMALIZER_T_MAX=1.0
+06/03 08:02:17 PM | NORMALIZER_T_MIN=0.05
+06/03 08:02:17 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 08:02:17 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 08:02:17 PM | PHI_GRAD_CLIP=1000000.0
+06/03 08:02:17 PM | PHI_LR=0.01
+06/03 08:02:17 PM | PHI_META_ANNEAL=1
+06/03 08:02:17 PM | PHI_META_LR=0.001
+06/03 08:02:17 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:02:17 PM | PHI_MOMENTUM=0.0
+06/03 08:02:17 PM | PHI_TASK_ANNEAL=0
+06/03 08:02:17 PM | PHI_WEIGHT_DECAY=0.0
+06/03 08:02:17 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 08:02:17 PM | PRETRAINED=pretrained
+06/03 08:02:17 PM | PRINT_FREQ=50
+06/03 08:02:17 PM | Q=1
+06/03 08:02:17 PM | REDUCTION_LAYERS=[1, 3]
+06/03 08:02:17 PM | RESIDUAL=residual
+06/03 08:02:17 PM | SEED=2
+06/03 08:02:17 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 08:02:17 PM | START_EPOCH=1
+06/03 08:02:17 PM | TASK_TRAIN_STEPS=5
+06/03 08:02:17 PM | TEST_ADAPT_STEPS=1.0
+06/03 08:02:17 PM | TEST_META_BATCH_SIZE=25
+06/03 08:02:17 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 08:02:17 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 08:02:17 PM | USE_FIRST_ORDER_DARTS=True
+06/03 08:02:17 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 08:02:17 PM | USE_HP_SETTING=1
+06/03 08:02:17 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 08:02:17 PM | USE_TORCHMETA_LOADER=True
+06/03 08:02:17 PM | USE_VINYALS_SPLIT=False
+06/03 08:02:17 PM | W_GRAD_CLIP=1000000.0
+06/03 08:02:17 PM | W_LR=0.005
+06/03 08:02:17 PM | W_META_ANNEAL=0
+06/03 08:02:17 PM | W_META_LR=1.0
+06/03 08:02:17 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:02:17 PM | W_MOMENTUM=0.0
+06/03 08:02:17 PM | W_TASK_ANNEAL=0
+06/03 08:02:17 PM | W_WEIGHT_DECAY=0.0
+06/03 08:02:17 PM | WARM_UP_EPOCHS=0
+06/03 08:02:17 PM | WORKERS=0
+06/03 08:02:17 PM | 
+06/03 08:09:41 PM | Start meta architecture search
+06/03 08:09:43 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 08:09:43 PM | 
+06/03 08:09:43 PM | Parameters:
+06/03 08:09:43 PM | A_META_ANNEAL=0
+06/03 08:09:43 PM | A_META_LR=0.6
+06/03 08:09:43 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:09:43 PM | A_TASK_ANNEAL=0
+06/03 08:09:43 PM | ALPHA_LR=0.005
+06/03 08:09:43 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 08:09:43 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 08:09:43 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 08:09:43 PM | BATCH_SIZE=20
+06/03 08:09:43 PM | BATCH_SIZE_TEST=10
+06/03 08:09:43 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 08:09:43 PM | DATASET=omniglot
+06/03 08:09:43 PM | DEVICE=cuda
+06/03 08:09:43 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 08:09:43 PM | DROP_PATH_PROB=0.2
+06/03 08:09:43 PM | EVAL=False
+06/03 08:09:43 PM | EVAL_EPOCHS=1
+06/03 08:09:43 PM | EVAL_FREQ=1000
+06/03 08:09:43 PM | EVAL_PREFIX=
+06/03 08:09:43 PM | GPUS=[0]
+06/03 08:09:43 PM | HP_SETTING=og_metanas
+06/03 08:09:43 PM | INIT_CHANNELS=28
+06/03 08:09:43 PM | JOB_ID=0
+06/03 08:09:43 PM | K=20
+06/03 08:09:43 PM | LAYERS=4
+06/03 08:09:43 PM | LOGGER=<Logger darts (INFO)>
+06/03 08:09:43 PM | LOSS_NN=loss_nn
+06/03 08:09:43 PM | LOSS_PROXY=mse
+06/03 08:09:43 PM | META_BATCH_SIZE=10
+06/03 08:09:43 PM | META_EPOCHS=20
+06/03 08:09:43 PM | META_MODEL=maml
+06/03 08:09:43 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 08:09:43 PM | MODEL_PATH=None
+06/03 08:09:43 PM | N=5
+06/03 08:09:43 PM | N_TRAIN=15
+06/03 08:09:43 PM | NAME=metatrain_og
+06/03 08:09:43 PM | NODES=3
+06/03 08:09:43 PM | NORMALIZER=softmax
+06/03 08:09:43 PM | NORMALIZER_T_MAX=1.0
+06/03 08:09:43 PM | NORMALIZER_T_MIN=0.05
+06/03 08:09:43 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 08:09:43 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 08:09:43 PM | PHI_GRAD_CLIP=1000000.0
+06/03 08:09:43 PM | PHI_LR=0.01
+06/03 08:09:43 PM | PHI_META_ANNEAL=1
+06/03 08:09:43 PM | PHI_META_LR=0.001
+06/03 08:09:43 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:09:43 PM | PHI_MOMENTUM=0.0
+06/03 08:09:43 PM | PHI_TASK_ANNEAL=0
+06/03 08:09:43 PM | PHI_WEIGHT_DECAY=0.0
+06/03 08:09:43 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 08:09:43 PM | PRETRAINED=pretrained
+06/03 08:09:43 PM | PRINT_FREQ=50
+06/03 08:09:43 PM | Q=1
+06/03 08:09:43 PM | REDUCTION_LAYERS=[1, 3]
+06/03 08:09:43 PM | RESIDUAL=residual
+06/03 08:09:43 PM | SEED=2
+06/03 08:09:43 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 08:09:43 PM | START_EPOCH=1
+06/03 08:09:43 PM | TASK_TRAIN_STEPS=5
+06/03 08:09:43 PM | TEST_ADAPT_STEPS=1.0
+06/03 08:09:43 PM | TEST_META_BATCH_SIZE=25
+06/03 08:09:43 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 08:09:43 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 08:09:43 PM | USE_FIRST_ORDER_DARTS=True
+06/03 08:09:43 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 08:09:43 PM | USE_HP_SETTING=1
+06/03 08:09:43 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 08:09:43 PM | USE_TORCHMETA_LOADER=True
+06/03 08:09:43 PM | USE_VINYALS_SPLIT=False
+06/03 08:09:43 PM | W_GRAD_CLIP=1000000.0
+06/03 08:09:43 PM | W_LR=0.005
+06/03 08:09:43 PM | W_META_ANNEAL=0
+06/03 08:09:43 PM | W_META_LR=1.0
+06/03 08:09:43 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:09:43 PM | W_MOMENTUM=0.0
+06/03 08:09:43 PM | W_TASK_ANNEAL=0
+06/03 08:09:43 PM | W_WEIGHT_DECAY=0.0
+06/03 08:09:43 PM | WARM_UP_EPOCHS=0
+06/03 08:09:43 PM | WORKERS=0
+06/03 08:09:43 PM | 
+06/03 08:13:12 PM | Start meta architecture search
+06/03 08:13:14 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 08:13:14 PM | 
+06/03 08:13:14 PM | Parameters:
+06/03 08:13:14 PM | A_META_ANNEAL=0
+06/03 08:13:14 PM | A_META_LR=0.6
+06/03 08:13:14 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:13:14 PM | A_TASK_ANNEAL=0
+06/03 08:13:14 PM | ALPHA_LR=0.005
+06/03 08:13:14 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 08:13:14 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 08:13:14 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 08:13:14 PM | BATCH_SIZE=20
+06/03 08:13:14 PM | BATCH_SIZE_TEST=10
+06/03 08:13:14 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 08:13:14 PM | DATASET=omniglot
+06/03 08:13:14 PM | DEVICE=cuda
+06/03 08:13:14 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 08:13:14 PM | DROP_PATH_PROB=0.2
+06/03 08:13:14 PM | EVAL=False
+06/03 08:13:14 PM | EVAL_EPOCHS=1
+06/03 08:13:14 PM | EVAL_FREQ=1000
+06/03 08:13:14 PM | EVAL_PREFIX=
+06/03 08:13:14 PM | GPUS=[0]
+06/03 08:13:14 PM | HP_SETTING=og_metanas
+06/03 08:13:14 PM | INIT_CHANNELS=28
+06/03 08:13:14 PM | JOB_ID=0
+06/03 08:13:14 PM | K=20
+06/03 08:13:14 PM | LAYERS=4
+06/03 08:13:14 PM | LOGGER=<Logger darts (INFO)>
+06/03 08:13:14 PM | LOSS_NN=loss_nn
+06/03 08:13:14 PM | LOSS_PROXY=mse
+06/03 08:13:14 PM | META_BATCH_SIZE=10
+06/03 08:13:14 PM | META_EPOCHS=20
+06/03 08:13:14 PM | META_MODEL=maml
+06/03 08:13:14 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 08:13:14 PM | MODEL_PATH=None
+06/03 08:13:14 PM | N=5
+06/03 08:13:14 PM | N_TRAIN=15
+06/03 08:13:14 PM | NAME=metatrain_og
+06/03 08:13:14 PM | NODES=3
+06/03 08:13:14 PM | NORMALIZER=softmax
+06/03 08:13:14 PM | NORMALIZER_T_MAX=1.0
+06/03 08:13:14 PM | NORMALIZER_T_MIN=0.05
+06/03 08:13:14 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 08:13:14 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 08:13:14 PM | PHI_GRAD_CLIP=1000000.0
+06/03 08:13:14 PM | PHI_LR=0.01
+06/03 08:13:14 PM | PHI_META_ANNEAL=1
+06/03 08:13:14 PM | PHI_META_LR=0.001
+06/03 08:13:14 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:13:14 PM | PHI_MOMENTUM=0.0
+06/03 08:13:14 PM | PHI_TASK_ANNEAL=0
+06/03 08:13:14 PM | PHI_WEIGHT_DECAY=0.0
+06/03 08:13:14 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 08:13:14 PM | PRETRAINED=pretrained
+06/03 08:13:14 PM | PRINT_FREQ=50
+06/03 08:13:14 PM | Q=1
+06/03 08:13:14 PM | REDUCTION_LAYERS=[1, 3]
+06/03 08:13:14 PM | RESIDUAL=residual
+06/03 08:13:14 PM | SEED=2
+06/03 08:13:14 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 08:13:14 PM | START_EPOCH=1
+06/03 08:13:14 PM | TASK_TRAIN_STEPS=5
+06/03 08:13:14 PM | TEST_ADAPT_STEPS=1.0
+06/03 08:13:14 PM | TEST_META_BATCH_SIZE=25
+06/03 08:13:14 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 08:13:14 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 08:13:14 PM | USE_FIRST_ORDER_DARTS=True
+06/03 08:13:14 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 08:13:14 PM | USE_HP_SETTING=1
+06/03 08:13:14 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 08:13:14 PM | USE_TORCHMETA_LOADER=True
+06/03 08:13:14 PM | USE_VINYALS_SPLIT=False
+06/03 08:13:14 PM | W_GRAD_CLIP=1000000.0
+06/03 08:13:14 PM | W_LR=0.005
+06/03 08:13:14 PM | W_META_ANNEAL=0
+06/03 08:13:14 PM | W_META_LR=1.0
+06/03 08:13:14 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:13:14 PM | W_MOMENTUM=0.0
+06/03 08:13:14 PM | W_TASK_ANNEAL=0
+06/03 08:13:14 PM | W_WEIGHT_DECAY=0.0
+06/03 08:13:14 PM | WARM_UP_EPOCHS=0
+06/03 08:13:14 PM | WORKERS=0
+06/03 08:13:14 PM | 
+06/03 08:18:08 PM | Start meta architecture search
+06/03 08:18:10 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 08:18:10 PM | 
+06/03 08:18:10 PM | Parameters:
+06/03 08:18:10 PM | A_META_ANNEAL=0
+06/03 08:18:10 PM | A_META_LR=0.6
+06/03 08:18:10 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:18:10 PM | A_TASK_ANNEAL=0
+06/03 08:18:10 PM | ALPHA_LR=0.005
+06/03 08:18:10 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 08:18:10 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 08:18:10 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 08:18:10 PM | BATCH_SIZE=20
+06/03 08:18:10 PM | BATCH_SIZE_TEST=10
+06/03 08:18:10 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 08:18:10 PM | DATASET=omniglot
+06/03 08:18:10 PM | DEVICE=cuda
+06/03 08:18:10 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 08:18:10 PM | DROP_PATH_PROB=0.2
+06/03 08:18:10 PM | EVAL=False
+06/03 08:18:10 PM | EVAL_EPOCHS=1
+06/03 08:18:10 PM | EVAL_FREQ=1000
+06/03 08:18:10 PM | EVAL_PREFIX=
+06/03 08:18:10 PM | GPUS=[0]
+06/03 08:18:10 PM | HP_SETTING=og_metanas
+06/03 08:18:10 PM | INIT_CHANNELS=28
+06/03 08:18:10 PM | JOB_ID=0
+06/03 08:18:10 PM | K=20
+06/03 08:18:10 PM | LAYERS=4
+06/03 08:18:10 PM | LOGGER=<Logger darts (INFO)>
+06/03 08:18:10 PM | LOSS_NN=loss_nn
+06/03 08:18:10 PM | LOSS_PROXY=mse
+06/03 08:18:10 PM | META_BATCH_SIZE=10
+06/03 08:18:10 PM | META_EPOCHS=20
+06/03 08:18:10 PM | META_MODEL=maml
+06/03 08:18:10 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 08:18:10 PM | MODEL_PATH=None
+06/03 08:18:10 PM | N=5
+06/03 08:18:10 PM | N_TRAIN=15
+06/03 08:18:10 PM | NAME=metatrain_og
+06/03 08:18:10 PM | NODES=3
+06/03 08:18:10 PM | NORMALIZER=softmax
+06/03 08:18:10 PM | NORMALIZER_T_MAX=1.0
+06/03 08:18:10 PM | NORMALIZER_T_MIN=0.05
+06/03 08:18:10 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 08:18:10 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 08:18:10 PM | PHI_GRAD_CLIP=1000000.0
+06/03 08:18:10 PM | PHI_LR=0.01
+06/03 08:18:10 PM | PHI_META_ANNEAL=1
+06/03 08:18:10 PM | PHI_META_LR=0.001
+06/03 08:18:10 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:18:10 PM | PHI_MOMENTUM=0.0
+06/03 08:18:10 PM | PHI_TASK_ANNEAL=0
+06/03 08:18:10 PM | PHI_WEIGHT_DECAY=0.0
+06/03 08:18:10 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 08:18:10 PM | PRETRAINED=pretrained
+06/03 08:18:10 PM | PRINT_FREQ=50
+06/03 08:18:10 PM | Q=1
+06/03 08:18:10 PM | REDUCTION_LAYERS=[1, 3]
+06/03 08:18:10 PM | RESIDUAL=residual
+06/03 08:18:10 PM | SEED=2
+06/03 08:18:10 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 08:18:10 PM | START_EPOCH=1
+06/03 08:18:10 PM | TASK_TRAIN_STEPS=5
+06/03 08:18:10 PM | TEST_ADAPT_STEPS=1.0
+06/03 08:18:10 PM | TEST_META_BATCH_SIZE=25
+06/03 08:18:10 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 08:18:10 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 08:18:10 PM | USE_FIRST_ORDER_DARTS=True
+06/03 08:18:10 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 08:18:10 PM | USE_HP_SETTING=1
+06/03 08:18:10 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 08:18:10 PM | USE_TORCHMETA_LOADER=True
+06/03 08:18:10 PM | USE_VINYALS_SPLIT=False
+06/03 08:18:10 PM | W_GRAD_CLIP=1000000.0
+06/03 08:18:10 PM | W_LR=0.005
+06/03 08:18:10 PM | W_META_ANNEAL=0
+06/03 08:18:10 PM | W_META_LR=1.0
+06/03 08:18:10 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:18:10 PM | W_MOMENTUM=0.0
+06/03 08:18:10 PM | W_TASK_ANNEAL=0
+06/03 08:18:10 PM | W_WEIGHT_DECAY=0.0
+06/03 08:18:10 PM | WARM_UP_EPOCHS=0
+06/03 08:18:10 PM | WORKERS=0
+06/03 08:18:10 PM | 
+06/03 08:19:55 PM | Start meta architecture search
+06/03 08:19:57 PM | alpha initial = [Parameter containing:
+tensor([[-6.1864e-04, -1.2029e-03,  1.2921e-03,  2.2760e-05,  1.5462e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-9.1148e-04, -5.0634e-04, -5.8549e-04, -6.3228e-05, -6.2597e-04]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[-1.5538e-04,  2.0051e-03,  1.7123e-05, -3.7111e-04, -2.4186e-03]],
+       device='cuda:0', requires_grad=True), Parameter containing:
+tensor([[ 0.0008, -0.0007,  0.0007,  0.0015, -0.0008]], device='cuda:0',
+       requires_grad=True)] 
+06/03 08:19:57 PM | 
+06/03 08:19:57 PM | Parameters:
+06/03 08:19:57 PM | A_META_ANNEAL=0
+06/03 08:19:57 PM | A_META_LR=0.6
+06/03 08:19:57 PM | A_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.6
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:19:57 PM | A_TASK_ANNEAL=0
+06/03 08:19:57 PM | ALPHA_LR=0.005
+06/03 08:19:57 PM | ALPHA_PRUNE_THRESHOLD=0.01
+06/03 08:19:57 PM | ALPHA_WEIGHT_DECAY=0.001
+06/03 08:19:57 PM | ANNEAL_SOFTMAX_TEMPERATURE=False
+06/03 08:19:57 PM | BATCH_SIZE=20
+06/03 08:19:57 PM | BATCH_SIZE_TEST=10
+06/03 08:19:57 PM | DATA_PATH=/home/ubuntu/metanas_custom/omniglot
+06/03 08:19:57 PM | DATASET=omniglot
+06/03 08:19:57 PM | DEVICE=cuda
+06/03 08:19:57 PM | DO_UNROLLED_ARCHITECTURE_STEPS=False
+06/03 08:19:57 PM | DROP_PATH_PROB=0.2
+06/03 08:19:57 PM | EVAL=False
+06/03 08:19:57 PM | EVAL_EPOCHS=1
+06/03 08:19:57 PM | EVAL_FREQ=1000
+06/03 08:19:57 PM | EVAL_PREFIX=
+06/03 08:19:57 PM | GPUS=[0]
+06/03 08:19:57 PM | HP_SETTING=og_metanas
+06/03 08:19:57 PM | INIT_CHANNELS=28
+06/03 08:19:57 PM | JOB_ID=0
+06/03 08:19:57 PM | K=20
+06/03 08:19:57 PM | LAYERS=4
+06/03 08:19:57 PM | LOGGER=<Logger darts (INFO)>
+06/03 08:19:57 PM | LOSS_NN=loss_nn
+06/03 08:19:57 PM | LOSS_PROXY=mse
+06/03 08:19:57 PM | META_BATCH_SIZE=10
+06/03 08:19:57 PM | META_EPOCHS=20
+06/03 08:19:57 PM | META_MODEL=maml
+06/03 08:19:57 PM | META_MODEL_PRUNE_THRESHOLD=0.01
+06/03 08:19:57 PM | MODEL_PATH=None
+06/03 08:19:57 PM | N=5
+06/03 08:19:57 PM | N_TRAIN=15
+06/03 08:19:57 PM | NAME=metatrain_og
+06/03 08:19:57 PM | NODES=3
+06/03 08:19:57 PM | NORMALIZER=softmax
+06/03 08:19:57 PM | NORMALIZER_T_MAX=1.0
+06/03 08:19:57 PM | NORMALIZER_T_MIN=0.05
+06/03 08:19:57 PM | NORMALIZER_TEMP_ANNEAL_MODE=linear
+06/03 08:19:57 PM | PATH=/home/ubuntu/metanas_custom/results/
+06/03 08:19:57 PM | PHI_GRAD_CLIP=1000000.0
+06/03 08:19:57 PM | PHI_LR=0.01
+06/03 08:19:57 PM | PHI_META_ANNEAL=1
+06/03 08:19:57 PM | PHI_META_LR=0.001
+06/03 08:19:57 PM | PHI_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:19:57 PM | PHI_MOMENTUM=0.0
+06/03 08:19:57 PM | PHI_TASK_ANNEAL=0
+06/03 08:19:57 PM | PHI_WEIGHT_DECAY=0.0
+06/03 08:19:57 PM | PLOT_PATH=/home/ubuntu/metanas_custom/results/plots
+06/03 08:19:57 PM | PRETRAINED=pretrained
+06/03 08:19:57 PM | PRINT_FREQ=50
+06/03 08:19:57 PM | Q=1
+06/03 08:19:57 PM | REDUCTION_LAYERS=[1, 3]
+06/03 08:19:57 PM | RESIDUAL=residual
+06/03 08:19:57 PM | SEED=2
+06/03 08:19:57 PM | SPARSIFY_INPUT_ALPHAS=None
+06/03 08:19:57 PM | START_EPOCH=1
+06/03 08:19:57 PM | TASK_TRAIN_STEPS=5
+06/03 08:19:57 PM | TEST_ADAPT_STEPS=1.0
+06/03 08:19:57 PM | TEST_META_BATCH_SIZE=25
+06/03 08:19:57 PM | TEST_TASK_TRAIN_STEPS=50
+06/03 08:19:57 PM | USE_DROP_PATH_IN_META_TESTING=False
+06/03 08:19:57 PM | USE_FIRST_ORDER_DARTS=True
+06/03 08:19:57 PM | USE_HIERARCHICAL_ALPHAS=False
+06/03 08:19:57 PM | USE_HP_SETTING=1
+06/03 08:19:57 PM | USE_PAIRWISE_INPUT_ALPHAS=True
+06/03 08:19:57 PM | USE_TORCHMETA_LOADER=True
+06/03 08:19:57 PM | USE_VINYALS_SPLIT=False
+06/03 08:19:57 PM | W_GRAD_CLIP=1000000.0
+06/03 08:19:57 PM | W_LR=0.005
+06/03 08:19:57 PM | W_META_ANNEAL=0
+06/03 08:19:57 PM | W_META_LR=1.0
+06/03 08:19:57 PM | W_META_OPTIM=SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 1.0
+    momentum: 0
+    nesterov: False
+    weight_decay: 0
+)
+06/03 08:19:57 PM | W_MOMENTUM=0.0
+06/03 08:19:57 PM | W_TASK_ANNEAL=0
+06/03 08:19:57 PM | W_WEIGHT_DECAY=0.0
+06/03 08:19:57 PM | WARM_UP_EPOCHS=0
+06/03 08:19:57 PM | WORKERS=0
+06/03 08:19:57 PM | 

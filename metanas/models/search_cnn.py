@@ -102,7 +102,7 @@ class SearchCNNController(nn.Module):
         super().__init__()
         self.n_nodes = n_nodes
         # self.criterion = nn.CrossEntropyLoss()
-        LossNN = None
+        # LossNN = None
         if lossfunc == 'loss_nn':
             print('nn')
             if residual == 'residual':
