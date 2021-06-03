@@ -52,6 +52,7 @@ args=(
     --pretrained none \
     --loss_proxy mse \
     --use_torchmeta_loader \
+    --residual residual \
 
 )
 

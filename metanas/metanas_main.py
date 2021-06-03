@@ -193,6 +193,7 @@ def _build_model(config, task_distribution, normalizer):
             use_pairwise_input_alphas=config.use_pairwise_input_alphas,
             alpha_prune_threshold=config.alpha_prune_threshold,
             pretrained=config.pretrained,
+            residual=config.residual,
         )
 
     elif config.meta_model == "maml":
@@ -374,18 +375,18 @@ def pca_viz(loss_nn, K=3, meta_epoch=0):
 
     matmul = _utils.matmul
     
-    # print(loss_nn_pca.fcx.weight) 
+    # print(loss_nn_pca.fc1.weight) 
     with torch.no_grad():
         # Perform SVD decomposition only on W1 weight
 
-        W1 = loss_nn_pca.fcx.weight
+        W1 = loss_nn_pca.fc1.weight
         # print('shape, ', W1.shape)
         U, S, V = pca_lowrank(W1, q=None, center=True, niter=3)
 
         # K-reduced W
         W_hat = matmul(W1, V[:, :K])
 
-        loss_nn_pca.fcx.weight = torch.nn.Parameter(W_hat)
+        loss_nn_pca.fc1.weight = torch.nn.Parameter(W_hat)
 
         # train_x in puts in R^1x2 (x,y)
         x = np.linspace(-1000, 1000, 200).reshape(-1, 1)
@@ -1086,7 +1087,7 @@ if __name__ == "__main__":
         "--loss_nn", type=str, default='loss_nn', help="loss neural network to use for self-supervised learning",
     )
 
-    # Pretraining
+    # Pretraining with first few layers of ResNet-18
     parser.add_argument(
         "--pretrained", type=str, default='none', help="whether to use resnet-18 pretraining",
     )
@@ -1094,6 +1095,11 @@ if __name__ == "__main__":
     # Loss neural network learning proxy
     parser.add_argument(
         "--loss_proxy", type=str, default='mse', help="the loss proxy used, i.e. mse or the dot product of gradients method",
+    )
+
+    # Residual connection 
+    parser.add_argument(
+        "--residual", type=str, default='none', help="whether we use the cross entropy residual connection",
     )
 
     args = parser.parse_args()

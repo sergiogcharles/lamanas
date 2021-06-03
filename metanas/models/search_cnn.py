@@ -87,6 +87,7 @@ class SearchCNNController(nn.Module):
         n_layers,
         lossfunc,
         pretrained,
+        residual,
         n_nodes=4,
         reduction_layers=[],
         stem_multiplier=3,
@@ -104,10 +105,20 @@ class SearchCNNController(nn.Module):
         LossNN = None
         if lossfunc == 'loss_nn':
             print('nn')
-            self.criterion = NNL(n_classes, n_classes)
+            if residual == 'residual':
+                print('Using residual')
+                self.criterion = NNL(n_classes, n_classes, residual='residual')
+            elif residual == 'none':
+                print('No residual')
+                self.criterion = NNL(n_classes, n_classes, residual='none')
         elif lossfunc == 'loss_rnn':
             print('rnn')
-            self.criterion = RNNL(n_classes, n_classes)
+            if residual == 'residual':
+                print('Using residual')
+                self.criterion = RNNL(n_classes, n_classes, residual='residual')
+            elif residual == 'none':
+                print('No residual')
+                self.criterion = RNNL(n_classes, n_classes, residual='none')
             # breakpoint()
         # self.criterion = LossNN
 
