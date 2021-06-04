@@ -20,3 +20,12 @@ Train-TestPrec@(1,) @ Epoch 1: 0.1250000037252903
 Train-TestPrec@(1,) @ Epoch 1: 0.23500000387430192 
 Train-TestPrec@(1,) @ Epoch 1: 0.16500000432133674 
 Train-TestPrec@(1,) @ Epoch 2: 0.1675000037997961 
+Train-TestPrec@(1,) @ Epoch 1: 0.21000000238418579 
+Train-TestPrec@(1,) @ Epoch 2: 0.2125000037252903 
+Train-TestPrec@(1,) @ Epoch 3: 0.21166667019327481 
+Train-TestPrec@(1,) @ Epoch 4: 0.22000000365078448 
+Train-TestPrec@(1,) @ Epoch 5: 0.22200000405311585 
+Train-TestPrec@(1,) @ Epoch 6: 0.2291666710128387 
+Train-TestPrec@(1,) @ Epoch 7: 0.23285714696560586 
+Train-TestPrec@(1,) @ Epoch 8: 0.23937500389292837 
+Train-TestPrec@(1,) @ Epoch 9: 0.24500000385774506 

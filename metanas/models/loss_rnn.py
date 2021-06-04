@@ -49,12 +49,12 @@ class RNNL(nn.Module):
         # make z_emb go from (N, H) to (1, N, H) to align with (time_steps, batch_size, in_size)
         # Initial hidden/cell state h_0=c_0 of shape (num_layers, batch, hidden_size)
         h = y.unsqueeze(0)
-        print(h.shape)
+        # print(h.shape)
         h = h.repeat(self.num_layers, 1, self.hidden_dim)
-        print('h shape', h.shape)
+        # print('h shape', h.shape)
 
         (h_0, c_0) = (h, h)
-        out_seq, _ = self.lstm(z_emb)
+        out_seq, _ = self.lstm(z_emb, (h_0, c_0))
         out = out_seq.squeeze(0)
         out = self.fc1(out)
 
