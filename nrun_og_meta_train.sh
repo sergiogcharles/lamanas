@@ -1,11 +1,10 @@
 #!/bin/bash
 
 DATASET=omniglot
-DATASET_DIR=/home/ubuntu/metanas/omniglot
-TRAIN_DIR=/home/ubuntu/metanas/results
+DATASET_DIR=/home/ubuntu/metanas_custom/omniglot
+TRAIN_DIR=/home/ubuntu/metanas_custom/results
 		
 mkdir -p $TRAIN_DIR
-
 
 args=(
     # Execution
@@ -32,11 +31,11 @@ args=(
     --alpha_prune_threshold 0.01 \
     # Meta Learning
     --meta_model searchcnn \
-    --meta_epochs 10 \
+    --meta_epochs 50 \
     --warm_up_epochs 0 \
     --use_pairwise_input_alphas \
-    --eval_freq 100 \
-    --eval_epochs 1 \
+    --eval_freq 1000 \
+    --eval_epochs 50 \
 
     --normalizer softmax \
     --normalizer_temp_anneal_mode linear \
@@ -50,7 +49,10 @@ args=(
     --reduction_layers 1 3 \
     --use_first_order_darts \
     --loss_nn loss_nn \
+    --pretrained none \
+    --loss_proxy mse \
     --use_torchmeta_loader \
+    --residual residual \
 
 )
 

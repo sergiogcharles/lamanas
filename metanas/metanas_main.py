@@ -371,23 +371,60 @@ def _prune_alphas(meta_model, meta_model_prune_threshold):
         meta_model.prune_alphas(prune_threshold=meta_model_prune_threshold)
 
 # PCA viz
-def pca_viz(loss_nn, K=3, meta_epoch=0):
+def pca_viz(loss_nn, K=3, meta_epoch=0, loss_name='loss_nn'):
     loss_nn_pca = copy.deepcopy(loss_nn).cuda()
 
     matmul = _utils.matmul
     
     # print(loss_nn_pca.fc1.weight) 
     with torch.no_grad():
-        # Perform SVD decomposition only on W1 weight
+        if loss_name == "loss_nn":
+            # Perform SVD decomposition only on W1 weight
 
-        W1 = loss_nn_pca.fc1.weight
-        # print('shape, ', W1.shape)
-        U, S, V = pca_lowrank(W1, q=None, center=True, niter=3)
+            W1 = loss_nn_pca.fc1.weight
+            # print('shape, ', W1.shape)
+            U, S, V = pca_lowrank(W1, q=None, center=True, niter=3)
 
-        # K-reduced W
-        W_hat = matmul(W1, V[:, :K])
+            # K-reduced W
+            W_hat = matmul(W1, V[:, :K])
 
-        loss_nn_pca.fc1.weight = torch.nn.Parameter(W_hat)
+            loss_nn_pca.fc1.weight = torch.nn.Parameter(W_hat)
+        else:
+            W1 = loss_nn_pca.fcz.weight
+            # (H, N)
+            # print('shape, ', W1.shape)
+            U, S, V = pca_lowrank(W1, q=None, center=True, niter=3)
+            # K-reduced W
+            W_hat = matmul(W1, V[:, :K])
+            loss_nn_pca.fcz.weight = torch.nn.Parameter(W_hat)
+
+            # Update Wxh for rnn2
+            # Reduce along columns
+            # See: https://stackoverflow.com/questions/51628607/pytorch-passing-numpy-array-for-weight-initialization/51630378[link][1]
+            # for accessing these parameters of RNN
+            # Wxh = loss_nn_pca.rnn2.all_weights[0][0]
+            # print('before', Wxh.shape)
+            # U, S, V = pca_lowrank(Wxh, q=None, center=True, niter=3)
+            # Wxh_hat = matmul(Wxh, V[:, :K])
+            # print(Wxh_hat.shape)
+
+            # # Reduce along rows
+            # U, S, V = pca_lowrank(Wxh_hat.T, q=None, center=True, niter=3)
+            # Wxh_hat = matmul(Wxh_hat.T, V[:, :K]).T
+            # print(Wxh_hat.shape)
+
+            # loss_nn_pca.rnn2.all_weights[0][0].data = torch.nn.Parameter(Wxh_hat)
+
+            # # Update W1 for fc1
+            # W1_fc = loss_nn_pca.fc1.weight
+            # print('shape, ', W1_fc.shape)
+            # U, S, V = pca_lowrank(W1_fc, q=None, center=True, niter=3)
+            # # K-reduced W 
+            # W1_fc_hat = matmul(W1_fc, V[:, :K])
+            # print(W1_fc_hat.shape)
+
+            # loss_nn_pca.fc1.weight = torch.nn.Parameter(W1_fc_hat)
+
 
         # train_x in puts in R^1x2 (x,y)
         x = np.linspace(-1e4, 1e4, 200).reshape(-1, 1)
@@ -407,6 +444,7 @@ def pca_viz(loss_nn, K=3, meta_epoch=0):
                 # print(y_label)
 
                 # Compute loss
+                # print(x_input.shape, y_label.shape, loss_nn_pca)
                 z[i][j] = loss_nn_pca(x_input, y_label) / 10000
             # if i % 10:
             #     print(f'{i}/{len(y)}')
@@ -541,7 +579,7 @@ def train(
             )
 
         # Visualize self-supervised loss
-        pca_viz(meta_model.criterion, meta_epoch=meta_epoch)
+        pca_viz(meta_model.criterion, meta_epoch=meta_epoch, loss_name=config.loss_nn)
         
         # Write meta train metrics to file
         train_test_loss_filename = 'meta_training' + "/train_test_loss.txt"

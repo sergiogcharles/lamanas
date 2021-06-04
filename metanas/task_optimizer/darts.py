@@ -74,8 +74,8 @@ class Darts:
         # loss neural network optimizer
         self.phi_optim = torch.optim.Adam(
             model.phis(),
-            self.config.phi_lr,
-            # lr=5,
+            # self.config.phi_lr,
+            lr=0.6,
             betas=(0.0, 0.999),
             weight_decay=self.config.phi_weight_decay,
         )
@@ -438,6 +438,7 @@ def pca_viz(loss_nn, K=3, meta_epoch=0):
                 # print(y_label)
 
                 # Compute loss
+                print(x_input.shape, y_label.shape, loss_nn_pca)
                 z[i][j] = loss_nn_pca(x_input, y_label) / 1000
             # if i % 10:
             #     print(f'{i}/{len(y)}')
@@ -469,6 +470,8 @@ def train(
 ):
 
     model.train()
+
+    model.criterion.train()
 
     for step, ((train_X, train_y), (val_X, val_y)) in enumerate(
         zip(task.train_loader, task.valid_loader)
@@ -518,6 +521,9 @@ def train(
         # logits_no_grad = logits.detach()
 
         # Pass through neural net loss model
+        # if model.criterion.__class__.__name__ == 'RNNL':
+        #     # print('yeet')
+        #     model.criterion.flatten_parameters()
         output = model.criterion(logits, train_y).cuda()
         
         if config.loss_proxy == 'mse':
@@ -527,13 +533,13 @@ def train(
 
             loss_proxy.backward(retain_graph=True)
 
-            # for param in model.parameters():
-            #     loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
-            #     os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
-            #     with open(loss_params_filename, "w") as f:
-            #         torch.set_printoptions(threshold=10_000)
-            #         f.write(str(param.grad))
-            #     break
+            for param in model.parameters():
+                loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
+                os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
+                with open(loss_params_filename, "w") as f:
+                    torch.set_printoptions(threshold=10_000)
+                    f.write(str(param.grad))
+                break
 
             nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
             phi_optim.step()
