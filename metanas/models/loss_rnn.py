@@ -44,7 +44,7 @@ class RNNL(nn.Module):
         z = torch.cat((x,y), dim=1)
         z_emb = self.fcz(z)
         z_emb = z_emb.unsqueeze(0)
-        z_emb = F.relu(z_emb)
+        z_emb = self.activation(z_emb)
 
         # print('input', z_emb.shape)
         self.lstm.flatten_parameters()
