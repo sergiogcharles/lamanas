@@ -373,9 +373,9 @@ class Darts:
                 
                 # Write test acc to file
                 test_acc_filename = 'meta_test' + "/test_acc.txt"
-                os.makedirs(os.path.dirname(train_test_acc_filename), exist_ok=True)
+                os.makedirs(os.path.dirname(test_acc_filename), exist_ok=True)
                 with open(test_acc_filename, "a") as f:
-                    f.write(f'Test acc @ Epoch {meta_epoch}: {prec1.item()} \n')
+                    f.write(f'Test acc: {prec1.item()} \n')
                 
 
         # return dict(genotype=genotype, top1=top1)
