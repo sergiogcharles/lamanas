@@ -21,6 +21,8 @@ class NNL(nn.Module):
 
         if self.residual == 'residual':
             self.cross_entropy = nn.CrossEntropyLoss()
+            
+        self.activation = nn.ELU()
 
     def forward(self, x, y):
         if self.residual == 'residual':
@@ -39,7 +41,7 @@ class NNL(nn.Module):
         out = z_emb
         if self.residual == 'residual':
             out += ce
-        out = F.relu(out)
+        out = self.activation(out)
         # FCC layer 2
         out = self.fc2(out)
 
