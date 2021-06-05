@@ -536,7 +536,7 @@ def train(
         if config.loss_proxy == 'mse':
             loss_proxy_mse = nn.MSELoss()
             loss_proxy = loss_proxy_mse(output, target)
-            print(f"MSE before: {loss_proxy}")
+#             print(f"MSE before: {loss_proxy}")
 
             loss_proxy.backward(retain_graph=True)
 
