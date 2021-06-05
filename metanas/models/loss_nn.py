@@ -45,5 +45,7 @@ class NNL(nn.Module):
         # FCC layer 2
         out = self.fc2(out)
 
+        # out = out / torch.norm(out)
+
         # Average over minibatch N
         return torch.mean(out).cuda()

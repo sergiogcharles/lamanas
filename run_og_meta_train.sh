@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DATASET=omniglot
-DATASET_DIR=/home/ubuntu/metanas_custom/omniglot
-TRAIN_DIR=/home/ubuntu/metanas_custom/results
+DATASET_DIR=/home/ubuntu/metanas_1/omniglot
+TRAIN_DIR=/home/ubuntu/metanas_1/results
 		
 mkdir -p $TRAIN_DIR
 
@@ -48,7 +48,7 @@ args=(
     --layers 4 \
     --reduction_layers 1 3 \
     --use_first_order_darts \
-    --loss_nn loss_rnn \
+    --loss_nn loss_nn \
     --pretrained none \
     --loss_proxy mse \
     --use_torchmeta_loader \

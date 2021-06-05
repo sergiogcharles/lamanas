@@ -216,15 +216,15 @@ class Darts:
 
         # Set phi optimizer
         # loss neural network optimizer
-        # self.phi_optim = torch.optim.Adam(
-        #     self.model.phis(),
-        #     self.config.phi_lr,
-        #     # lr=5,
-        #     betas=(0.0, 0.999),
-        #     weight_decay=self.config.phi_weight_decay,
-        # )
+        self.phi_optim = torch.optim.Adam(
+            self.model.phis(),
+            self.config.phi_lr,
+            # lr=5,
+            betas=(0.0, 0.999),
+            weight_decay=self.config.phi_weight_decay,
+        )
 
-        # # Phase 3: update phi meta parameters of loss neural net
+        # Phase 3: update phi meta parameters of loss neural net
         # for step, ((train_X, train_y), (val_X, val_y)) in enumerate(
         #     zip(task.train_loader, task.valid_loader)
         # ):
@@ -232,62 +232,136 @@ class Darts:
         #     val_X, val_y = val_X.to(self.config.device), val_y.to(self.config.device)
         #     N = train_X.size(0)
 
-        #     self.phi_optim.zero_grad()
+            # self.phi_optim.zero_grad()
 
-        #     logits = self.model(train_X).cuda()
+            # logits = self.model(train_X).cuda()
 
-        #     # ground truth: whatever the softmax produces
-        #     target_loss = nn.CrossEntropyLoss()
-        #     target = target_loss(logits, train_y)
-        #     # logits_no_grad = logits.detach()
+            # # ground truth: whatever the softmax produces
+            # target_loss = nn.CrossEntropyLoss()
+            # target = target_loss(logits, train_y)
+            # # logits_no_grad = logits.detach()
 
-        #     # Pass through neural net loss model
-        #     output = self.model.criterion(logits, train_y).cuda()
+            # # Pass through neural net loss model
+            # output = self.model.criterion(logits, train_y).cuda()
             
-        #     if self.config.loss_proxy == 'mse':
-        #         loss_proxy_mse = nn.MSELoss()
-        #         loss_proxy = loss_proxy_mse(output, target)
-        #         print(f"MSE before: {loss_proxy}")
+            # if self.config.loss_proxy == 'mse':
+            #     loss_proxy_mse = nn.MSELoss()
+            #     loss_proxy = loss_proxy_mse(output, target)
+            #     print(f"MSE before: {loss_proxy}")
 
-        #         loss_proxy.backward()
+            #     loss_proxy.backward()
 
-        #         nn.utils.clip_grad_norm_(self.model.phis(), self.config.phi_grad_clip)
-        #         self.phi_optim.step()
+            #     nn.utils.clip_grad_norm_(self.model.phis(), self.config.phi_grad_clip)
+            #     self.phi_optim.step()
 
-        #         with torch.no_grad():
-        #             output = self.model.criterion(logits, train_y)
-        #             loss_after = loss_proxy_mse(output, target)
-        #             print(f"MSE after: {loss_after}")
-        #     elif self.config.loss_proxy == 'dot_product':
-        #         # Proxy
-        #         loss_proxy = target 
+            #     with torch.no_grad():
+            #         output = self.model.criterion(logits, train_y)
+            #         loss_after = loss_proxy_mse(output, target)
+            #         print(f"MSE after: {loss_after}")
+            # elif self.config.loss_proxy == 'dot_product':
+            #     # Proxy
+            #     loss_proxy = target 
 
-        #         grad_train_theta = torch.autograd.grad(output, self.model.weights(), retain_graph=True, allow_unused=True)
-        #         grad_val_theta = torch.autograd.grad(target, self.model.weights(), retain_graph=True, allow_unused=True)
+            #     grad_train_theta = torch.autograd.grad(output, self.model.weights(), retain_graph=True, allow_unused=True)
+            #     grad_val_theta = torch.autograd.grad(target, self.model.weights(), retain_graph=True, allow_unused=True)
 
-        #         grad_train_alpha = torch.autograd.grad(output, self.model.alphas(), retain_graph=True, allow_unused=True)
-        #         grad_val_alpha = torch.autograd.grad(target, self.model.alphas(), retain_graph=True, allow_unused=True)
+            #     grad_train_alpha = torch.autograd.grad(output, self.model.alphas(), retain_graph=True, allow_unused=True)
+            #     grad_val_alpha = torch.autograd.grad(target, self.model.alphas(), retain_graph=True, allow_unused=True)
 
-        #         for i in range(len(grad_train_theta)):
-        #             if (type(grad_train_theta) != type(None)) and (type(grad_val_theta) != type(None)) and (type(grad_train_theta[i]) != type(None)) and (type(grad_val_theta[i]) != type(None)):
-        #                 loss_proxy -= torch.dot(grad_train_theta[i].reshape(-1), grad_val_theta[i].reshape(-1))
+            #     for i in range(len(grad_train_theta)):
+            #         if (type(grad_train_theta) != type(None)) and (type(grad_val_theta) != type(None)) and (type(grad_train_theta[i]) != type(None)) and (type(grad_val_theta[i]) != type(None)):
+            #             loss_proxy -= torch.dot(grad_train_theta[i].reshape(-1), grad_val_theta[i].reshape(-1))
 
-        #         for i in range(len(grad_train_alpha)):
-        #             if (type(grad_train_alpha) != type(None)) and (type(grad_val_alpha) != type(None)) and (type(grad_train_alpha[i]) != type(None)) and (type(grad_val_alpha[i]) != type(None)):
-        #                 loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
+            #     for i in range(len(grad_train_alpha)):
+            #         if (type(grad_train_alpha) != type(None)) and (type(grad_val_alpha) != type(None)) and (type(grad_train_alpha[i]) != type(None)) and (type(grad_val_alpha[i]) != type(None)):
+            #             loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
                 
 
-        #         print(f"Loss proxy before: {loss_proxy}")
+            #     print(f"Loss proxy before: {loss_proxy}")
 
-        #         loss_proxy.backward()
+            #     loss_proxy.backward()
 
-        #         nn.utils.clip_grad_norm_(self.model.phis(), self.config.phi_grad_clip)
-        #         self.phi_optim.step()
+            #     nn.utils.clip_grad_norm_(self.model.phis(), self.config.phi_grad_clip)
+            #     self.phi_optim.step()
 
-        #         with torch.no_grad():
-        #             output = self.model.criterion(logits, train_y)
-        #             loss_after = loss_proxy
-        #             print(f"Loss proxy after: {loss_after}")
+            #     with torch.no_grad():
+            #         output = self.model.criterion(logits, train_y)
+            #         loss_after = loss_proxy
+            #         print(f"Loss proxy after: {loss_after}")
+        
+        # Phase 3: update phi meta parameters of loss neural net
+        # for param in model.criterion.parameters():
+        #     param.requires_grad = True
+        
+        for step, ((train_X, train_y), (val_X, val_y)) in enumerate(
+            zip(task.train_loader, task.valid_loader)
+        ):
+            train_X, train_y = train_X.to(self.config.device), train_y.to(self.config.device)
+            val_X, val_y = val_X.to(self.config.device), val_y.to(self.config.device)
+            N = train_X.size(0)
+            self.phi_optim.zero_grad()
+
+            logits = self.model(train_X).cuda()
+            logits = Variable(logits.data, requires_grad=True)
+            logits.retain_grad()
+            
+            # ground truth: whatever the softmax produces
+            target_loss = nn.CrossEntropyLoss()
+            target = target_loss(logits, train_y)
+            # logits_no_grad = logits.detach()
+
+            # Pass through neural net loss model
+            output = self.model.criterion(logits, train_y).cuda()
+            
+            if self.config.loss_proxy == 'mse':
+                loss_proxy_mse = nn.MSELoss()
+                loss_proxy = loss_proxy_mse(output, target)
+    #             print(f"MSE before: {loss_proxy}")
+
+                loss_proxy.backward(retain_graph=True)
+
+                for param in self.model.parameters():
+                    loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
+                    os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
+                    with open(loss_params_filename, "w") as f:
+                        torch.set_printoptions(threshold=10_000)
+                        f.write(str(param.grad))
+                    break
+
+                nn.utils.clip_grad_norm_(self.model.phis(), self.config.phi_grad_clip)
+                self.phi_optim.step()
+
+            elif self.config.loss_proxy == 'dot_product':
+                # Proxy
+                loss_proxy = target 
+
+                grad_train_theta = torch.autograd.grad(output, self.model.weights(), retain_graph=True, allow_unused=True)
+                grad_val_theta = torch.autograd.grad(target, self.model.weights(), retain_graph=True, allow_unused=True)
+
+                grad_train_alpha = torch.autograd.grad(output, self.model.alphas(), retain_graph=True, allow_unused=True)
+                grad_val_alpha = torch.autograd.grad(target, self.model.alphas(), retain_graph=True, allow_unused=True)
+
+                for i in range(len(grad_train_theta)):
+                    if (type(grad_train_theta) != type(None)) and (type(grad_val_theta) != type(None)) and (type(grad_train_theta[i]) != type(None)) and (type(grad_val_theta[i]) != type(None)):
+                        loss_proxy -= torch.dot(grad_train_theta[i].reshape(-1), grad_val_theta[i].reshape(-1))
+
+                for i in range(len(grad_train_alpha)):
+                    if (type(grad_train_alpha) != type(None)) and (type(grad_val_alpha) != type(None)) and (type(grad_train_alpha[i]) != type(None)) and (type(grad_val_alpha[i]) != type(None)):
+                        loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
+                
+
+                loss_proxy.backward(retain_graph=True)
+
+                # for param in model.parameters():
+                #     loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
+                #     os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
+                #     with open(loss_params_filename, "w") as f:
+                #         torch.set_printoptions(threshold=10_000)
+                #         f.write(str(param.grad))
+                #     break
+
+                nn.utils.clip_grad_norm_(self.model.phis(), self.config.phi_grad_clip)
+                self.phi_optim.step()
 
 
         # Visualize loss neural network for K steps of task learner
@@ -512,87 +586,73 @@ def train(
         nn.utils.clip_grad_norm_(model.weights(), config.w_grad_clip)
         w_optim.step()
 
-        # Phase 3: update phi meta parameters of loss neural net
-        # for param in model.criterion.parameters():
-        #     param.requires_grad = True
+#         # Phase 3: update phi meta parameters of loss neural net
+#         # for param in model.criterion.parameters():
+#         #     param.requires_grad = True
 
-        phi_optim.zero_grad()
+#         phi_optim.zero_grad()
 
-        logits = model(train_X).cuda()
-        logits = Variable(logits.data, requires_grad=True)
-        logits.retain_grad()
+#         logits = model(train_X).cuda()
+#         logits = Variable(logits.data, requires_grad=True)
+#         logits.retain_grad()
         
-        # ground truth: whatever the softmax produces
-        target_loss = nn.CrossEntropyLoss()
-        target = target_loss(logits, train_y)
-        # logits_no_grad = logits.detach()
+#         # ground truth: whatever the softmax produces
+#         target_loss = nn.CrossEntropyLoss()
+#         target = target_loss(logits, train_y)
+#         # logits_no_grad = logits.detach()
 
-        # Pass through neural net loss model
-        # if model.criterion.__class__.__name__ == 'RNNL':
-        #     # print('yeet')
-        #     model.criterion.flatten_parameters()
-        output = model.criterion(logits, train_y).cuda()
+#         # Pass through neural net loss model
+#         output = model.criterion(logits, train_y).cuda()
         
-        if config.loss_proxy == 'mse':
-            loss_proxy_mse = nn.MSELoss()
-            loss_proxy = loss_proxy_mse(output, target)
-#             print(f"MSE before: {loss_proxy}")
+#         if config.loss_proxy == 'mse':
+#             loss_proxy_mse = nn.MSELoss()
+#             loss_proxy = loss_proxy_mse(output, target)
+# #             print(f"MSE before: {loss_proxy}")
 
-            loss_proxy.backward(retain_graph=True)
+#             loss_proxy.backward(retain_graph=True)
 
-            for param in model.parameters():
-                loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
-                os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
-                with open(loss_params_filename, "w") as f:
-                    torch.set_printoptions(threshold=10_000)
-                    f.write(str(param.grad))
-                break
+#             for param in model.parameters():
+#                 loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
+#                 os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
+#                 with open(loss_params_filename, "w") as f:
+#                     torch.set_printoptions(threshold=10_000)
+#                     f.write(str(param.grad))
+#                 break
 
-            nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
-            phi_optim.step()
+#             nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
+#             phi_optim.step()
 
-#             with torch.no_grad():
-#                 output = model.criterion(logits, train_y)
-#                 loss_after = loss_proxy_mse(output, target)
-#                 print(f"MSE after: {loss_after}")
-        elif config.loss_proxy == 'dot_product':
-            # Proxy
-            loss_proxy = target 
+#         elif config.loss_proxy == 'dot_product':
+#             # Proxy
+#             loss_proxy = target 
 
-            grad_train_theta = torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)
-            grad_val_theta = torch.autograd.grad(target, model.weights(), retain_graph=True, allow_unused=True)
+#             grad_train_theta = torch.autograd.grad(output, model.weights(), retain_graph=True, allow_unused=True)
+#             grad_val_theta = torch.autograd.grad(target, model.weights(), retain_graph=True, allow_unused=True)
 
-            grad_train_alpha = torch.autograd.grad(output, model.alphas(), retain_graph=True, allow_unused=True)
-            grad_val_alpha = torch.autograd.grad(target, model.alphas(), retain_graph=True, allow_unused=True)
+#             grad_train_alpha = torch.autograd.grad(output, model.alphas(), retain_graph=True, allow_unused=True)
+#             grad_val_alpha = torch.autograd.grad(target, model.alphas(), retain_graph=True, allow_unused=True)
 
-            for i in range(len(grad_train_theta)):
-                if (type(grad_train_theta) != type(None)) and (type(grad_val_theta) != type(None)) and (type(grad_train_theta[i]) != type(None)) and (type(grad_val_theta[i]) != type(None)):
-                    loss_proxy -= torch.dot(grad_train_theta[i].reshape(-1), grad_val_theta[i].reshape(-1))
+#             for i in range(len(grad_train_theta)):
+#                 if (type(grad_train_theta) != type(None)) and (type(grad_val_theta) != type(None)) and (type(grad_train_theta[i]) != type(None)) and (type(grad_val_theta[i]) != type(None)):
+#                     loss_proxy -= torch.dot(grad_train_theta[i].reshape(-1), grad_val_theta[i].reshape(-1))
 
-            for i in range(len(grad_train_alpha)):
-                if (type(grad_train_alpha) != type(None)) and (type(grad_val_alpha) != type(None)) and (type(grad_train_alpha[i]) != type(None)) and (type(grad_val_alpha[i]) != type(None)):
-                    loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
+#             for i in range(len(grad_train_alpha)):
+#                 if (type(grad_train_alpha) != type(None)) and (type(grad_val_alpha) != type(None)) and (type(grad_train_alpha[i]) != type(None)) and (type(grad_val_alpha[i]) != type(None)):
+#                     loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
             
 
-#             print(f"Loss proxy before: {loss_proxy}")
+#             loss_proxy.backward(retain_graph=True)
 
-            loss_proxy.backward(retain_graph=True)
+#             # for param in model.parameters():
+#             #     loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
+#             #     os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
+#             #     with open(loss_params_filename, "w") as f:
+#             #         torch.set_printoptions(threshold=10_000)
+#             #         f.write(str(param.grad))
+#             #     break
 
-            # for param in model.parameters():
-            #     loss_params_filename = "metanas/task_optimizer/loss_params_after.txt"
-            #     os.makedirs(os.path.dirname(loss_params_filename), exist_ok=True)
-            #     with open(loss_params_filename, "w") as f:
-            #         torch.set_printoptions(threshold=10_000)
-            #         f.write(str(param.grad))
-            #     break
-
-            nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
-            phi_optim.step()
-
-#             with torch.no_grad():
-#                 output = model.criterion(logits, train_y)
-#                 loss_after = loss_proxy
-#                 print(f"Loss proxy after: {loss_after}")
+#             nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
+#             phi_optim.step()
 
 
 
