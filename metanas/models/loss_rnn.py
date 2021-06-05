@@ -29,6 +29,8 @@ class RNNL(nn.Module):
         nn.init.orthogonal_(self.fc1.weight, gain=1)
         self.fc2 = nn.Linear(32, output_dim)
         nn.init.orthogonal_(self.fc2.weight, gain=1)
+        
+        self.activation = nn.ELU()
 
     def forward(self, x, y):
         if self.residual == 'residual':
@@ -61,7 +63,7 @@ class RNNL(nn.Module):
         # Residual connection
         if self.residual == 'residual':
             out += ce 
-        out = F.relu(out)
+        out = self.activation(out)
 
         out = self.fc2(out)
 
