@@ -39,6 +39,7 @@ class NNL(nn.Module):
         out = z_emb
         if self.residual == 'residual':
             out += ce
+        out = F.relu(out)
         # FCC layer 2
         out = self.fc2(out)
 
