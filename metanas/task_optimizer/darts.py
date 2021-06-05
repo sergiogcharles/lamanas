@@ -369,7 +369,7 @@ class Darts:
                 top1_logger.update(prec1.item(), 1)
 
                 # Print test acc
-                print(f'Test acc: {prec1.item()}')
+#                 print(f'Test acc: {prec1.item()}')
                 
                 # Write test acc to file
                 test_acc_filename = 'meta_test' + "/test_acc.txt"
@@ -551,10 +551,10 @@ def train(
             nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
             phi_optim.step()
 
-            with torch.no_grad():
-                output = model.criterion(logits, train_y)
-                loss_after = loss_proxy_mse(output, target)
-                print(f"MSE after: {loss_after}")
+#             with torch.no_grad():
+#                 output = model.criterion(logits, train_y)
+#                 loss_after = loss_proxy_mse(output, target)
+#                 print(f"MSE after: {loss_after}")
         elif config.loss_proxy == 'dot_product':
             # Proxy
             loss_proxy = target 
@@ -574,7 +574,7 @@ def train(
                     loss_proxy -= torch.dot(grad_train_alpha[i].reshape(-1), grad_val_alpha[i].reshape(-1))
             
 
-            print(f"Loss proxy before: {loss_proxy}")
+#             print(f"Loss proxy before: {loss_proxy}")
 
             loss_proxy.backward(retain_graph=True)
 
@@ -589,10 +589,10 @@ def train(
             nn.utils.clip_grad_norm_(model.phis(), config.phi_grad_clip)
             phi_optim.step()
 
-            with torch.no_grad():
-                output = model.criterion(logits, train_y)
-                loss_after = loss_proxy
-                print(f"Loss proxy after: {loss_after}")
+#             with torch.no_grad():
+#                 output = model.criterion(logits, train_y)
+#                 loss_after = loss_proxy
+#                 print(f"Loss proxy after: {loss_after}")
 
 
 
