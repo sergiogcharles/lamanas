@@ -88,7 +88,7 @@ class Darts:
         )
 
         # What loss proxy we're using
-        print(f'loss proxy: {config.loss_proxy}')
+#         print(f'loss proxy: {config.loss_proxy}')
 
     def step(
         self,
