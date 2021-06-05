@@ -31,11 +31,11 @@ args=(
     --alpha_prune_threshold 0.01 \
     # Meta Learning
     --meta_model searchcnn \
-    --meta_epochs 50 \
-    --warm_up_epochs 0 \
+    --meta_epochs 30 \
+    --warm_up_epochs 20 \
     --use_pairwise_input_alphas \
     --eval_freq 1000 \
-    --eval_epochs 50 \
+    --eval_epochs 10 \
 
     --normalizer softmax \
     --normalizer_temp_anneal_mode linear \
@@ -53,7 +53,7 @@ args=(
     --loss_proxy mse \
     --use_torchmeta_loader \
     --residual residual \
-
+    --print_freq 1 \
 )
 
 
