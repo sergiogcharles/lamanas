@@ -1,4 +1,4 @@
-# LAMANAS: Loss and Model Agnostic Meta Neural Architecture Search for Few-Shot Learning
+# LAMANAS: Loss Agnostic and Model Agnostic Meta Neural Architecture Search for Few-Shot Learning
 
 
 This is the implmentation is derived from the implementation of [Meta-Learning of Neural Architectures for Few-Shot Learning](https://openaccess.thecvf.com/content_CVPR_2020/html/Elsken_Meta-Learning_of_Neural_Architectures_for_Few-Shot_Learning_CVPR_2020_paper.html), located [here](https://github.com/boschresearch/metanas/tree/305e3070908c6adf974fbdf8220e8afba4eb60fd).
