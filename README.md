@@ -1,7 +1,7 @@
 # LAMANAS: Loss Agnostic and Model Agnostic Meta Neural Architecture Search for Few-Shot Learning
 
 
-This is an implmentation of a loss and model agnostic meta neural architecture search using a self-supervised loss, parameterized by a neural network, [found in our paper](https://cs229.stanford.edu/proj2021spr/report2/82285254.pdf). Our base implemention is derived from [Meta-Learning of Neural Architectures for Few-Shot Learning](https://openaccess.thecvf.com/content_CVPR_2020/html/Elsken_Meta-Learning_of_Neural_Architectures_for_Few-Shot_Learning_CVPR_2020_paper.html), located [here](https://github.com/boschresearch/metanas/tree/305e3070908c6adf974fbdf8220e8afba4eb60fd).
+This is an implmentation of [our paper](https://cs229.stanford.edu/proj2021spr/report2/82285254.pdf) on Loss Agnostic and Model Agnostic Meta Neural Architecture Search (LAMANAS) using a self-supervised loss, parameterized by a neural network. Our base implemention is derived from [Meta-Learning of Neural Architectures for Few-Shot Learning](https://openaccess.thecvf.com/content_CVPR_2020/html/Elsken_Meta-Learning_of_Neural_Architectures_for_Few-Shot_Learning_CVPR_2020_paper.html), located [here](https://github.com/boschresearch/metanas/tree/305e3070908c6adf974fbdf8220e8afba4eb60fd).
 
 
 
